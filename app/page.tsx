@@ -23,7 +23,7 @@ export default function Home() {
           <div className="w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
               className="bg-sky-900 h-4 rounded-full"
-              style={{ width: "1%" }}
+              style={{ width: YearPercent.toString() + "%" }}
             ></div>
           </div>
           <h1 className="font-bold w-2/12 px-4">{YearPercent.toFixed(2)} % </h1>
@@ -33,7 +33,7 @@ export default function Home() {
           <div className="w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
               className="bg-sky-700 h-4 rounded-full"
-              style={{ width: "1%" }}
+              style={{ width: MonthPercent.toString() + "%" }}
             ></div>
           </div>
           <h1 className="font-bold w-2/12 px-4">
@@ -45,7 +45,7 @@ export default function Home() {
           <div className="w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
               className="bg-sky-500 h-4 rounded-full"
-              style={{ width: "1%" }}
+              style={{ width: DayPercent.toString() + "%" }}
             ></div>
           </div>
           <h1 className="font-bold w-2/12 px-4">{DayPercent.toFixed(2)} % </h1>
