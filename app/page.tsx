@@ -7,6 +7,8 @@ export default function Home() {
   const month = new Date().getMonth();
   const date = new Date().getDate();
   const hours = new Date().getHours();
+  const minutes = new Date().getMinutes();
+  const seconds = new Date().getSeconds();
 
   const YearPercent = (date / TOTAL_DAYS) * 100;
   const MonthPercent = (date / TOTAL_MONTHS) * 100;
@@ -16,7 +18,7 @@ export default function Home() {
     <main className="flex flex-col justify-center items-center p-10 min-h-screen">
       <div className="flex flex-col w-1/2 items-center justify-center">
         <h1 className="text-3xl font-bold text-slate-700">
-          {date}/{month + 1}/{year}
+          {date}/{month + 1}/{year} - {hours} : {minutes}
         </h1>
         <div className="flex w-full items-center align-center">
           <h1 className="font-bold w-2/12 py-4">Año </h1>
