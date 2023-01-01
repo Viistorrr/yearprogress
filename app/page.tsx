@@ -13,6 +13,8 @@ export default function Home() {
   const MonthPercent = (date / TOTAL_MONTHS) * 100;
   const DayPercent = (hours / TOTAL_HOURS) * 100;
 
+  console.log(hours.toLocaleString("en-US", { minimumIntegerDigits: 2 }));
+
   return (
     <main className="flex flex-col justify-center items-center p-10 min-h-screen">
       <div className="flex flex-col w-1/2 items-center justify-center">
