@@ -3,12 +3,11 @@ const TOTAL_MONTHS = 12;
 const TOTAL_HOURS = 24;
 
 export default function Home() {
-  const year = new Date().getFullYear();
-  const month = new Date().getMonth();
-  const date = new Date().getDate();
-  const hours = new Date().getHours();
-  const minutes = new Date().getMinutes();
-  const seconds = new Date().getSeconds();
+  const year: any = new Date().getFullYear().toLocaleString("es-CO");
+  const month: any = new Date().getMonth().toLocaleString("es-CO");
+  const date: any = new Date().getDate().toLocaleString("es-CO");
+  const hours: any = new Date().getHours().toLocaleString("es-CO");
+  const minutes: any = new Date().getMinutes().toLocaleString("es-CO");
 
   const YearPercent = (date / TOTAL_DAYS) * 100;
   const MonthPercent = (date / TOTAL_MONTHS) * 100;
