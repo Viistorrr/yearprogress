@@ -13,11 +13,18 @@ export default function Home() {
   const MonthPercent = (date / TOTAL_MONTHS) * 100;
   const DayPercent = (hours / TOTAL_HOURS) * 100;
 
-  console.log(hours.toLocaleString("en-US", { minimumIntegerDigits: 2 }));
+  var now: any = new Date();
+  var start: any = new Date(now.getFullYear(), 0, 0);
+  var diff = now - start;
+  var oneDay = 1000 * 60 * 60 * 24;
+  var day = Math.floor(diff / oneDay);
 
   return (
     <main className="flex flex-col justify-center items-center p-10 min-h-screen">
-      <div className="flex flex-col w-1/2 items-center justify-center">
+      <div className="flex flex-col w-full lg:w-1/2 items-center justify-center">
+        <h1 className="text-3xl font-bold text-slate-700 p-16">
+          Día {day} de {TOTAL_DAYS}
+        </h1>
         <h1 className="text-3xl font-bold text-slate-700">
           {date}/{month + 1}/{year} - {hours} : {minutes}
         </h1>
