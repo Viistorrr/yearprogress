@@ -36,7 +36,7 @@ export default function Home() {
 
   return (
     <main className="flex flex-col justify-center items-center p-10 min-h-screen">
-      <h1 className="text-6xl font-bold text-slate-700">
+      <h1 className="text-6xl font-bold text-slate-700 items-center justify-center">
         ¿Qué día del año es hoy?
       </h1>
       <span className="text-base py-2 italic">Ey, gracias por entrar</span>😁✌🏾
