@@ -37,55 +37,51 @@ export default function Home() {
         </h1>
         <div className="flex w-full items-center align-center">
           <h1 className="font-bold w-2/12 py-4">Día </h1>
-          <div className="w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
+          <div className="flex items-center w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
               className="flex items-center justify-center py-2 bg-sky-900 h-4 rounded-full"
               style={{ width: DayPercent.toString() + "%" }}
-            >
-              <h1 className="font-bold items-center text-sm text-white">
-                {DayPercent.toFixed(2)} %{" "}
-              </h1>
-            </div>
+            ></div>
+            <h1 className="font-bold items-center text-sm text-sky-900">
+              {DayPercent.toFixed(2)} %{" "}
+            </h1>
           </div>
         </div>
         <div className="flex w-full items-center align-center">
           <h1 className="font-bold w-2/12 py-4">Semana </h1>
-          <div className="w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
+          <div className="flex items-center align-center w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
               className="flex items-center justify-center py-2 bg-sky-700 h-4 rounded-full"
               style={{ width: WeekPercent.toString() + "%" }}
-            >
-              <h1 className="font-bold items-center text-sm text-white">
-                {WeekPercent.toFixed(2)} %{" "}
-              </h1>
-            </div>
+            ></div>
+            <h1 className="font-bold items-center text-sm text-sky-900">
+              {WeekPercent.toFixed(2)} %{" "}
+            </h1>
           </div>
         </div>
         <div className="flex w-full items-center align-center">
           <h1 className="font-bold w-2/12 py-4">Mes </h1>
-          <div className="w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
+          <div className="flex items-center align-center w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
               className="flex items-center justify-center py-2 bg-sky-500 h-4 rounded-full"
               style={{ width: MonthPercent.toString() + "%" }}
-            >
-              <h1 className="font-bold items-center text-sm text-white">
-                {MonthPercent.toFixed(2)} %{" "}
-              </h1>
-            </div>
+            ></div>
+            <h1 className="font-bold items-center text-sm text-sky-900">
+              {MonthPercent.toFixed(2)} %{" "}
+            </h1>
           </div>
         </div>
 
         <div className="flex w-full items-center align-center">
           <h1 className="font-bold w-2/12 py-4">Año </h1>
-          <div className="w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
+          <div className="flex items-center align-center w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
               className="flex items-center justify-center py-2 bg-sky-500 h-4 rounded-full"
               style={{ width: YearPercent.toString() + "%" }}
-            >
-              <h1 className="font-bold text-sm text-sky-900">
-                {YearPercent.toFixed(2)} %{" "}
-              </h1>
-            </div>
+            ></div>
+            <h1 className="font-bold text-sm text-sky-900">
+              {YearPercent.toFixed(2)} %{" "}
+            </h1>
           </div>
         </div>
       </div>
