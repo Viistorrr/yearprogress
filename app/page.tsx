@@ -1,13 +1,15 @@
+import { LocalDateTime } from "local-date";
+
 const TOTAL_DAYS = 365;
 const TOTAL_MONTHS = 12;
 const TOTAL_HOURS = 24;
 
 export default function Home() {
-  const year = new Date().getFullYear();
-  const month = new Date().getMonth();
-  const date = new Date().getDate();
-  const hours = new Date().getHours();
-  const minutes = new Date().getMinutes();
+  const year = new LocalDateTime().getFullYear();
+  const month = new LocalDateTime().getMonth();
+  const date = new LocalDateTime().getDate();
+  const hours = new LocalDateTime().getHours();
+  const minutes = new LocalDateTime().getMinutes();
 
   const YearPercent = (date / TOTAL_DAYS) * 100;
   const MonthPercent = (date / TOTAL_MONTHS) * 100;
@@ -18,6 +20,8 @@ export default function Home() {
   var diff = now - start;
   var oneDay = 1000 * 60 * 60 * 24;
   var day = Math.floor(diff / oneDay);
+
+  console.log();
 
   return (
     <main className="flex flex-col justify-center items-center p-10 min-h-screen">
