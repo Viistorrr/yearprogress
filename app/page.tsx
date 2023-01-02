@@ -27,8 +27,6 @@ export default function Home() {
   var oneDay = 1000 * 60 * 60 * 24;
   var day = Math.floor(diff / oneDay);
 
-  console.log();
-
   return (
     <main className="flex flex-col justify-start items-center p-10 min-h-screen">
       <div className="flex flex-col w-full lg:w-1/2 items-center justify-center">
