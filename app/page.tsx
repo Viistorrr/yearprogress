@@ -15,8 +15,6 @@ export default function Home() {
   const MonthPercent = (date / TOTAL_MONTHS) * 100;
   const DayPercent = (hours / TOTAL_HOURS) * 100;
 
-  
-
   var now: any = new Date();
   var start: any = new Date(now.getFullYear(), 0, 0);
   var diff = now - start;
@@ -35,14 +33,14 @@ export default function Home() {
           {date}/{month + 1}/{year} - {hours} : {minutes}
         </h1>
         <div className="flex w-full items-center align-center">
-          <h1 className="font-bold w-2/12 py-4">Año </h1>
+          <h1 className="font-bold w-2/12 py-4">Día </h1>
           <div className="w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
-              className="bg-sky-900 h-4 rounded-full"
-              style={{ width: YearPercent.toString() + "%" }}
+              className="bg-sky-500 h-4 rounded-full"
+              style={{ width: DayPercent.toString() + "%" }}
             ></div>
           </div>
-          <h1 className="font-bold w-2/12 px-4">{YearPercent.toFixed(2)} % </h1>
+          <h1 className="font-bold w-2/12 px-4">{DayPercent.toFixed(2)} % </h1>
         </div>
         <div className="flex w-full items-center align-center">
           <h1 className="font-bold w-2/12 py-4">Mes </h1>
@@ -56,15 +54,16 @@ export default function Home() {
             {MonthPercent.toFixed(2)} %{" "}
           </h1>
         </div>
+
         <div className="flex w-full items-center align-center">
-          <h1 className="font-bold w-2/12 py-4">Día </h1>
+          <h1 className="font-bold w-2/12 py-4">Año </h1>
           <div className="w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
-              className="bg-sky-500 h-4 rounded-full"
-              style={{ width: DayPercent.toString() + "%" }}
+              className="bg-sky-900 h-4 rounded-full"
+              style={{ width: YearPercent.toString() + "%" }}
             ></div>
           </div>
-          <h1 className="font-bold w-2/12 px-4">{DayPercent.toFixed(2)} % </h1>
+          <h1 className="font-bold w-2/12 px-4">{YearPercent.toFixed(2)} % </h1>
         </div>
       </div>
       <div>
