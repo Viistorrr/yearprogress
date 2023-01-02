@@ -15,7 +15,7 @@ export default function Head() {
       <meta name="twitter:description" content="A simple year progress bar" />
       <meta
         name="twitter:image"
-        content="https://vyear-progress.vercel.app/preview.png"
+        content="https://vyear-progress.vercel.app/assets/imgs/preview.png"
       />
 
       <meta property="og:type" content="website" />
@@ -23,7 +23,7 @@ export default function Head() {
       <meta property="og:description" content="A simple year progress bar" />
       <meta
         property="og:image"
-        content="https://vyear-progress.vercel.app/preview.png"
+        content="https://vyear-progress.vercel.app/assets/imgs/preview.png"
       />
       <meta property="og:url" content="https://vyear-progress.vercel.app/" />
       <meta property="og:site_name" content="vYear Progress" />
