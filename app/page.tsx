@@ -36,9 +36,11 @@ export default function Home() {
         <h1 className="text-3xl font-bold text-slate-700">
           {date}/{month + 1}/{year} - {hours} : {minutes}
         </h1>
-        <div className="flex w-full items-center align-center">
-          <h1 className="font-bold w-2/12 py-4">Día </h1>
-          <div className="flex items-center w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
+        <div className="flex flex-col w-full items-center align-center">
+          <div>
+            <h1 className="font-bold w-full py-4">Progreso del Día </h1>
+          </div>
+          <div className="flex items-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
               className="flex items-center justify-center py-2 bg-sky-900 h-4 rounded-full"
               style={{ width: DayPercent.toString() + "%" }}
@@ -48,9 +50,11 @@ export default function Home() {
             </h1>
           </div>
         </div>
-        <div className="flex w-full items-center align-center">
-          <h1 className="font-bold w-2/12 py-4">Semana </h1>
-          <div className="flex items-center align-center w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
+        <div className="flex flex-col w-full items-center align-center">
+          <div>
+            <h1 className="font-bold w-full py-4">Progreso de la Semana </h1>
+          </div>
+          <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
               className="flex items-center justify-center py-2 bg-sky-700 h-4 rounded-full"
               style={{ width: WeekPercent.toString() + "%" }}
@@ -60,9 +64,11 @@ export default function Home() {
             </h1>
           </div>
         </div>
-        <div className="flex w-full items-center align-center">
-          <h1 className="font-bold w-2/12 py-4">Mes </h1>
-          <div className="flex items-center align-center w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
+        <div className="flex flex-col w-full items-center align-center">
+          <div>
+            <h1 className="font-bold w-full py-4">Progreso del Mes </h1>
+          </div>
+          <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
               className="flex items-center justify-center py-2 bg-sky-500 h-4 rounded-full"
               style={{ width: MonthPercent.toString() + "%" }}
@@ -73,9 +79,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex w-full items-center align-center">
-          <h1 className="font-bold w-2/12 py-4">Año </h1>
-          <div className="flex items-center align-center w-8/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
+        <div className="flex flex-col w-full items-center align-center">
+          <div>
+            <h1 className="font-bold w-full py-4">Progreso del Año </h1>
+          </div>
+          <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
               className="flex items-center justify-center py-2 bg-sky-500 h-4 rounded-full"
               style={{ width: YearPercent.toString() + "%" }}
@@ -86,11 +94,11 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div>
+      <div className="pt-8">
         <p className="text-sm text-slate-700">
           Hecho por{" "}
           <a
-            className="text-sky-900 hover:text-sky-700 py-4"
+            className="text-sky-900 hover:text-sky-700"
             href="https://twitter.com/viistorrr"
             target="_blank"
             rel="noopener noreferrer"
@@ -100,7 +108,7 @@ export default function Home() {
         </p>
       </div>
       <div>
-        <p className="text-sm text-slate-700 py-4">
+        <p className="text-sm text-slate-700">
           <a
             className="text-sky-900 hover:text-sky-700"
             href="https://www.buymeacoffee.com/viistorrr"
