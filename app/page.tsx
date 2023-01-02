@@ -2,6 +2,7 @@ import { LocalDateTime } from "local-date";
 
 const TOTAL_DAYS = 365;
 const TOTAL_WEEK_DAYS = 7;
+const TOTAL_WEEKS = 52;
 const TOTAL_MONTHS = 12;
 const TOTAL_HOURS = 24;
 
@@ -21,6 +22,8 @@ export default function Home() {
   const DayPercent: any = (localHours / TOTAL_HOURS) * 100;
   const WeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
 
+  const week = Math.ceil((date + 1) / 7);
+
   var now: any = new Date();
   var start: any = new Date(now.getFullYear(), 0, 0);
   var diff = now - start;
@@ -28,17 +31,16 @@ export default function Home() {
   var day = Math.floor(diff / oneDay);
 
   return (
-    <main className="flex flex-col justify-start items-center p-10 min-h-screen">
+    <main className="flex flex-col justify-center items-center p-10 min-h-screen">
       <div className="flex flex-col w-full lg:w-1/2 items-center justify-center">
-        <h1 className="text-3xl font-bold text-slate-700 p-16">
-          Día {day} de {TOTAL_DAYS}
-        </h1>
         <h1 className="text-3xl font-bold text-slate-700">
           {date}/{month + 1}/{year} - {hours} : {minutes}
         </h1>
         <div className="flex flex-col w-full items-center align-center">
           <div>
-            <h1 className="font-bold w-full py-4">Progreso del Día </h1>
+            <h1 className="font-bold w-full py-4">
+              Día {day} de {TOTAL_DAYS}
+            </h1>
           </div>
           <div className="flex items-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
@@ -52,7 +54,9 @@ export default function Home() {
         </div>
         <div className="flex flex-col w-full items-center align-center">
           <div>
-            <h1 className="font-bold w-full py-4">Progreso de la Semana </h1>
+            <h1 className="font-bold w-full py-4">
+              Semana {week} de {TOTAL_WEEKS}
+            </h1>
           </div>
           <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
@@ -66,7 +70,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col w-full items-center align-center">
           <div>
-            <h1 className="font-bold w-full py-4">Progreso del Mes </h1>
+            <h1 className="font-bold w-full py-4">Mes 1 de {TOTAL_MONTHS}</h1>
           </div>
           <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
@@ -81,7 +85,7 @@ export default function Home() {
 
         <div className="flex flex-col w-full items-center align-center">
           <div>
-            <h1 className="font-bold w-full py-4">Progreso del Año </h1>
+            <h1 className="font-bold w-full py-4">Año 2023 </h1>
           </div>
           <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
