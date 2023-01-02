@@ -18,9 +18,13 @@ export default function Home() {
   const localHours: any = hours.toLocaleString("es-ES");
 
   const YearPercent = (date / TOTAL_DAYS) * 100;
+  const YearPercentMiss = 100 - YearPercent;
   const MonthPercent = (date / TOTAL_MONTHS) * 100;
+  const MonthPercentMiss = 100 - MonthPercent;
   const DayPercent: any = (localHours / TOTAL_HOURS) * 100;
+  const DayPercentMiss: any = 100 - DayPercent;
   const WeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
+  const WeekPercentMiss = 100 - WeekPercent;
 
   const week = Math.ceil((date + 1) / 7);
 
@@ -32,8 +36,12 @@ export default function Home() {
 
   return (
     <main className="flex flex-col justify-center items-center p-10 min-h-screen">
+      <h1 className="text-6xl font-bold text-slate-700">
+        ¿Qué día del año es hoy?
+      </h1>
+      <span className="text-base py-2 italic">Ey, gracias por entrar😁✌🏾</span>
       <div className="flex flex-col w-full lg:w-1/2 items-center justify-center">
-        <h1 className="text-3xl font-bold text-slate-700">
+        <h1 className="text-3xl font-bold text-slate-700 py-8">
           {date}/{month + 1}/{year} - {hours} : {minutes}
         </h1>
         <div className="flex flex-col w-full items-center align-center">
@@ -44,11 +52,13 @@ export default function Home() {
           </div>
           <div className="flex items-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
-              className="flex items-center justify-center py-2 bg-sky-900 h-4 rounded-full"
-              style={{ width: DayPercent.toString() + "%" }}
+              className={`flex items-center justify-center py-2 ${
+                DayPercentMiss > 50 ? "bg-emerald-400" : "bg-rose-400"
+              } h-4 rounded-full`}
+              style={{ width: DayPercentMiss.toString() + "%" }}
             ></div>
             <h1 className="font-bold items-center text-sm text-sky-900">
-              {DayPercent.toFixed(2)} %{" "}
+              {DayPercentMiss.toFixed(2)} %{" "}
             </h1>
           </div>
         </div>
@@ -60,11 +70,13 @@ export default function Home() {
           </div>
           <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
-              className="flex items-center justify-center py-2 bg-sky-700 h-4 rounded-full"
-              style={{ width: WeekPercent.toString() + "%" }}
+              className={`flex items-center justify-center py-2 ${
+                WeekPercentMiss > 50 ? "bg-emerald-400" : "bg-rose-400"
+              } h-4 rounded-full`}
+              style={{ width: WeekPercentMiss.toString() + "%" }}
             ></div>
             <h1 className="font-bold items-center text-sm text-sky-900">
-              {WeekPercent.toFixed(2)} %{" "}
+              {WeekPercentMiss.toFixed(2)} %{" "}
             </h1>
           </div>
         </div>
@@ -74,11 +86,13 @@ export default function Home() {
           </div>
           <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
-              className="flex items-center justify-center py-2 bg-sky-500 h-4 rounded-full"
-              style={{ width: MonthPercent.toString() + "%" }}
+              className={`flex items-center justify-center py-2 ${
+                MonthPercentMiss > 50 ? "bg-emerald-400" : "bg-rose-400"
+              } h-4 rounded-full`}
+              style={{ width: MonthPercentMiss.toString() + "%" }}
             ></div>
             <h1 className="font-bold items-center text-sm text-sky-900">
-              {MonthPercent.toFixed(2)} %{" "}
+              {MonthPercentMiss.toFixed(2)} %{" "}
             </h1>
           </div>
         </div>
@@ -89,11 +103,13 @@ export default function Home() {
           </div>
           <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
-              className="flex items-center justify-center py-2 bg-sky-500 h-4 rounded-full"
-              style={{ width: YearPercent.toString() + "%" }}
+              className={`flex items-center justify-center py-2 ${
+                YearPercentMiss > 50 ? "bg-emerald-400" : "bg-rose-400"
+              } h-4 rounded-full`}
+              style={{ width: YearPercentMiss.toString() + "%" }}
             ></div>
             <h1 className="font-bold text-sm text-sky-900">
-              {YearPercent.toFixed(2)} %{" "}
+              {YearPercentMiss.toFixed(2)} %{" "}
             </h1>
           </div>
         </div>
