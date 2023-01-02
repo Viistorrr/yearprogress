@@ -65,17 +65,29 @@ export default function Home() {
         <p className="text-sm text-slate-700">
           Hecho por{" "}
           <a
-            className="text-sky-900 hover:text-sky-700"
+            className="text-sky-900 hover:text-sky-700 py-4"
             href="https://twitter.com/viistorrr"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <b>@viistorrr</b>
+            <i>@viistorrr</i>
           </a>
         </p>
       </div>
       <div>
         <p className="text-sm text-slate-700 py-4">
+          <a
+            className="text-sky-900 hover:text-sky-700"
+            href="https://www.buymeacoffee.com/viistorrr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Buy me a coffee ☕{" "}
+          </a>
+        </p>
+      </div>
+      <div>
+        <p className="text-sm text-slate-700">
           <a
             className="text-sky-900 hover:text-sky-700"
             href="https://www.viistorrr.com/"
