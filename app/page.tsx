@@ -12,6 +12,7 @@ const options = {
     "X-RapidAPI-Key": "09e1613e52msh046fac448c79824p1e7e9djsn2c7cfc786b66",
     "X-RapidAPI-Host": "world-time2.p.rapidapi.com",
   },
+  cache: "no-store" as RequestCache,
 };
 
 async function getData() {
