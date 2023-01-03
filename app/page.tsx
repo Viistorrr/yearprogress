@@ -43,13 +43,9 @@ export default async function Home() {
   const WeekPercentMiss = 100 - WeekPercent;
 
   return (
-    <main className="flex flex-col justify-center items-center p-10 min-h-screen">
-      <h3 className="text-6xl font-bold text-slate-700">
-        ¿Qué día del año es hoy?
-      </h3>
-      <span className="text-base py-2 italic">Ey, gracias por entrar</span>😁✌🏾
-      <div className="flex flex-col w-full lg:w-1/2 items-center justify-center">
-        <h1 className="text-3xl font-bold text-slate-700 py-8">
+    <main className="flex flex-col w-full justify-center items-center p-10 h-screen">
+      <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
+        <h1 className="text-lg font-bold text-slate-700">
           {weekDays[weekDay]} {localDateTime}
         </h1>
 
@@ -123,7 +119,8 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <div className="pt-8">
+      <span className="py-4 text-base italic">Ey, gracias por entrar😁✌🏾</span>
+      <div className="">
         <p className="text-sm text-slate-700">
           Hecho por{" "}
           <a
