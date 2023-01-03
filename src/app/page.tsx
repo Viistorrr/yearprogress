@@ -1,22 +1,16 @@
-import { weekDays } from "../utils/constants";
-const TOTAL_DAYS = 365;
-const TOTAL_WEEK_DAYS = 7;
-const TOTAL_WEEKS = 52;
-const TOTAL_MONTHS = 12;
-const TOTAL_HOURS = 24;
-
-const url = "https://world-time2.p.rapidapi.com/timezone/America/Bogota";
-const options = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": "09e1613e52msh046fac448c79824p1e7e9djsn2c7cfc786b66",
-    "X-RapidAPI-Host": "world-time2.p.rapidapi.com",
-  },
-  cache: "no-store" as RequestCache,
-};
+import {
+  weekDays,
+  TOTAL_DAYS,
+  TOTAL_WEEK_DAYS,
+  TOTAL_WEEKS,
+  TOTAL_MONTHS,
+  TOTAL_HOURS,
+  API_TIME_URL,
+  API_OPTIONS_URL,
+} from "@utils/constants";
 
 async function getData() {
-  const res = await fetch(url, options);
+  const res = await fetch(API_TIME_URL, API_OPTIONS_URL);
   return res.json();
 }
 
@@ -34,11 +28,9 @@ export default async function Home() {
   const utcOffsetHours = utcOffset.slice(0, 3);
 
   const date = globalDate.getDate();
-  const year = globalDate.getFullYear();
-  const month = globalDate.getMonth();
   const hours = globalDate.getHours() + parseInt(utcOffsetHours);
-  const minutes = globalDate.getMinutes();
-  const weekDay = globalDate.getDay();
+
+  const weekDay = localTimeData.day_of_week;
   const localHours: any = hours.toLocaleString("es-ES");
 
   const YearPercent = (date / TOTAL_DAYS) * 100;
@@ -49,12 +41,6 @@ export default async function Home() {
   const DayPercentMiss: any = 100 - DayPercent;
   const WeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
   const WeekPercentMiss = 100 - WeekPercent;
-
-  var now: any = new Date();
-  var start: any = new Date(now.getFullYear(), 0, 0);
-  var diff = now - start;
-  var oneDay = 1000 * 60 * 60 * 24;
-  var day = Math.floor(diff / oneDay);
 
   return (
     <main className="flex flex-col justify-center items-center p-10 min-h-screen">
