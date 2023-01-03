@@ -28,6 +28,8 @@ export default async function Home() {
   const utcOffsetHours = utcOffset.slice(0, 3);
   const date = globalDate.getDate();
   const hours = globalDate.getHours() + parseInt(utcOffsetHours);
+  const week = Math.ceil(date / 7);
+  const month = globalDate.getMonth() + 1;
   const weekDay = localTimeData.day_of_week;
   const YearPercent = (date / TOTAL_DAYS) * 100;
   const MonthPercent = (date / TOTAL_MONTHS) * 100;
@@ -71,7 +73,7 @@ export default async function Home() {
         </div>
         <div className="flex flex-col w-full items-center align-center justify-center">
           <h1 className="font-bold py-4">
-            Semana {weekDay} de {TOTAL_WEEKS}
+            Semana {week} de {TOTAL_WEEKS}
           </h1>
           <div className="flex flex-row w-full items-center align-center">
             <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
@@ -88,7 +90,9 @@ export default async function Home() {
           </div>
         </div>
         <div className="flex flex-col w-full items-center align-center justify-center">
-          <h1 className="font-bold py-4">Mes 1 de {TOTAL_MONTHS}</h1>
+          <h1 className="font-bold py-4">
+            Mes {month} de {TOTAL_MONTHS}
+          </h1>
           <div className="flex flex-row w-full items-center align-center">
             <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
               <div
