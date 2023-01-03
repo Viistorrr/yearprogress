@@ -36,7 +36,7 @@ export default async function Home() {
   const date = globalDate.getDate();
   const year = globalDate.getFullYear();
   const month = globalDate.getMonth();
-  const hours = globalDate.getHours() - parseInt(utcOffsetHours);
+  const hours = globalDate.getHours() + parseInt(utcOffsetHours);
   const minutes = globalDate.getMinutes();
   const weekDay = globalDate.getDay();
   const localHours: any = hours.toLocaleString("es-ES");
