@@ -60,12 +60,12 @@ export default async function Home() {
           <div className="flex items-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
               className={`flex items-center justify-center py-2 ${setColor(
-                DayPercentMiss
+                DayPercent
               )} h-4 rounded-full`}
-              style={{ width: DayPercentMiss.toString() + "%" }}
+              style={{ width: DayPercent.toString() + "%" }}
             ></div>
             <h1 className="font-bold items-center text-sm text-sky-900">
-              {DayPercentMiss.toFixed(1)} %{" "}
+              {DayPercent.toFixed(1)} %{" "}
             </h1>
           </div>
         </div>
