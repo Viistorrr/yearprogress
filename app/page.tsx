@@ -23,7 +23,15 @@ export default async function Home() {
   const globalDate = new Date(localTimeData.datetime);
   console.log(globalDate);
   console.log(localTimeData.datetime);
-  console.log(new Date(localTimeData.datetime));
+  const localDateTime = new Date(localTimeData.datetime).toLocaleString(
+    "es-ES",
+    {
+      timeZone: "America/Bogota",
+    }
+  );
+  console.log(localDateTime);
+
+  console.log(typeof localTimeData.datetime);
 
   const date = globalDate.getDate();
   const year = globalDate.getFullYear();
@@ -56,7 +64,7 @@ export default async function Home() {
       <span className="text-base py-2 italic">Ey, gracias por entrar</span>😁✌🏾
       <div className="flex flex-col w-full lg:w-1/2 items-center justify-center">
         <h1 className="text-3xl font-bold text-slate-700 py-8">
-          {date}/{month + 1}/{year} - {hours} : {minutes}
+          {localDateTime}
         </h1>
 
         <div className="flex flex-col w-full items-center align-center">
