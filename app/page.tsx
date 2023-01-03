@@ -1,5 +1,3 @@
-import { LocalDateTime } from "local-date";
-
 const TOTAL_DAYS = 365;
 const TOTAL_WEEK_DAYS = 7;
 const TOTAL_WEEKS = 52;
@@ -44,6 +42,7 @@ export default function Home() {
         <h1 className="text-3xl font-bold text-slate-700 py-8">
           {date}/{month + 1}/{year} - {hours} : {minutes}
         </h1>
+
         <div className="flex flex-col w-full items-center align-center">
           <div>
             <h1 className="font-bold w-full py-4">
