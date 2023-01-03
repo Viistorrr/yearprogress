@@ -4,12 +4,30 @@ const TOTAL_WEEKS = 52;
 const TOTAL_MONTHS = 12;
 const TOTAL_HOURS = 24;
 
-export default function Home() {
-  const globalDate = new Date();
+const url = "https://world-time2.p.rapidapi.com/timezone/America/Bogota";
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "09e1613e52msh046fac448c79824p1e7e9djsn2c7cfc786b66",
+    "X-RapidAPI-Host": "world-time2.p.rapidapi.com",
+  },
+};
 
+async function getData() {
+  const res = await fetch(url, options);
+  return res.json();
+}
+
+export default async function Home() {
+  const localTimeData = await getData();
+  const globalDate = new Date(localTimeData.datetime);
+  console.log(globalDate);
+  console.log(localTimeData.datetime);
+  console.log(new Date(localTimeData.datetime));
+
+  const date = globalDate.getDate();
   const year = globalDate.getFullYear();
   const month = globalDate.getMonth();
-  const date = globalDate.getDate();
   const hours = globalDate.getHours();
   const minutes = globalDate.getMinutes();
   const weekDay = globalDate.getDay();
@@ -23,8 +41,6 @@ export default function Home() {
   const DayPercentMiss: any = 100 - DayPercent;
   const WeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
   const WeekPercentMiss = 100 - WeekPercent;
-
-  const week = Math.ceil((date + 1) / 7);
 
   var now: any = new Date();
   var start: any = new Date(now.getFullYear(), 0, 0);
@@ -46,7 +62,7 @@ export default function Home() {
         <div className="flex flex-col w-full items-center align-center">
           <div>
             <h1 className="font-bold w-full py-4">
-              Día {day} de {TOTAL_DAYS}
+              Día {localTimeData.day_of_year} de {TOTAL_DAYS}
             </h1>
           </div>
           <div className="flex items-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
@@ -64,7 +80,7 @@ export default function Home() {
         <div className="flex flex-col w-full items-center align-center">
           <div>
             <h1 className="font-bold w-full py-4">
-              Semana {week} de {TOTAL_WEEKS}
+              Semana {localTimeData.week_number} de {TOTAL_WEEKS}
             </h1>
           </div>
           <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
