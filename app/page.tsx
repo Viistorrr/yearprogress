@@ -26,21 +26,24 @@ export default async function Home() {
 
   const utcOffset = localTimeData.utc_offset;
   const utcOffsetHours = utcOffset.slice(0, 3);
-
   const date = globalDate.getDate();
   const hours = globalDate.getHours() + parseInt(utcOffsetHours);
-
   const weekDay = localTimeData.day_of_week;
-  const localHours: any = hours.toLocaleString("es-ES");
-
   const YearPercent = (date / TOTAL_DAYS) * 100;
-  const YearPercentMiss = 100 - YearPercent;
   const MonthPercent = (date / TOTAL_MONTHS) * 100;
-  const MonthPercentMiss = 100 - MonthPercent;
-  const DayPercent: any = (localHours / TOTAL_HOURS) * 100;
+  const DayPercent: any = (hours / TOTAL_HOURS) * 100;
   const DayPercentMiss: any = 100 - DayPercent;
   const WeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
-  const WeekPercentMiss = 100 - WeekPercent;
+
+  const setColor = (percent: number) => {
+    if (percent < 33.3333) {
+      return "bg-rose-400";
+    } else if (33.3333 < percent && percent < 66.6666) {
+      return "bg-amber-400";
+    } else {
+      return "bg-emerald-400";
+    }
+  };
 
   return (
     <main className="flex flex-col w-full justify-center items-center p-10 h-screen">
@@ -48,7 +51,6 @@ export default async function Home() {
         <h1 className="text-lg font-bold text-slate-700">
           {weekDays[weekDay]} {localDateTime}
         </h1>
-
         <div className="flex flex-col w-full items-center align-center">
           <div>
             <h1 className="font-bold w-full py-4">
@@ -57,13 +59,13 @@ export default async function Home() {
           </div>
           <div className="flex items-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
-              className={`flex items-center justify-center py-2 ${
-                DayPercentMiss > 50 ? "bg-emerald-400" : "bg-rose-400"
-              } h-4 rounded-full`}
+              className={`flex items-center justify-center py-2 ${setColor(
+                DayPercentMiss
+              )} h-4 rounded-full`}
               style={{ width: DayPercentMiss.toString() + "%" }}
             ></div>
             <h1 className="font-bold items-center text-sm text-sky-900">
-              {DayPercentMiss.toFixed(2)} %{" "}
+              {DayPercentMiss.toFixed(1)} %{" "}
             </h1>
           </div>
         </div>
@@ -75,13 +77,13 @@ export default async function Home() {
           </div>
           <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
-              className={`flex items-center justify-center py-2 ${
-                WeekPercentMiss > 50 ? "bg-emerald-400" : "bg-rose-400"
-              } h-4 rounded-full`}
-              style={{ width: WeekPercentMiss.toString() + "%" }}
+              className={`flex items-center justify-center py-2 ${setColor(
+                WeekPercent
+              )} h-4 rounded-full`}
+              style={{ width: WeekPercent.toString() + "%" }}
             ></div>
             <h1 className="font-bold items-center text-sm text-sky-900">
-              {WeekPercentMiss.toFixed(2)} %{" "}
+              {WeekPercent.toFixed(1)} %{" "}
             </h1>
           </div>
         </div>
@@ -91,13 +93,13 @@ export default async function Home() {
           </div>
           <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
-              className={`flex items-center justify-center py-2 ${
-                MonthPercentMiss > 50 ? "bg-emerald-400" : "bg-rose-400"
-              } h-4 rounded-full`}
-              style={{ width: MonthPercentMiss.toString() + "%" }}
+              className={`flex items-center justify-center py-2 ${setColor(
+                MonthPercent
+              )} h-4 rounded-full`}
+              style={{ width: MonthPercent.toString() + "%" }}
             ></div>
             <h1 className="font-bold items-center text-sm text-sky-900">
-              {MonthPercentMiss.toFixed(2)} %{" "}
+              {MonthPercent.toFixed(1)} %{" "}
             </h1>
           </div>
         </div>
@@ -108,13 +110,13 @@ export default async function Home() {
           </div>
           <div className="flex items-center align-center w-full bg-gray-300 rounded-full h-4 dark:bg-gray-700">
             <div
-              className={`flex items-center justify-center py-2 ${
-                YearPercentMiss > 50 ? "bg-emerald-400" : "bg-rose-400"
-              } h-4 rounded-full`}
-              style={{ width: YearPercentMiss.toString() + "%" }}
+              className={`flex items-center justify-center py-2 ${setColor(
+                YearPercent
+              )} h-4 rounded-full`}
+              style={{ width: YearPercent.toString() + "%" }}
             ></div>
             <h1 className="font-bold text-sm text-sky-900">
-              {YearPercentMiss.toFixed(2)} %{" "}
+              {YearPercent.toFixed(1)} %{" "}
             </h1>
           </div>
         </div>
