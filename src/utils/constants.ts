@@ -1,10 +1,10 @@
 export const API_TIME_URL =
   "https://world-time2.p.rapidapi.com/timezone/America/Bogota";
 
-export const API_OPTIONS_URL = {
+export const API_OPTIONS_URL: any = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "09e1613e52msh046fac448c79824p1e7e9djsn2c7cfc786b66",
+    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPIDAPI_KEY,
     "X-RapidAPI-Host": "world-time2.p.rapidapi.com",
   },
   cache: "no-store" as RequestCache,
