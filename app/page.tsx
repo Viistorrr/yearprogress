@@ -60,7 +60,7 @@ export default async function Home() {
       <span className="text-base py-2 italic">Ey, gracias por entrar</span>😁✌🏾
       <div className="flex flex-col w-full lg:w-1/2 items-center justify-center">
         <h1 className="text-3xl font-bold text-slate-700 py-8">
-          Hoy es {weekDays[weekDay]} {localDateTime}
+          {weekDays[weekDay]} {localDateTime}
         </h1>
 
         <div className="flex flex-col w-full items-center align-center">
