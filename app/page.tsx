@@ -30,10 +30,13 @@ export default async function Home() {
     }
   );
 
+  const utcOffset = localTimeData.utc_offset;
+  const utcOffsetHours = utcOffset.slice(0, 3);
+
   const date = globalDate.getDate();
   const year = globalDate.getFullYear();
   const month = globalDate.getMonth();
-  const hours = globalDate.getHours();
+  const hours = globalDate.getHours() - parseInt(utcOffsetHours);
   const minutes = globalDate.getMinutes();
   const weekDay = globalDate.getDay();
   const localHours: any = hours.toLocaleString("es-ES");
@@ -55,9 +58,9 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col justify-center items-center p-10 min-h-screen">
-      <h1 className="text-6xl font-bold text-slate-700 items-center justify-center">
+      <h3 className="text-6xl font-bold text-slate-700">
         ¿Qué día del año es hoy?
-      </h1>
+      </h3>
       <span className="text-base py-2 italic">Ey, gracias por entrar</span>😁✌🏾
       <div className="flex flex-col w-full lg:w-1/2 items-center justify-center">
         <h1 className="text-3xl font-bold text-slate-700 py-8">
