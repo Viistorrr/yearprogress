@@ -27,7 +27,7 @@ export default async function Home() {
   const utcOffset = localTimeData.utc_offset;
   const utcOffsetHours = utcOffset.slice(0, 3);
   const date = globalDate.getDate();
-  const hours = globalDate.getHours() - 2 * parseInt(utcOffsetHours);
+  const hours = globalDate.getHours() - parseInt(utcOffsetHours);
   hours > 27 ? hours - 3 : hours;
 
   const week = Math.ceil(date / 7);
