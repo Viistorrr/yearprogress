@@ -9,7 +9,7 @@ import {
   TOTAL_HOURS,
   API_TIME_URL,
   API_OPTIONS_URL,
-} from "@utils/constants";
+} from "../utils/constants";
 
 async function getData() {
   const res = await fetch(API_TIME_URL, API_OPTIONS_URL);
