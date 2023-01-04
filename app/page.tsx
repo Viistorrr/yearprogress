@@ -62,24 +62,7 @@ export default async function Home() {
             total={TOTAL_DAYS}
             percent={DayPercent}
           />
-          <div className="flex flex-col w-full items-center align-center justify-center">
-            <h1 className="font-bold py-4">
-              Día {localTimeData.day_of_year} de {TOTAL_DAYS}
-            </h1>
-            <div className="flex flex-row w-full items-center align-center ">
-              <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
-                <div
-                  className={`flex items-center justify-center py-2 ${setColor(
-                    DayPercent
-                  )} h-4 rounded-full`}
-                  style={{ width: DayPercent.toString() + "%" }}
-                ></div>
-              </div>
-              <h1 className="w-1/12 pl-2 font-bold items-center text-sm text-sky-900">
-                {DayPercent.toFixed(1)} %{" "}
-              </h1>
-            </div>
-          </div>
+
           <div className="flex flex-col w-full items-center align-center justify-center">
             <h1 className="font-bold py-4">
               Semana {week} de {TOTAL_WEEKS}
