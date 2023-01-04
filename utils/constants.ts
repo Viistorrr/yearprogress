@@ -35,6 +35,16 @@ export const months: any = {
   12: "Diciembre",
 };
 
+export const setColor = (percent: number) => {
+  if (percent <= 33.3333) {
+    return "bg-rose-400";
+  } else if (33.3333 < percent && percent <= 66.6666) {
+    return "bg-amber-400";
+  } else {
+    return "bg-emerald-400";
+  }
+};
+
 export const TOTAL_DAYS = 365;
 export const TOTAL_WEEK_DAYS = 7;
 export const TOTAL_WEEKS = 52;
