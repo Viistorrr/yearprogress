@@ -1,7 +1,6 @@
 import {
   weekDays,
   months,
-  setColor,
   TOTAL_DAYS,
   TOTAL_WEEK_DAYS,
   TOTAL_WEEKS,
@@ -9,12 +8,22 @@ import {
   TOTAL_HOURS,
   API_TIME_URL,
   API_OPTIONS_URL,
-} from "../utils/constants";
+} from "@utils/constants";
 
 async function getData() {
   const res = await fetch(API_TIME_URL, API_OPTIONS_URL);
   return res.json();
 }
+
+const setColor = (percent: number) => {
+  if (percent <= 33.3333) {
+    return "bg-rose-400";
+  } else if (33.3333 < percent && percent <= 66.6666) {
+    return "bg-amber-400";
+  } else {
+    return "bg-emerald-400";
+  }
+};
 
 export default async function Home() {
   const localTimeData = await getData();
