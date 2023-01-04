@@ -58,29 +58,19 @@ export default async function Home() {
         </h1>
         <div className="w-full border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-2xl">
           <ProgressBar
+            label="Día"
             number={localTimeData.day_of_year}
             total={TOTAL_DAYS}
             percent={DayPercent}
           />
 
-          <div className="flex flex-col w-full items-center align-center justify-center">
-            <h1 className="font-bold py-4">
-              Semana {week} de {TOTAL_WEEKS}
-            </h1>
-            <div className="flex flex-row w-full items-center align-center">
-              <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
-                <div
-                  className={`flex items-center justify-center py-2 ${setColor(
-                    WeekPercent
-                  )} h-4 rounded-full`}
-                  style={{ width: WeekPercent.toString() + "%" }}
-                ></div>
-              </div>
-              <h1 className="w-1/12 pl-2 font-bold items-center text-sm text-sky-900">
-                {WeekPercent.toFixed(1)} %{" "}
-              </h1>
-            </div>
-          </div>
+          <ProgressBar
+            label="Semana"
+            number={week}
+            total={TOTAL_WEEKS}
+            percent={WeekPercent}
+          />
+
           <div className="flex flex-col w-full items-center align-center justify-center">
             <h1 className="font-bold py-4">
               {months[month]} | Mes {month} de {TOTAL_MONTHS}

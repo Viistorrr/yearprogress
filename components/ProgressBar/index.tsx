@@ -8,11 +8,11 @@ const setColor = (percent: number) => {
   }
 };
 
-const ProgressBar = ({ number, total, percent }: any) => {
+const ProgressBar = ({ label, number, total, percent }: any) => {
   return (
     <div className="flex flex-col w-full items-center align-center justify-center">
       <h1 className="font-bold py-4">
-        Día {number} de {total}
+        {label} {number} de {total}
       </h1>
       <div className="flex flex-row w-full items-center align-center ">
         <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
