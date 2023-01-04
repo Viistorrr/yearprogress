@@ -39,9 +39,9 @@ export default async function Home() {
   const WeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
 
   const setColor = (percent: number) => {
-    if (percent < 33.3333) {
+    if (percent <= 33.3333) {
       return "bg-rose-400";
-    } else if (33.3333 < percent && percent < 66.6666) {
+    } else if (33.3333 < percent && percent <= 66.6666) {
       return "bg-amber-400";
     } else {
       return "bg-emerald-400";
