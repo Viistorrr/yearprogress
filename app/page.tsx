@@ -28,6 +28,10 @@ export default async function Home() {
   const utcOffsetHours = utcOffset.slice(0, 3);
   const date = globalDate.getDate();
   const hours = globalDate.getHours() + parseInt(utcOffsetHours);
+  hours > 24 ? hours - 24 : hours;
+  hours < 0 ? hours + 24 : hours;
+  hours < 10 ? "0" + hours : hours;
+  hours > 10 ? hours : hours;
   const week = Math.ceil(date / 7);
   const month = globalDate.getMonth() + 1;
   const weekDay = localTimeData.day_of_week;
@@ -118,7 +122,7 @@ export default async function Home() {
                 style={{ width: YearPercent.toString() + "%" }}
               ></div>
             </div>
-            <h1 className="w-1/12 pl-2 font-bold items-center text-sm text-sky-900">
+            <h1 className="w-1/12 mx-2 px-2 font-normal items-center text-sm text-sky-900">
               {YearPercent.toFixed(1)} %{" "}
             </h1>
           </div>
