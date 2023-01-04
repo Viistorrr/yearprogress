@@ -20,8 +20,33 @@ export const weekDays: any = {
   6: "Sábado",
 };
 
+export const months: any = {
+  1: "Enero",
+  2: "Febrero",
+  3: "Marzo",
+  4: "Abril",
+  5: "Mayo",
+  6: "Junio",
+  7: "Julio",
+  8: "Agosto",
+  9: "Septiembre",
+  10: "Octubre",
+  11: "Noviembre",
+  12: "Diciembre",
+};
+
 export const TOTAL_DAYS = 365;
 export const TOTAL_WEEK_DAYS = 7;
 export const TOTAL_WEEKS = 52;
 export const TOTAL_MONTHS = 12;
 export const TOTAL_HOURS = 24;
+
+export const setColor = (percent: number) => {
+  if (percent <= 33.3333) {
+    return "bg-rose-400";
+  } else if (33.3333 < percent && percent <= 66.6666) {
+    return "bg-amber-400";
+  } else {
+    return "bg-emerald-400";
+  }
+};
