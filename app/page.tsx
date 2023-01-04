@@ -1,3 +1,5 @@
+import ProgressBar from "@components/ProgressBar";
+
 import {
   weekDays,
   months,
@@ -55,6 +57,11 @@ export default async function Home() {
           {weekDays[weekDay]} {localDateTime}
         </h1>
         <div className="w-full border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-2xl">
+          <ProgressBar
+            number={localTimeData.day_of_year}
+            total={TOTAL_DAYS}
+            percent={DayPercent}
+          />
           <div className="flex flex-col w-full items-center align-center justify-center">
             <h1 className="font-bold py-4">
               Día {localTimeData.day_of_year} de {TOTAL_DAYS}
