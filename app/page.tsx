@@ -41,34 +41,12 @@ export default async function Home() {
   const utcOffsetHours = utcOffset.slice(0, 3);
   const date = globalDate.getDate();
   var hours = globalDate.getHours() + parseInt(utcOffset) + 13;
+  if (hours == 7) hours = 19;
+  if (hours == 8) hours = 20;
   if (hours == 9) hours = 21;
   if (hours == 10) hours = 22;
   if (hours == 11) hours = 23;
   if (hours == 12) hours = 0;
-  if (hours == 13) hours = 1;
-  if (hours == 14) hours = 2;
-  if (hours == 15) hours = 3;
-  if (hours == 16) hours = 4;
-  if (hours == 17) hours = 5;
-  if (hours == 18) hours = 6;
-  if (hours == 19) hours = 7;
-  if (hours == 20) hours = 8;
-  if (hours == 21) hours = 9;
-  if (hours == 22) hours = 10;
-  if (hours == 23) hours = 11;
-  if (hours == 24) hours = 12;
-  if (hours == 25) hours = 13;
-  if (hours == 26) hours = 14;
-  if (hours == 27) hours = 15;
-  if (hours == 28) hours = 16;
-  if (hours == 29) hours = 17;
-  if (hours == 30) hours = 18;
-  if (hours == 31) hours = 19;
-  if (hours == 32) hours = 20;
-  if (hours == 33) hours = 21;
-  if (hours == 34) hours = 22;
-  if (hours == 35) hours = 23;
-  if (hours == 36) hours = 0;
 
   //if (hours < 0) hours = globalDate.getHours() - 2 * parseInt(utcOffsetHours);
 
