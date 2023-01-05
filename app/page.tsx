@@ -41,7 +41,7 @@ export default async function Home() {
   const utcOffsetHours = utcOffset.slice(0, 3);
   const date = globalDate.getDate();
   var hours = globalDate.getHours() + parseInt(utcOffsetHours);
-  if (hours < 0) hours = globalDate.getHours();
+  if (hours < 0) hours = globalDate.getHours() - parseInt(utcOffsetHours);
 
   const week = Math.ceil(date / 7);
   const month = globalDate.getMonth() + 1;
