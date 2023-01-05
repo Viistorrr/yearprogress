@@ -62,8 +62,11 @@ export default async function Home() {
   return (
     <main className="flex flex-col w-full justify-center items-center p-10 h-screen ">
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
-        <h1 className="text-lg font-bold text-slate-700 py-4">
+        <h1 className="flex justify-center text-lg font-bold text-slate-700 py-4">
           {weekDays[weekDay]} {localDateTime}
+        </h1>
+        <h1 className="text-lg font-bold text-slate-700">
+          Día {localTimeData.day_of_year} de {TOTAL_DAYS}
         </h1>
         <div className="w-full  pr-8 pb-8 pl-8">
           {/*<ProgressBar
