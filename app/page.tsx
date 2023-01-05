@@ -40,7 +40,7 @@ export default async function Home() {
   const utcOffset = localTimeData.utc_offset;
   const utcOffsetHours = utcOffset.slice(0, 3);
   const date = globalDate.getDate();
-  var hours = globalDate.getHours() + parseInt(utcOffset) + 17;
+  var hours = globalDate.getHours() + parseInt(utcOffset) + 15;
   //if (hours < 0) hours = globalDate.getHours() - 2 * parseInt(utcOffsetHours);
 
   const week = Math.ceil(date / 7);
