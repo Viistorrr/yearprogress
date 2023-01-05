@@ -4,7 +4,6 @@ import {
   weekDays,
   months,
   getMonthPercent,
-  getColor,
   TOTAL_DAYS,
   TOTAL_WEEK_DAYS,
   TOTAL_WEEKS,
@@ -28,6 +27,16 @@ export default async function Home() {
       timeZone: "America/Bogota",
     }
   );
+
+  const getColor = (percent: number) => {
+    if (percent <= 33.3333) {
+      return "bg-rose-400";
+    } else if (33.3333 < percent && percent <= 66.6666) {
+      return "bg-amber-400";
+    } else {
+      return "bg-emerald-400";
+    }
+  };
 
   const utcOffset = localTimeData.utc_offset;
   const utcOffsetHours = utcOffset.slice(0, 3);
@@ -79,7 +88,7 @@ export default async function Home() {
                   }}
                 ></div>
               </div>
-              <h1 className="w-1/12 pl-2 font-bold items-center text-sm text-sky-900">
+              <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
                 {WeekPercent.toFixed(1)}%
               </h1>
             </div>
@@ -100,7 +109,7 @@ export default async function Home() {
                   }}
                 ></div>
               </div>
-              <h1 className="w-1/12 pl-2 font-bold items-center text-sm text-sky-900">
+              <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
                 {getMonthPercent(month, date).toFixed(1)}%
               </h1>
             </div>
@@ -119,7 +128,7 @@ export default async function Home() {
                   style={{ width: YearPercent.toString() + "%" }}
                 ></div>
               </div>
-              <h1 className="w-1/12 pl-2 font-bold items-center text-sm text-sky-900">
+              <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
                 {YearPercent.toFixed(1)}%
               </h1>
             </div>
