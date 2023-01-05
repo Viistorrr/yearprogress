@@ -39,4 +39,4 @@ export const TOTAL_DAYS = 365;
 export const TOTAL_WEEK_DAYS = 7;
 export const TOTAL_WEEKS = 52;
 export const TOTAL_MONTHS = 12;
-export const TOTAL_HOURS = 24;
+export const TOTAL_HOURS = 12;
