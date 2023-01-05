@@ -40,8 +40,8 @@ export default async function Home() {
   const utcOffset = localTimeData.utc_offset;
   const utcOffsetHours = utcOffset.slice(0, 3);
   const date = globalDate.getDate();
-  var hours = globalDate.getHours() + parseInt(utcOffset);
-  if (hours < 0) hours = globalDate.getHours() - 2 * parseInt(utcOffsetHours);
+  var hours = globalDate.getHours(); // + parseInt(utcOffset);
+  //if (hours < 0) hours = globalDate.getHours() - 2 * parseInt(utcOffsetHours);
 
   const week = Math.ceil(date / 7);
   const month = globalDate.getMonth() + 1;
