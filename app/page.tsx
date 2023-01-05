@@ -38,9 +38,9 @@ export default async function Home() {
   );
 
   const utcOffset = localTimeData.utc_offset;
-  const utcOffsetHours = localTimeData.utc_offset;
+  const utcOffsetHours = utcOffset.slice(0, 3);
   const date = globalDate.getDate();
-  var hours = globalDate.getHours() + parseInt(utcOffsetHours) + 5;
+  var hours = globalDate.getHours() + parseInt(utcOffset) + 13;
   if (hours == 19) hours = 7;
   if (hours == 20) hours = 8;
   if (hours == 21) hours = 9;
