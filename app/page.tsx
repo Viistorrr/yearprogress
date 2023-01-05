@@ -65,14 +65,14 @@ export default async function Home() {
           {weekDays[weekDay]} {localDateTime}
         </h1>
         <div className="w-full border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-2xl">
-          <ProgressBar
+          {/*<ProgressBar
             label="Día"
             number={localTimeData.day_of_year}
             total={TOTAL_DAYS}
             percent={DayPercent}
           />
 
-          {/* <ProgressBar
+           <ProgressBar
             label="Semana"
             number={week}
             total={TOTAL_WEEKS}
@@ -96,9 +96,12 @@ export default async function Home() {
                 {MonthPercent.toFixed(1)} %{" "}
               </h1>
             </div>
-          </div>
-          <div className="flex flex-col w-full items-center align-center justify-center">
-            <h1 className="font-bold py-4">Año 2023</h1>
+          </div>*/}
+
+          <div className="flex flex-col w-full items-center align-center justify-center p-4">
+            <h1 className="text-lg font-bold text-slate-700 py-2">
+              Día {localTimeData.day_of_year} de {TOTAL_DAYS}
+            </h1>
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
                 <div
@@ -112,7 +115,7 @@ export default async function Home() {
                 {YearPercent.toFixed(1)} %{" "}
               </h1>
             </div>
-          </div> */}
+          </div>
         </div>
       </div>
       <span className="py-4 text-base italic">Ey, gracias por entrar😁✌🏾</span>
