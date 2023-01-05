@@ -40,7 +40,9 @@ export default async function Home() {
   const utcOffset = localTimeData.utc_offset;
   const utcOffsetHours = utcOffset.slice(0, 3);
   const date = globalDate.getDate();
-  const hours = globalDate.getHours() + parseInt(utcOffsetHours);
+  var hours = globalDate.getHours() + parseInt(utcOffsetHours);
+
+  if (hours > 24) globalDate.getHours() - 24;
 
   const week = Math.ceil(date / 7);
   const month = globalDate.getMonth() + 1;
@@ -54,7 +56,7 @@ export default async function Home() {
     <main className="flex flex-col w-full justify-center items-center p-10 h-screen">
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
         <h1 className="text-lg font-bold text-slate-700 py-4">
-          {weekDays[weekDay]} {localDateTime}
+          {weekDays[weekDay]} {localDateTime} | {hours} horas
         </h1>
         <div className="w-full border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-2xl">
           <ProgressBar
