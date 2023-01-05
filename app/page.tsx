@@ -117,7 +117,7 @@ export default async function Home() {
 
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4">
             <h1 className="text-lg font-bold text-slate-700 py-2">
-              Año {globalDate.getFullYear()}
+              {globalDate.getFullYear()}
             </h1>
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
