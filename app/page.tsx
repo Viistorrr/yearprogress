@@ -95,7 +95,7 @@ export default async function Home() {
             percent={DayPercent}
           />
 
-          <ProgressBar
+          {/* <ProgressBar
             label="Semana"
             number={week}
             total={TOTAL_WEEKS}
@@ -135,7 +135,7 @@ export default async function Home() {
                 {YearPercent.toFixed(1)} %{" "}
               </h1>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <span className="py-4 text-base italic">Ey, gracias por entrar😁✌🏾</span>
