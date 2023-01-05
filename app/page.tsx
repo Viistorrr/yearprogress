@@ -56,7 +56,8 @@ export default async function Home() {
     <main className="flex flex-col w-full justify-center items-center p-10 h-screen">
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
         <h1 className="text-lg font-bold text-slate-700 py-4">
-          {weekDays[weekDay]} {localDateTime} | {hours} horas
+          {weekDays[weekDay]} {localDateTime} | {hours} horas |{date} date |{" "}
+          {utcOffsetHours}| {utcOffset} utc offset
         </h1>
         <div className="w-full border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-2xl">
           <ProgressBar
