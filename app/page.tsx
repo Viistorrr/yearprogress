@@ -135,7 +135,7 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <span className="py-4 text-base italic">Ey, gracias por entrar😁✌🏾</span>
+      <span className="py-4 text-base italic">Ey! gracias por entrar😁✌🏾</span>
       <div className="">
         <p className="text-sm text-slate-700">
           Hecho por{" "}
