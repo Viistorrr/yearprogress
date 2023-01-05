@@ -15,7 +15,7 @@ const ProgressBar = ({ label, number, total, percent }: any) => {
         {label} {number} de {total}
       </h1>
       <div className="flex flex-row w-full items-center align-center ">
-        <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4 dark:bg-gray-700">
+        <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4 ">
           <div
             className={`flex items-center justify-center py-2 ${setColor(
               percent
@@ -23,7 +23,7 @@ const ProgressBar = ({ label, number, total, percent }: any) => {
             style={{ width: percent.toString() + "%" }}
           ></div>
         </div>
-        <h1 className="w-1/12 pl-2 font-bold items-center text-sm text-sky-900">
+        <h1 className="w-1/12 pl-2 font-bold items-center text-sm text-sky-900 dark:text-white">
           {percent.toFixed(1)} %{" "}
         </h1>
       </div>
