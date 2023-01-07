@@ -1,4 +1,5 @@
 import ProgressBar from "@components/ProgressBar";
+import DomainComponent from "src/components/DomainComponent";
 
 import {
   weekDays,
@@ -68,6 +69,7 @@ export default async function Home() {
         <h1 className="text-lg font-bold text-slate-700">
           Día {localTimeData.day_of_year} de {TOTAL_DAYS}
         </h1>
+
         <div className="w-full  pr-8 pb-8 pl-8">
           {/*<ProgressBar
             label="Día"
@@ -76,7 +78,7 @@ export default async function Home() {
             percent={DayPercent}
           />*/}
 
-          <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:mt-6 hover:mb-6 hover:shadow-xl">
+          <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4">
               Semana {week} de {TOTAL_WEEKS}
             </h1>
@@ -97,7 +99,7 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:mt-6 hover:mb-6 hover:shadow-xl">
+          <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4">
               {months[month].name} | Mes {month} de {TOTAL_MONTHS}
             </h1>
@@ -118,7 +120,7 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:mt-6 hover:mb-6 hover:shadow-xl">
+          <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="text-lg font-bold text-slate-700 py-2">
               {globalDate.getFullYear()}
             </h1>
