@@ -129,8 +129,6 @@ export default async function Home() {
           </div>
         </div>
       </div>
-      <span className="py-4 text-base italic">Ey! Gracias por entrar😁✌🏾</span>
-
       <a
         key="Twitter"
         href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @viistorrr"
@@ -158,7 +156,7 @@ export default async function Home() {
           Compartir en Twitter
         </button>
       </a>
-
+      <span className="py-4 text-base italic">Ey! Gracias por entrar😁✌🏾</span>
       <div className="">
         <p className="text-sm text-slate-700">
           Hecho por{" "}
