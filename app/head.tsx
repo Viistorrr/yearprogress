@@ -10,7 +10,7 @@ export default function Head() {
   console.log(path);
   return (
     <>
-      <title>Year Progress</title>
+      <title>Year Progress by @viistorrr</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="description" content="A simple a simple progress bar" />
 
@@ -41,7 +41,7 @@ export default function Head() {
       <meta name="twitter:title" content="Progreso del Año" />
       <meta
         name="twitter:description"
-        content="Una simple barra de progreso que te muestra el porcentaje de avance del año"
+        content="Una simple barra de progreso que te muestra el porcentaje de avance del año "
       />
       <meta
         name="twitter:image"
