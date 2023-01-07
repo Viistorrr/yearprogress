@@ -39,29 +39,15 @@ export default async function Home() {
     }
   };
 
-  const utcOffset = localTimeData.utc_offset;
-  const utcOffsetHours = utcOffset.slice(0, 3);
   const date = globalDate.getDate();
-  var hours = globalDate.getHours() + parseInt(utcOffset) + 13;
-  if (hours == 19) hours = 7;
-  if (hours == 20) hours = 8;
-  if (hours == 21) hours = 9;
-  if (hours == 22) hours = 10;
-  if (hours == 23) hours = 11;
-  if (hours == 24) hours = 12;
-
-  //if (hours < 0) hours = globalDate.getHours() - 2 * parseInt(utcOffsetHours);
-
   const week = Math.ceil(date / 7);
   const month = globalDate.getMonth() + 1;
   const weekDay = localTimeData.day_of_week;
   const YearPercent = (date / TOTAL_DAYS) * 100;
-  const MonthPercent = (date / TOTAL_MONTHS) * 100;
-  const DayPercent: any = (hours / TOTAL_HOURS) * 100;
   const WeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
 
   return (
-    <main className="flex flex-col w-full justify-center items-center p-10 h-screen ">
+    <main className="flex flex-col w-full justify-center items-center p-10 h-screen bg-slate-200 ">
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
         <h1 className="flex justify-center text-lg font-bold text-slate-700 py-4">
           {weekDays[weekDay]} {localDateTime}
@@ -71,13 +57,6 @@ export default async function Home() {
         </h1>
 
         <div className="w-full  pr-8 pb-8 pl-8">
-          {/*<ProgressBar
-            label="Día"
-            number={localTimeData.day_of_year}
-            total={TOTAL_DAYS}
-            percent={DayPercent}
-          />*/}
-
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4">
               Semana {week} de {TOTAL_WEEKS}
