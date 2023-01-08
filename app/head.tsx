@@ -5,9 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 export default function Head() {
   const path = usePathname();
   const router = useRouter();
-  console.log(router);
 
-  console.log(path);
   return (
     <>
       <title>Year Progress by @viistorrr</title>
