@@ -58,7 +58,7 @@ export default async function Home() {
   const WeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
 
   return (
-    <main className="flex flex-col w-full  justify-center items-center p-10 h-full bg-slate-200 text-slate-700">
+    <main className="flex flex-col w-full  justify-center items-center p-10 h-screen bg-slate-200 text-slate-700">
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
         <h1 className="flex justify-center text-lg font-bold text-slate-700 py-4">
           {weekDays[weekDay]} {localDateTime.slice(0, 10).replace(/,/g, "")}
