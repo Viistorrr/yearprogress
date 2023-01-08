@@ -8,7 +8,7 @@ export default function Head() {
 
   return (
     <>
-      <title>Progreso del Año - @viistorrr</title>
+      <title>Progreso del Año - Dev @viistorrr</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="description" content="A simple a simple progress bar" />
 
