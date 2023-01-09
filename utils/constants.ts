@@ -11,13 +11,13 @@ export const API_OPTIONS_URL: any = {
 };
 
 export const weekDays: any = {
-  0: "Domingo",
-  1: "Lunes",
-  2: "Martes",
-  3: "Miércoles",
-  4: "Jueves",
-  5: "Viernes",
-  6: "Sábado",
+  1: "Domingo",
+  2: "Lunes",
+  3: "Martes",
+  4: "Miércoles",
+  5: "Jueves",
+  6: "Viernes",
+  7: "Sábado",
 };
 
 export const months: any = {
