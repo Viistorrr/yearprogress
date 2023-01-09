@@ -55,7 +55,7 @@ export default async function Home() {
   const month = globalDate.getMonth() + 1;
   const weekDay = localTimeData.day_of_week;
   const YearPercent = (date / TOTAL_DAYS) * 100;
-  const WeekPercent = (weekDay + 1 / TOTAL_WEEK_DAYS) * 100;
+  const WeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
 
   return (
     <main className="flex flex-col w-full  justify-center items-center p-10 h-screen bg-slate-200 text-slate-700">
