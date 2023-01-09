@@ -20,9 +20,14 @@ export const weekDays: any = {
   7: "Sábado",
 };
 
+export const getCurrentYear = () => {
+  const currentYear = new Date().getFullYear();
+  return currentYear;
+};
+
 export const months: any = {
   1: { name: "Enero", days: 31 },
-  2: { name: "Febrero", days: 2023 % 4 === 0 ? 29 : 28 },
+  2: { name: "Febrero", days: getCurrentYear() % 4 === 0 ? 29 : 28 },
   3: { name: "Marzo", days: 31 },
   4: { name: "Abril", days: 30 },
   5: { name: "Mayo", days: 31 },
