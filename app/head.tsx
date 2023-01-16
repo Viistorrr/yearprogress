@@ -72,6 +72,11 @@ export default function Head() {
             gtag('config', 'G-3ZY266V0CC');
             `}
       </Script>
+      <Script
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3769837006415356"
+        crossOrigin="anonymous"
+      ></Script>
     </>
   );
 }
