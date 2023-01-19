@@ -22,8 +22,8 @@ async function getData() {
 
 export default async function Home() {
   const localTimeData = await getData();
-  const globalDate = new Date(localTimeData.datetime);
-  const localDateTime = new Date(localTimeData.datetime).toLocaleString(
+  const globalDate = new Date();
+  const localDateTime = new Date().toLocaleString(
     "es-ES",
     {
       timeZone: "America/Bogota",
@@ -66,16 +66,14 @@ export default async function Home() {
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4">
                 <div
-                  className={`flex items-center justify-center py-2 ${getColor(
-                    WeekPercent
-                  )} h-4 rounded-full`}
+                  className={`flex items-center justify-center py-2 bg-amber-400 h-4 rounded-full`}
                   style={{
-                    width: WeekPercent.toString() + "%",
+                    width: "57.4%",
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                {WeekPercent.toFixed(1)}%
+                57,4%
               </h1>
             </div>
           </div>
