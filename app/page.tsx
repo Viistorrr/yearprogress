@@ -22,8 +22,8 @@ async function getData() {
 
 export default async function Home() {
   const localTimeData = await getData();
-  const globalDate = new Date();
-  const localDateTime = new Date().toLocaleString(
+  const globalDate = new Date(localTimeData.datetime);
+  const localDateTime = new Date(localTimeData.datetime).toLocaleString(
     "es-ES",
     {
       timeZone: "America/Bogota",
@@ -44,7 +44,7 @@ export default async function Home() {
   const week = Math.ceil(date / 7);
   const month = globalDate.getMonth() + 1;
   let weekDay = localTimeData.day_of_week;
-  weekDay = weekDay + 1;
+  weekDay = weekDay;
   const YearPercent = (date / TOTAL_DAYS) * 100;
   const WeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
 
@@ -68,12 +68,12 @@ export default async function Home() {
                 <div
                   className={`flex items-center justify-center py-2 bg-amber-400 h-4 rounded-full`}
                   style={{
-                    width: "57.4%",
+                    width: WeekPercent.toString() + "%",
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                57,4%
+              {WeekPercent.toFixed(1)}%
               </h1>
             </div>
           </div>
