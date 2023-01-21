@@ -50,6 +50,8 @@ export default async function Home() {
   const YearPercent = (date / TOTAL_DAYS) * 100;
   const WeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
 
+  console.log(WeekPercent)
+
   return (
     <main className="flex flex-col w-full  justify-center items-center p-10 h-screen bg-slate-200 text-slate-700">
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
@@ -68,7 +70,9 @@ export default async function Home() {
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4">
                 <div
-                  className={`flex items-center justify-center py-2 bg-amber-400 h-4 rounded-full`}
+                    className={`flex items-center justify-center py-2 ${getColor(
+                      WeekPercent
+                    )} h-4 rounded-full`}
                   style={{
                     width: WeekPercent.toString() + "%",
                   }}
