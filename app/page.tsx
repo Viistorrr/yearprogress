@@ -1,5 +1,6 @@
 import ProgressBar from "@components/ProgressBar";
 import Clock from "@components/Clock";
+import Week from "@components/Week";
 import DomainComponent from "src/components/DomainComponent";
 
 import {
@@ -61,6 +62,7 @@ export default async function Home() {
           Día {localTimeData.day_of_year} de {TOTAL_DAYS}
         </h1>
         <Clock />
+        <Week day={weekDays[weekDay]} />
         <div className="w-full  pr-8 pb-8 pl-8">
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4 ">
