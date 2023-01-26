@@ -1,45 +1,27 @@
-const Week = ({day}:any) => {
-console.log(day);
-const getDay = () =>{
-   
-    if(day === "Domingo"){
-        return "text-red-500"
-    }else if(day === "Lunes"){
-        return "text-yellow-500"
-    }else if(day === "Martes"){
-        return "text-green-500"
-    }else if(day === "Miércoles"){
-        return "font-bold text-red-500"
-    }else if(day === "Jueves"){
-        return "text-indigo-500"
-    }else if(day === "Viernes"){
-        return "text-purple-500"
-    }else if(day === "Sábado"){
-        return "text-pink-500"
-    }
-}
-console.log(getDay())
+const Week = ({weekDay}:any) => {
+
+ 
   return (
-    <div className="flex items-center">
-        <div className={`px-6 ${getDay()}`}>
+    <div className="flex flex-wrap items-center py-4">
+        <div className={`px-6 rounded-md border-2 border-gray-800 ${weekDay === 7 ? 'font-bold':''}`}>
          Domingo
         </div>
-        <div className={`px-6 ${getDay()}`}>
+        <div className={`px-6 rounded-md border-2 border-gray-800 ${weekDay === 1 ? 'font-bold':''}`}>
             Lunes
         </div>
-        <div className={`px-6 ${getDay()}`}>
+        <div className={`px-6 rounded-md border-2 border-gray-800 ${weekDay === 2 ? 'font-bold':''}`}>
             Martes
         </div>
-        <div className={`px-6 ${getDay()}`}>
+        <div className={`px-6 rounded-md border-2 border-gray-800 ${weekDay === 3 ? 'font-bold':''}`}>
             Miércoles
         </div>
-        <div className={`px-6 ${getDay()}`}>
+        <div className={`px-6 rounded-md border-2 border-gray-800 ${weekDay === 4 ? 'font-bold':''}`}>
             Jueves
         </div>
-        <div className={`px-6 ${getDay()}`}>
+        <div className={`px-6 rounded-md border-2 border-gray-800 ${weekDay === 5 ? 'font-bold':''}`}>
             Viernes
         </div>
-        <div className={`px-6 ${getDay()}`}>
+        <div className={`px-6 rounded-md border-2 border-gray-800 ${weekDay === 6 ? 'font-bold':''}`}>
             Sábado
         </div>
     </div>
