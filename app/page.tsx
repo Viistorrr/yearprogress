@@ -52,9 +52,9 @@ export default async function Home() {
   const WeekPercent = (week / TOTAL_WEEKS) * 100;
 
   return (
-    <main className="flex flex-col w-full  justify-center items-center h-screen bg-slate-200 text-slate-700">
+    <main className="flex flex-col w-full justify-center items-center h-full bg-slate-200 text-slate-700">
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
-        <Clock />
+        
         <h1 className="flex justify-center text-lg font-bold text-slate-700 py-4">
           {localDateTime.slice(0, 10).replace(/,/g, "")}
         </h1>
@@ -62,8 +62,8 @@ export default async function Home() {
         <h1 className="text-lg font-bold text-slate-700">
           Día {localTimeData.day_of_year} de {TOTAL_DAYS}
         </h1>
-        
-        <Week weekDay={weekDay} />
+        <span className="mt-4 mb-4 px-4 font-bold bg-emerald-200 rounded-full border-2 border-emerald-500">{weekDays[weekDay]}</span>
+        <Clock />
         <div className="w-full  pr-8 pb-8 pl-8">
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4 ">
