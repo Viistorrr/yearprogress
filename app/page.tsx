@@ -52,7 +52,7 @@ export default async function Home() {
   const WeekPercent = (week / TOTAL_WEEKS) * 100;
 
   return (
-    <main className="flex flex-col w-full justify-center items-center h-full bg-slate-200 text-slate-700">
+    <main className="flex flex-col w-full justify-center items-center h-screen bg-slate-200 text-slate-700">
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
         
         <h1 className="flex justify-center text-lg font-bold text-slate-700 py-4">
