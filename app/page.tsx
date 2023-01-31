@@ -5,16 +5,12 @@ import DomainComponent from "src/components/DomainComponent";
 
 import {
   weekDays,
-  months,
   dayOfYear,
   getMonthPercent,
   getCurrentYear,
   TOTAL_DAYS,
-  TOTAL_WEEK_DAYS,
   TOTAL_WEEKS,
-  TOTAL_MONTHS,
-  API_TIME_URL,
-  API_OPTIONS_URL,
+  TOTAL_MONTHS
 } from "@utils/constants";
 
 export default async function Home() {
