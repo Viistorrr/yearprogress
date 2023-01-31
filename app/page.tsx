@@ -17,18 +17,9 @@ import {
   API_OPTIONS_URL,
 } from "@utils/constants";
 
-async function getData() {
-  const res = await fetch(API_TIME_URL, API_OPTIONS_URL);
-  return res.json();
-}
-
 export default async function Home() {
   const newDate = new Date().toLocaleString("es-ES", { timeZone: "America/Bogota" });
-  console.log(new Date().getMonth());
-  const localTimeData = await getData();
-  const globalDate = new Date(localTimeData.datetime);
   
-
   const getColor = (percent: number) => {
     if (percent <= 33.3333) {
       return "bg-rose-400";
