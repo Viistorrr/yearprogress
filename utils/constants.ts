@@ -51,9 +51,9 @@ export const months: any = {
 };
 
 export const getMonthPercent = (month: number, date: any) => {
-  /* const monthDays = months[month].days;
-  const monthPercent = (date / monthDays) * 100;*/
-  return 10; 
+  const monthDays = months[month].days;
+  const monthPercent = (date / monthDays) * 100;
+  return monthPercent;
 };
 
 export const TOTAL_DAYS = 365;

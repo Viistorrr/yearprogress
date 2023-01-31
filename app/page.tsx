@@ -24,9 +24,7 @@ async function getData() {
 
 export default async function Home() {
   const newDate = new Date().toLocaleString("es-ES", { timeZone: "America/Bogota" });
-
-   
-  
+  console.log(new Date().getMonth());
   const localTimeData = await getData();
   const globalDate = new Date(localTimeData.datetime);
   
@@ -41,10 +39,10 @@ export default async function Home() {
     }
   };
 
-  const date = globalDate.getDate();
+  const date = new Date().getDate();
   const week = Math.ceil(date / 7);
-  const month = globalDate.getMonth() + 1;
-  let weekDay = localTimeData.day_of_week;
+  const month = new Date().getMonth() + 1;
+  let weekDay = new Date().getDay();
   if (weekDay === 0) {
     weekDay = 7; //Domingo
   }
@@ -90,7 +88,7 @@ export default async function Home() {
 
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4 text-slate-700">
-              Mes  1 de {TOTAL_MONTHS}
+              Mes {month} de {TOTAL_MONTHS}
             </h1>
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4">
