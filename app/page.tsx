@@ -53,7 +53,7 @@ export default async function Home() {
         <div className="w-full  pr-8 pb-8 pl-8">
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4 ">
-              Semana {week} de {TOTAL_WEEKS}
+              Semana 5 de {TOTAL_WEEKS}
             </h1>
             <span className="mb-4 px-4 text-base font-bold bg-emerald-200 rounded-full border-2 border-emerald-500">{weekDays[weekDay]}</span>
             <div className="flex flex-row w-full items-center align-center">
@@ -63,12 +63,12 @@ export default async function Home() {
                       WeekPercent
                     )} h-4 rounded-full`}
                   style={{
-                    width: WeekPercent.toString() + "%",
+                    width: "9.6%",
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              {WeekPercent.toFixed(1)}%
+              9.6%
               </h1>
             </div>
           </div>
@@ -84,12 +84,12 @@ export default async function Home() {
                     getMonthPercent(month, date)
                   )} h-4 rounded-full`}
                   style={{
-                    width: getMonthPercent(month, date).toString() + "%",
+                    width: "16.6%",
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                {getMonthPercent(month, date).toFixed(1)}%
+                16.6%
               </h1>
             </div>
           </div>
