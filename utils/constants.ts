@@ -50,7 +50,7 @@ export const months: any = {
   12: { name: "Diciembre", days: 31 },
 };
 
-export const getMonthPercent = (month: number, date: any) => {
+export const getMonthPercent = (month: number, date: number) => {
   const monthDays = months[month].days;
   const monthPercent = (date / monthDays) * 100;
   return monthPercent;

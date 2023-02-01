@@ -1,10 +1,12 @@
 import ProgressBar from "@components/ProgressBar";
 import Clock from "@components/Clock";
+import dayjs from "dayjs";
 import Week from "@components/Week";
 import DomainComponent from "src/components/DomainComponent";
 
 import {
   weekDays,
+  months,
   dayOfYear,
   getMonthPercent,
   getCurrentYear,
@@ -14,6 +16,7 @@ import {
 } from "@utils/constants";
 
 export default async function Home() {
+  console.log("dayjs",dayjs().date());
   const newDate = new Date().toLocaleString("es-ES", { timeZone: "America/Bogota" });
   
   const getColor = (percent: number) => {
@@ -27,6 +30,7 @@ export default async function Home() {
   };
 
   const date = new Date().getDate();
+  console.log("date", new Date().getMonth() +1)
   const week = Math.ceil(date / 7);
   const month = new Date().getMonth() + 1;
   let weekDay = new Date().getDay();
@@ -41,7 +45,7 @@ export default async function Home() {
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
         
         <h1 className="flex justify-center text-lg font-bold text-slate-700 py-4">
-          {newDate.slice(0, 10).replace(/,/g, "")}
+          {dayjs().format("DD/MM/YYYY")}
         </h1>
         
         <Clock />
@@ -75,7 +79,7 @@ export default async function Home() {
 
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4 text-slate-700">
-              Mes {month} de {TOTAL_MONTHS}
+            {months[month].name} | Mes {month} de {TOTAL_MONTHS}
             </h1>
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4">
@@ -84,12 +88,12 @@ export default async function Home() {
                     getMonthPercent(month, date)
                   )} h-4 rounded-full`}
                   style={{
-                    width: "16.6%",
+                    width: getMonthPercent(month, date).toString() + "%",
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                16.6%
+              {getMonthPercent(month, date).toFixed(1)}%
               </h1>
             </div>
           </div>
