@@ -35,7 +35,7 @@ export default async function Home() {
   const month = new Date().getMonth() + 1;
   let weekDay = new Date().getDay();
   if (weekDay === 0) {
-    weekDay = 7; //Domingoo
+    weekDay = 7; //Domingooo
   }
   const YearPercent = (dayOfYear() / TOTAL_DAYS) * 100;
   const WeekPercent = (week / TOTAL_WEEKS) * 100;
