@@ -1,7 +1,6 @@
 import ProgressBar from "@components/ProgressBar";
 import Clock from "@components/Clock";
 import dayjs from "dayjs";
-import { getColor } from "@utils/colors";
 import Week from "@components/Week";
 import DomainComponent from "src/components/DomainComponent";
 
@@ -17,6 +16,16 @@ import {
   TOTAL_WEEKS,
   TOTAL_MONTHS
 } from "@utils/constants";
+
+const getColor = (percent: number) => {
+  if (percent <= 33.3333) {
+    return "bg-rose-400";
+  } else if (33.3333 < percent && percent <= 66.6666) {
+    return "bg-amber-400";
+  } else {
+    return "bg-emerald-400";
+  }
+};
 
 async function getData() {
   const res = await fetch(API_TIME_URL, API_OPTIONS_URL);
