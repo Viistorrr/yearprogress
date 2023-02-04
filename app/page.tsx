@@ -14,7 +14,8 @@ import {
   getCurrentYear,
   TOTAL_DAYS,
   TOTAL_WEEKS,
-  TOTAL_MONTHS
+  TOTAL_MONTHS,
+  getColor,
 } from "@utils/constants";
 
 async function getData() {
@@ -29,15 +30,7 @@ export default async function Home() {
   
   const date = globalDate.getDate();
   
-  const getColor = (percent: number) => {
-    if (percent <= 33.3333) {
-      return "bg-rose-400";
-    } else if (33.3333 < percent && percent <= 66.6666) {
-      return "bg-amber-400";
-    } else {
-      return "bg-emerald-400";
-    }
-  };
+  
 
   const month = globalDate.getMonth() + 1;
   let weekDay = day_of_week;
