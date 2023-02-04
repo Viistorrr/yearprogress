@@ -1,6 +1,7 @@
 import ProgressBar from "@components/ProgressBar";
 import Clock from "@components/Clock";
 import dayjs from "dayjs";
+import { getColor } from "@utils/colors";
 import Week from "@components/Week";
 import DomainComponent from "src/components/DomainComponent";
 
@@ -14,8 +15,7 @@ import {
   getCurrentYear,
   TOTAL_DAYS,
   TOTAL_WEEKS,
-  TOTAL_MONTHS,
-  getColor,
+  TOTAL_MONTHS
 } from "@utils/constants";
 
 async function getData() {
