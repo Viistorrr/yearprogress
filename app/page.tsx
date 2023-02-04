@@ -1,5 +1,6 @@
 import ProgressBar from "@components/ProgressBar";
 import Clock from "@components/Clock";
+import Error from "@components/Error";
 import dayjs from "dayjs";
 import Week from "@components/Week";
 import DomainComponent from "src/components/DomainComponent";
@@ -34,7 +35,7 @@ async function getData() {
 export default async function Home() {
   const localTimeData = await getData();
   const globalDate = new Date(localTimeData.datetime);
-  const {day_of_week, day_of_year, week_number} = localTimeData;  
+  const {day_of_week, day_of_year, week_number} = localTimeData;
   const date = globalDate.getDate();
   const month = globalDate.getMonth() + 1;
   const localDateTime = new Date(localTimeData.datetime).toLocaleString(
@@ -53,7 +54,7 @@ export default async function Home() {
   
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
-      <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
+      {month ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
         <h1 className="text-xl font-bold text-slate-700">
           Día {day_of_year} de {TOTAL_DAYS}
         </h1>
@@ -126,7 +127,7 @@ export default async function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </div> : <Error />}
       <a
         key="Twitter"
         href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @viistorrr"
