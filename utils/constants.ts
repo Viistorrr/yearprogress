@@ -1,4 +1,4 @@
-/* export const API_TIME_URL =
+export const API_TIME_URL =
   "https://world-time2.p.rapidapi.com/timezone/America/Bogota";
 
 export const API_OPTIONS_URL: any = {
@@ -8,7 +8,7 @@ export const API_OPTIONS_URL: any = {
     "X-RapidAPI-Host": "world-time2.p.rapidapi.com",
   },
   cache: "no-store" as RequestCache,
-}; */
+};
 
 export const weekDays: any = {
   1: "Lunes",

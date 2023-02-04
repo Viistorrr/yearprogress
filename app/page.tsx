@@ -5,6 +5,8 @@ import Week from "@components/Week";
 import DomainComponent from "src/components/DomainComponent";
 
 import {
+  API_TIME_URL,
+  API_OPTIONS_URL,
   weekDays,
   months,
   dayOfYear,
@@ -15,9 +17,17 @@ import {
   TOTAL_MONTHS
 } from "@utils/constants";
 
+async function getData() {
+  const res = await fetch(API_TIME_URL, API_OPTIONS_URL);
+  return res.json();
+}
+
 export default async function Home() {
-  console.log("dayjs",dayjs().date());
-  const newDate = new Date().toLocaleString("es-ES", { timeZone: "America/Bogota" });
+  const localTimeData = await getData();
+  const globalDate = new Date(localTimeData.datetime);
+  const {day_of_week, day_of_year, week_number} = localTimeData;
+  
+  const date = globalDate.getDate();
   
   const getColor = (percent: number) => {
     if (percent <= 33.3333) {
@@ -29,17 +39,16 @@ export default async function Home() {
     }
   };
 
-  const date = new Date().getDate();
-  console.log("date", new Date())
-  const week = Math.ceil(date / 7);
-  const month = new Date().getMonth() + 1;
-  let weekDay = new Date().getDay();
+  const month = globalDate.getMonth() + 1;
+  let weekDay = day_of_week;
+
+  
   if (weekDay === 0) {
-    weekDay = 7; //Domingooo
+    weekDay = 7; //Domingo
   }
   const YearPercent = (dayOfYear() / TOTAL_DAYS) * 100;
-  const WeekPercent = (week / TOTAL_WEEKS) * 100;
-
+  const WeekPercent = (week_number / TOTAL_WEEKS) * 100;
+  
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-slate-200 text-slate-700">
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
@@ -51,13 +60,13 @@ export default async function Home() {
         <Clock />
 
         <h1 className="text-lg font-bold text-slate-700">
-          Día {dayOfYear()} de {TOTAL_DAYS}
+          Día {day_of_year} de {TOTAL_DAYS}
         </h1>
         
         <div className="w-full  pr-8 pb-8 pl-8">
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4 ">
-              Semana 5 de {TOTAL_WEEKS}
+              Semana {week_number} de {TOTAL_WEEKS}
             </h1>
             <span className="mb-4 px-4 text-base font-bold bg-emerald-200 rounded-full border-2 border-emerald-500">{weekDays[weekDay]}</span>
             <div className="flex flex-row w-full items-center align-center">
@@ -67,12 +76,12 @@ export default async function Home() {
                       WeekPercent
                     )} h-4 rounded-full`}
                   style={{
-                    width: "9.6%",
+                    width: WeekPercent.toString() + "%"
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              9.6%
+              {WeekPercent.toFixed(1)}%
               </h1>
             </div>
           </div>
