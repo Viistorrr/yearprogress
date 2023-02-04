@@ -9,7 +9,6 @@ import {
   API_OPTIONS_URL,
   weekDays,
   months,
-  dayOfYear,
   getMonthPercent,
   getCurrentYear,
   TOTAL_DAYS,
@@ -35,20 +34,21 @@ async function getData() {
 export default async function Home() {
   const localTimeData = await getData();
   const globalDate = new Date(localTimeData.datetime);
-  const {day_of_week, day_of_year, week_number} = localTimeData;
-  
+  const {day_of_week, day_of_year, week_number} = localTimeData;  
   const date = globalDate.getDate();
-  
-  
-
   const month = globalDate.getMonth() + 1;
+  const localDateTime = new Date(localTimeData.datetime).toLocaleString(
+    "es-ES",
+    {
+      timeZone: "America/Bogota",
+    }
+  );
   let weekDay = day_of_week;
-
-  
   if (weekDay === 0) {
     weekDay = 7; //Domingo
   }
-  const YearPercent = (dayOfYear() / TOTAL_DAYS) * 100;
+  
+  const YearPercent = (day_of_year / TOTAL_DAYS) * 100;
   const WeekPercent = (week_number / TOTAL_WEEKS) * 100;
   
   return (
@@ -57,18 +57,18 @@ export default async function Home() {
         <h1 className="text-xl font-bold text-slate-700">
           Día {day_of_year} de {TOTAL_DAYS}
         </h1>
-        <h2 className="flex justify-center text-lg font-bold text-slate-700 py-4">
-          {dayjs().format("DD/MM/YYYY")}
+        <h2 className="flex justify-center text-lg font-bold text-slate-700 py-2">
+          {localDateTime.slice(0, 10).replace(/,/g, "")}
         </h2>
         
         <Clock />
         
         <div className="w-full  pr-8 pb-8 pl-8">
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
-            <h1 className="font-bold py-4 ">
+            <h1 className="font-bold py-4">
               Semana {week_number} de {TOTAL_WEEKS}
             </h1>
-            <span className="mb-4 px-4 text-base font-bold bg-emerald-200 rounded-full border-2 border-emerald-500">{weekDays[weekDay]}</span>
+            <span className="mb-4 px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">{weekDays[weekDay]}</span>
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div

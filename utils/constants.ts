@@ -20,16 +20,6 @@ export const weekDays: any = {
   7: "Domingo",
 };
 
-export const dayOfYear: any = () =>{
-  const year:any = new Date().getFullYear();
-  const start = new Date(year, 0, 0);
-  const diff = new Date().getTime() - start.getTime();
-  const oneDay = 1000 * 60 * 60 * 24;
-  const day = Math.floor(diff / oneDay);
-
-  return day;
-}
-
 export const getCurrentYear = () => {
   const currentYear = new Date().getFullYear();
   return currentYear;
