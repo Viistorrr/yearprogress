@@ -50,18 +50,16 @@ export default async function Home() {
   const WeekPercent = (week_number / TOTAL_WEEKS) * 100;
   
   return (
-    <main className="flex flex-col w-full justify-center items-center h-screen bg-slate-200 text-slate-700">
+    <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
       <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
-        
-        <h1 className="flex justify-center text-lg font-bold text-slate-700 py-4">
-          {dayjs().format("DD/MM/YYYY")}
-        </h1>
-        
-        <Clock />
-
-        <h1 className="text-lg font-bold text-slate-700">
+        <h1 className="text-xl font-bold text-slate-700">
           Día {day_of_year} de {TOTAL_DAYS}
         </h1>
+        <h2 className="flex justify-center text-lg font-bold text-slate-700 py-4">
+          {dayjs().format("DD/MM/YYYY")}
+        </h2>
+        
+        <Clock />
         
         <div className="w-full  pr-8 pb-8 pl-8">
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
@@ -70,7 +68,7 @@ export default async function Home() {
             </h1>
             <span className="mb-4 px-4 text-base font-bold bg-emerald-200 rounded-full border-2 border-emerald-500">{weekDays[weekDay]}</span>
             <div className="flex flex-row w-full items-center align-center">
-              <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4">
+              <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                     className={`flex items-center justify-center py-2 ${getColor(
                       WeekPercent
@@ -91,7 +89,7 @@ export default async function Home() {
             {months[month].name} | Mes {month} de {TOTAL_MONTHS}
             </h1>
             <div className="flex flex-row w-full items-center align-center">
-              <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4">
+              <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                   className={`flex items-center justify-center py-2 ${getColor(
                     getMonthPercent(month, date)
@@ -112,7 +110,7 @@ export default async function Home() {
               {getCurrentYear()}
             </h1>
             <div className="flex flex-row w-full items-center align-center">
-              <div className="flex items-center w-11/12 bg-gray-300 rounded-full h-4">
+              <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                   className={`flex items-center justify-center py-2 ${getColor(
                     YearPercent
@@ -154,7 +152,7 @@ export default async function Home() {
           Compartir en Twitter
         </button>
       </a>
-      <span className="py-4 text-base italic ">Ey! Gracias por entrar😁✌🏾</span>
+      <span className="py-4 text-base ">Gracias por entrar😁✌🏾</span>
       <div className="">
         <p className="text-sm text-slate-700">
           Desarrollado por{" "}
