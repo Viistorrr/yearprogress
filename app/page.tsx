@@ -14,7 +14,8 @@ import {
   getCurrentYear,
   TOTAL_DAYS,
   TOTAL_WEEKS,
-  TOTAL_MONTHS
+  TOTAL_MONTHS,
+  TOTAL_WEEK_DAYS
 } from "@utils/constants";
 
 const getColor = (percent: number) => {
@@ -51,6 +52,8 @@ export default async function Home() {
   
   const YearPercent = (day_of_year / TOTAL_DAYS) * 100;
   const WeekPercent = (week_number / TOTAL_WEEKS) * 100;
+  const currentWeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
+  console.log(currentWeekPercent);
   
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
@@ -74,15 +77,15 @@ export default async function Home() {
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                     className={`flex items-center justify-center py-2 ${getColor(
-                      WeekPercent
+                      currentWeekPercent
                     )} h-4 rounded-full`}
                   style={{
-                    width: WeekPercent.toString() + "%"
+                    width: currentWeekPercent.toString() + "%"
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              {WeekPercent.toFixed(1)}%
+              {currentWeekPercent.toFixed(1)}%
               </h1>
             </div>
           </div>
