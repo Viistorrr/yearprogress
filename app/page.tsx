@@ -85,7 +85,7 @@ export default async function Home() {
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              {currentWeekPercent.toFixed(1)}%
+              {currentWeekPercent.toFixed(0)}%
               </h1>
             </div>
           </div>
@@ -106,7 +106,7 @@ export default async function Home() {
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              {getMonthPercent(month, date).toFixed(1)}%
+              {getMonthPercent(month, date).toFixed(0)}%
               </h1>
             </div>
           </div>
@@ -125,7 +125,7 @@ export default async function Home() {
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                {YearPercent.toFixed(1)}%
+                {YearPercent.toFixed(0)}%
               </h1>
             </div>
           </div>
