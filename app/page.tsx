@@ -3,7 +3,6 @@ import Error from "@components/Error";
 
 import {
   API_TIME_URL,
-  API_OPTIONS_URL,
   weekDays,
   months,
   getMonthPercent,
@@ -25,7 +24,7 @@ const getColor = (percent: number) => {
 };
 
 async function getData() {
-  const res = await fetch(API_TIME_URL, API_OPTIONS_URL);
+  const res = await fetch(API_TIME_URL);
   return res.json();
 }
 
