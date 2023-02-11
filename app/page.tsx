@@ -1,9 +1,5 @@
-import ProgressBar from "@components/ProgressBar";
 import Clock from "@components/Clock";
 import Error from "@components/Error";
-import dayjs from "dayjs";
-import Week from "@components/Week";
-import DomainComponent from "src/components/DomainComponent";
 
 import {
   API_TIME_URL,
@@ -51,9 +47,8 @@ export default async function Home() {
   }
   
   const YearPercent = (day_of_year / TOTAL_DAYS) * 100;
-  const WeekPercent = (week_number / TOTAL_WEEKS) * 100;
   const currentWeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
-  console.log(currentWeekPercent);
+  
   
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
@@ -158,7 +153,7 @@ export default async function Home() {
           Compartir en Twitter
         </button>
       </a>
-      <span className="py-4 text-base ">Gracias por entrar😁✌🏾</span>
+      <span className="py-4 text-base ">😁✌🏾</span>
       <div className="">
         <p className="text-sm text-slate-700">
           Desarrollado por{" "}
