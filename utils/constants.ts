@@ -1,5 +1,5 @@
 export const API_TIME_URL =
-  "https://world-time2.p.rapidapi.com/timezone/America/Bogota";
+  "https://worldtimeapi.org/api/timezone/America/Bogota";
 
 export const API_OPTIONS_URL: any = {
   method: "GET",
