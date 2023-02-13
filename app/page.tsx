@@ -23,12 +23,13 @@ const getColor = (percent: number) => {
 };
 
 async function getTime() {
-  const res = await fetch("https://worldtimeapi.org/api/timezone/America/Bogota");
+  const res = await fetch('https://worldtimeapi.org/api/timezone/America/Bogota');
   return res.json();
 }
 
 export default async function Home() {
-  const localTimeData = await getTime();
+  const res = await fetch('https://worldtimeapi.org/api/timezone/America/Bogota');
+  const localTimeData = await res.json();
   const globalDate = new Date(localTimeData.datetime);
   const {day_of_week, day_of_year, week_number} = localTimeData;
   const date = globalDate.getDate();
