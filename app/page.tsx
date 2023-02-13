@@ -2,8 +2,6 @@ import Clock from "@components/Clock";
 import Error from "@components/Error";
 
 import {
-  API_TIME_URL,
-  API_OPTIONS_URL,
   weekDays,
   months,
   getMonthPercent,
@@ -22,6 +20,18 @@ const getColor = (percent: number) => {
   } else {
     return "bg-emerald-400";
   }
+};
+
+const API_TIME_URL =
+  "https://worldtimeapi.org/api/timezone/America/Bogota";
+
+const API_OPTIONS_URL: any = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "",
+    "X-RapidAPI-Host": "",
+  },
+  cache: "no-store" as RequestCache,
 };
 
 async function getData() {

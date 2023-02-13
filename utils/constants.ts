@@ -1,6 +1,3 @@
-export const API_TIME_URL =
-  "https://worldtimeapi.org/api/timezone/America/Bogota";
-
 export const API_OPTIONS_URL: any = {
   method: "GET",
   headers: {
