@@ -53,15 +53,13 @@ export default async function Home() {
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
       {month ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
-        <h1 className="text-xl font-bold text-slate-700">
-          Día {day_of_year} de {TOTAL_DAYS}
-        </h1>
+        <Clock />
         <h2 className="flex justify-center text-lg font-bold text-slate-700 py-2">
           {localDateTime.slice(0, 10).replace(/,/g, "")}
         </h2>
-        
-        <Clock />
-        
+        <h1 className="text-xl font-bold text-slate-700">
+          Día {day_of_year} de {TOTAL_DAYS}
+        </h1> 
         <div className="w-full  pr-8 pb-8 pl-8">
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4">
