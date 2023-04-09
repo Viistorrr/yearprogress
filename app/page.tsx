@@ -25,7 +25,7 @@ const getColor = (percent: number) => {
 };
 
 async function getData() {
-  const res = await fetch(API_TIME_URL, API_OPTIONS_URL);
+  const res = await fetch("https://worldtimeapi.org/api/timezone/America/Bogota");
   return res.json();
 }
 
