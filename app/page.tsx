@@ -32,7 +32,7 @@ async function getData() {
 }
 
 export default async function Home() {
-  const localTimeData = await getData();
+  /*const localTimeData = await getData();
   const globalDate = new Date(localTimeData.datetime);
   const {day_of_week, day_of_year, week_number} = localTimeData;
   const date = globalDate.getDate();
@@ -60,20 +60,22 @@ export default async function Home() {
     let days = Math.floor(diff / (1000 * 3600 * 24));
 
     return days;
-  }
+  }*/
+
+  const month = 4
   
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
       {month ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
         <div className="py-2">
           <h2 className="flex justify-center text-lg font-bold text-slate-700 py-2">
-            {localDateTime.slice(0, 10).replace(/,/g, "")}
+            9/04/2023
           </h2>
           <h1 className="text-xl font-bold text-slate-700">
             Día 99 de 365
           </h1>
         </div>
-        <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">{weekDays[weekDay]}</span>
+        <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">Domingo</span>
         <div className="w-full  pr-8 pb-8 pl-8">
         <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="text-lg font-bold text-slate-700 py-2">
