@@ -206,13 +206,3 @@ export default async function Home() {
     </main>
   );
 }
-
-export async function getServerSideProps(){
-  const data = await getData();
-  
-  return {
-    props: {
-      data
-    }
-  }
-}
