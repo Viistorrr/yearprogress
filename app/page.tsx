@@ -1,6 +1,7 @@
 import Clock from "@components/Clock";
 import Error from "@components/Error";
 
+
 import {
   API_TIME_URL,
   API_OPTIONS_URL,
@@ -26,7 +27,8 @@ const getColor = (percent: number) => {
 
 async function getData() {
   const res = await fetch("https://worldtimeapi.org/api/timezone/America/Bogota");
-  return res.json();
+  const data = await res.json();
+  return data;
 }
 
 export default async function Home() {
