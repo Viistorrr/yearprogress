@@ -32,7 +32,7 @@ async function getData() {
 }
 
 export default async function Home() {
-  const localTimeData = await getData();
+  /*const localTimeData = await getData();
   const globalDate = new Date(localTimeData.datetime);
   const {day_of_week, day_of_year, week_number} = localTimeData;
   const date = globalDate.getDate();
@@ -60,20 +60,24 @@ export default async function Home() {
     let days = Math.floor(diff / (1000 * 3600 * 24));
 
     return days;
-  }
+  }*/
+
+  const nro_dias = 102
+
+  const month = 4
   
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
       {month ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
         <div className="py-2">
           <h2 className="flex justify-center text-lg font-bold text-slate-700 py-2">
-          {localDateTime.slice(0, 10).replace(/,/g, "")}
+            12/04/2023
           </h2>
           <h1 className="text-xl font-bold text-slate-700">
-          Día {day_of_year} de {TOTAL_DAYS}
+            Día 102 de 365
           </h1>
         </div>
-        <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">{weekDays[weekDay]}</span>
+        <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">Miércoles</span>
         <div className="w-full  pr-8 pb-8 pl-8">
         <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="text-lg font-bold text-slate-700 py-2">
@@ -83,55 +87,55 @@ export default async function Home() {
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                   className={`flex items-center justify-center py-2 ${getColor(
-                    YearPercent
+                    27
                   )} h-4 rounded-full`}
-                  style={{ width: YearPercent.toString() + "%" }}
+                  style={{ width: "27%" }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                {YearPercent.toFixed(0)}%
+                27%
               </h1>
             </div>
           </div>
 
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4 text-slate-700">
-            {months[month].name} | Mes {month} de {TOTAL_MONTHS}
+            Abril | Mes 4 de 12
             </h1>
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                   className={`flex items-center justify-center py-2 ${getColor(
-                    getMonthPercent(month, date)
+                    getMonthPercent(4, 12)
                   )} h-4 rounded-full`}
                   style={{
-                    width: getMonthPercent(month, date).toString() + "%",
+                    width: getMonthPercent(4, 12).toString() + "%",
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              {getMonthPercent(month, date).toFixed(0)}%
+              {getMonthPercent(4, 12).toFixed(0)}%
               </h1>
             </div>
           </div>
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4">
-            Semana {week_number} de {TOTAL_WEEKS}
+              Semana 14 de 52
             </h1>
             
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                     className={`flex items-center justify-center py-2 ${getColor(
-                      currentWeekPercent
+                      42
                     )} h-4 rounded-full`}
                   style={{
-                    width: currentWeekPercent.toString() + "%"
+                    width: "42%"
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              {currentWeekPercent.toFixed(0)}%
+              42%
               </h1>
             </div>
           </div>
