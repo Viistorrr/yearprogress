@@ -71,13 +71,13 @@ export default async function Home() {
       {month ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
         <div className="py-2">
           <h2 className="flex justify-center text-lg font-bold text-slate-700 py-2">
-            12/04/2023
+            13/04/2023
           </h2>
           <h1 className="text-xl font-bold text-slate-700">
-            Día 102 de 365
+            Día 103 de 365
           </h1>
         </div>
-        <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">Miércoles</span>
+        <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">Jueves</span>
         <div className="w-full  pr-8 pb-8 pl-8">
         <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="text-lg font-bold text-slate-700 py-2">
@@ -87,13 +87,13 @@ export default async function Home() {
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                   className={`flex items-center justify-center py-2 ${getColor(
-                    27
+                    28
                   )} h-4 rounded-full`}
-                  style={{ width: "27%" }}
+                  style={{ width: "28%" }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                27%
+                28%
               </h1>
             </div>
           </div>
@@ -114,7 +114,7 @@ export default async function Home() {
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              {getMonthPercent(4, 12).toFixed(0)}%
+              {getMonthPercent(4, 13).toFixed(0)}%
               </h1>
             </div>
           </div>
@@ -127,15 +127,15 @@ export default async function Home() {
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                     className={`flex items-center justify-center py-2 ${getColor(
-                      42
+                      57
                     )} h-4 rounded-full`}
                   style={{
-                    width: "42%"
+                    width: "57%"
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              42%
+              57%
               </h1>
             </div>
           </div>
