@@ -32,6 +32,30 @@ async function getData() {
 }
 
 export default async function Home() {
+  const date = new Date();
+
+  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const year = date.getFullYear().toString();
+
+  const formattedDate = `${day}/${month}/${year}`;
+
+  console.log("Fecha actual: ", formattedDate);
+
+  const yearStart = new Date(date.getFullYear(), 0, 0);
+  const diff = (date.getTime() - yearStart.getTime()) + ((yearStart.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000);
+  const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+  console.log("dayOfYear-----", dayOfYear);
+
+  const dayOfWeek = weekDays[date.getDay()];
+
+  console.log("e día de la semana: ", dayOfWeek);
+
+  const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
+  const pastDaysOfYear = (date.getTime() - firstDayOfYear.getTime()) / 86400000;
+  const weekNumber = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
+
+  console.log("Número de semana del año: ", weekNumber);
   /*const localTimeData = await getData();
   const globalDate = new Date(localTimeData.datetime);
   const {day_of_week, day_of_year, week_number} = localTimeData;
@@ -48,36 +72,28 @@ export default async function Home() {
     weekDay = 7; //Domingo
   }
   
-  const YearPercent = (day_of_year / TOTAL_DAYS) * 100;
+  
   const currentWeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
 
-  const hoy = new Date();
-  const date2 = new Date("2023-12-31");
   
-  const dateDiff = (hoy: Date, date2: Date) => {
-    const diff = hoy.getTime() - date2.getTime();
-    
-    let days = Math.floor(diff / (1000 * 3600 * 24));
-
-    return days;
   }*/
+  const YearPercent = (dayOfYear / TOTAL_DAYS) * 100;
+  
 
-  const nro_dias = 102
-
-  const month = 4
+  
   
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
       {month ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
         <div className="py-2">
           <h2 className="flex justify-center text-lg font-bold text-slate-700 py-2">
-            14/04/2023
+            {formattedDate}
           </h2>
           <h1 className="text-xl font-bold text-slate-700">
-            Día 104 de 365
+            Día {dayOfYear} de {TOTAL_DAYS}
           </h1>
         </div>
-        <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">Viernes</span>
+        <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">{dayOfWeek}</span>
         <div className="w-full  pr-8 pb-8 pl-8">
         <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="text-lg font-bold text-slate-700 py-2">
@@ -87,13 +103,13 @@ export default async function Home() {
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                   className={`flex items-center justify-center py-2 ${getColor(
-                    28
+                    YearPercent
                   )} h-4 rounded-full`}
-                  style={{ width: "28%" }}
+                  style={{ width: YearPercent }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                28%
+                {YearPercent}%
               </h1>
             </div>
           </div>
@@ -120,7 +136,7 @@ export default async function Home() {
           </div>
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4">
-              Semana 15 de 52
+              Semana {weekNumber} de 52
             </h1>
             
             <div className="flex flex-row w-full items-center align-center">

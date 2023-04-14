@@ -10,15 +10,7 @@ export const API_OPTIONS_URL: any = {
   cache: "no-store" as RequestCache,
 };
 
-export const weekDays: any = {
-  1: "Lunes",
-  2: "Martes",
-  3: "Miércoles",
-  4: "Jueves",
-  5: "Viernes",
-  6: "Sábado",
-  7: "Domingo",
-};
+export const weekDays: any = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
 
 export const getCurrentYear = () => {
   const currentYear = new Date().getFullYear();
