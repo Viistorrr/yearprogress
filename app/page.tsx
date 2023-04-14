@@ -3,8 +3,6 @@ import Error from "@components/Error";
 
 
 import {
-  API_TIME_URL,
-  API_OPTIONS_URL,
   weekDays,
   months,
   getMonthPercent,
@@ -25,66 +23,26 @@ const getColor = (percent: number) => {
   }
 };
 
-async function getData() {
-  const res = await fetch(API_TIME_URL, API_OPTIONS_URL);
-  const data = await res.json();
-  return data;
-}
-
 export default async function Home() {
   const date = new Date();
-
-  const day = date.getDate().toString().padStart(2, '0');
-  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const day = date.getDate();
+  const month = (date.getMonth() + 1);
   const year = date.getFullYear().toString();
-
   const formattedDate = `${day}/${month}/${year}`;
-
-  console.log("Fecha actual: ", formattedDate);
-
   const yearStart = new Date(date.getFullYear(), 0, 0);
   const diff = (date.getTime() - yearStart.getTime()) + ((yearStart.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000);
   const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
-  console.log("dayOfYear-----", dayOfYear);
-
   const dayOfWeek = weekDays[date.getDay()];
-
-  console.log("e día de la semana: ", dayOfWeek);
-
+  const dayOfWeekd = date.getDay();
+  const currentWeekPercent = (dayOfWeekd / TOTAL_WEEK_DAYS) * 100;
   const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
   const pastDaysOfYear = (date.getTime() - firstDayOfYear.getTime()) / 86400000;
   const weekNumber = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
-
-  console.log("Número de semana del año: ", weekNumber);
-  /*const localTimeData = await getData();
-  const globalDate = new Date(localTimeData.datetime);
-  const {day_of_week, day_of_year, week_number} = localTimeData;
-  const date = globalDate.getDate();
-  const month = globalDate.getMonth() + 1;
-  const localDateTime = new Date(localTimeData.datetime).toLocaleString(
-    "es-ES",
-    {
-      timeZone: "America/Bogota",
-    }
-  );
-  let weekDay = day_of_week;
-  if (weekDay === 0) {
-    weekDay = 7; //Domingo
-  }
-  
-  
-  const currentWeekPercent = (weekDay / TOTAL_WEEK_DAYS) * 100;
-
-  
-  }*/
   const YearPercent = (dayOfYear / TOTAL_DAYS) * 100;
-  
 
-  
-  
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
-      {month ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
+      {date ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
         <div className="py-2">
           <h2 className="flex justify-center text-lg font-bold text-slate-700 py-2">
             {formattedDate}
@@ -105,57 +63,54 @@ export default async function Home() {
                   className={`flex items-center justify-center py-2 ${getColor(
                     YearPercent
                   )} h-4 rounded-full`}
-                  style={{ width: YearPercent }}
+                  style={{ width: YearPercent.toString() + "%" }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                {YearPercent}%
+              {YearPercent.toFixed(0)}%
               </h1>
             </div>
           </div>
-
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4 text-slate-700">
-            Abril | Mes 4 de 12
+            {months[month].name} | Mes {month} de {TOTAL_MONTHS}
             </h1>
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                   className={`flex items-center justify-center py-2 ${getColor(
-                    getMonthPercent(4, 14)
+                    getMonthPercent(month, day)
                   )} h-4 rounded-full`}
                   style={{
-                    width: getMonthPercent(4, 14).toString() + "%",
+                    width: getMonthPercent(month, day).toString() + "%",
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              {getMonthPercent(4, 14).toFixed(0)}%
+              {getMonthPercent(month, day).toFixed(0)}%
               </h1>
             </div>
           </div>
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4">
-              Semana {weekNumber} de 52
+              Semana {weekNumber} de {TOTAL_WEEKS}
             </h1>
-            
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                     className={`flex items-center justify-center py-2 ${getColor(
-                      71
+                      currentWeekPercent
                     )} h-4 rounded-full`}
                   style={{
-                    width: "71%"
+                    width: currentWeekPercent.toString() + "%"
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              71%
+              {currentWeekPercent.toFixed(0)}%
               </h1>
             </div>
           </div>
-          
         </div>
       </div> : <Error />}
       <a

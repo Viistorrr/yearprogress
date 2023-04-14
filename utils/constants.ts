@@ -1,15 +1,3 @@
-export const API_TIME_URL =
-  "https://world-time2.p.rapidapi.com/timezone/America/Bogota";
-
-export const API_OPTIONS_URL: any = {
-  method: "GET",
-  headers: {
-    "X-RapidAPI-Key": process.env.NEXT_PUBLIC_RAPIDAPI_KEY,
-    "X-RapidAPI-Host": "world-time2.p.rapidapi.com",
-  },
-  cache: "no-store" as RequestCache,
-};
-
 export const weekDays: any = ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'];
 
 export const getCurrentYear = () => {
