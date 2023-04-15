@@ -24,11 +24,15 @@ const getColor = (percent: number) => {
 };
 
 export default async function Home() {
+
+  const options = { timeZone: 'America/Bogota',  };
+  const formatter = new Intl.DateTimeFormat('en-US', options);
   const date = new Date();
   const day = date.getDate();
   const month = (date.getMonth() + 1);
   const year = date.getFullYear().toString();
-  const formattedDate = `${day}/${month}/${year}`;
+  let formattedDate = formatter.format(date);
+  formattedDate = `${day}/${month}/${year}`;
   const yearStart = new Date(date.getFullYear(), 0, 0);
   const diff = (date.getTime() - yearStart.getTime()) + ((yearStart.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000);
   const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
