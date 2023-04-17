@@ -105,15 +105,15 @@ export default async function Home() {
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
                     className={`flex items-center justify-center py-2 ${getColor(
-                      100
+                      currentWeekPercent
                     )} h-4 rounded-full`}
                   style={{
-                    width: "100%"
+                    width: currentWeekPercent.toString() + "%"
                   }}
                 ></div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              100%
+              {currentWeekPercent.toFixed(0)}%
               </h1>
             </div>
           </div>
