@@ -119,6 +119,7 @@ export default async function Home() {
           </div>
         </div>
       </div> : <Error />}
+      
       <a
         key="Twitter"
         href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @viistorrr"
