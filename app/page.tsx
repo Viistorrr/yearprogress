@@ -120,7 +120,7 @@ export default async function Home() {
       </div> : <Error />}
       <a
         key="Twitter"
-        href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @viistorrr"
+        href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @iprogresodelano"
         target="_blank"
         rel="noopener noreferrer"
         className="text-sky-500 hover:text-sky-600"
