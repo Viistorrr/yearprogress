@@ -44,6 +44,8 @@ export default async function Home() {
   const weekNumber = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7);
   const YearPercent = (dayOfYear / TOTAL_DAYS) * 100;
 
+  const updateYearInfo = (options:any) => {}
+
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
       {date ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
@@ -75,7 +77,7 @@ export default async function Home() {
               </h1>
             </div>
           </div>
-          
+
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4 text-slate-700">
             {months[month].name} | Mes {month} de {TOTAL_MONTHS}
