@@ -37,7 +37,8 @@ export default async function Home() {
   const diff = (date.getTime() - yearStart.getTime()) + ((yearStart.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000);
   const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
   const dayOfWeek = weekDays[date.getDay()];
-  const dayOfWeekd = date.getDay()+1;
+  let dayOfWeekd = date.getDay()
+  if(dayOfWeekd == 0) dayOfWeekd = 7
   const currentWeekPercent = (dayOfWeekd / TOTAL_WEEK_DAYS) * 100;
   const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
   const pastDaysOfYear = (date.getTime() - firstDayOfYear.getTime()) / 86400000;
