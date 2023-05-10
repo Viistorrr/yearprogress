@@ -47,6 +47,7 @@ export default async function Home() {
 
   const updateYearInfo = (options:any) => {}
 
+    
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
       {date ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
