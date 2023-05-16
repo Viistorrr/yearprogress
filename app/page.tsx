@@ -46,6 +46,7 @@ export default async function Home() {
   const YearPercent = (dayOfYear / TOTAL_DAYS) * 100;
 
   const updateYearInfo = (options:any) => {}
+  
 
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
