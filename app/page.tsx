@@ -45,7 +45,7 @@ export default async function Home() {
   const weekNumber = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay()) / 7);
   const YearPercent = (dayOfYear / TOTAL_DAYS) * 100;
 
-  const updateYearInfo = (options:any) => {}  
+  const updateYearInfo = (options:any) => {}
 
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
