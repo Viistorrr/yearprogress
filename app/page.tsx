@@ -22,6 +22,7 @@ const getColor = (percent: number) => {
     return "bg-emerald-400";
   }
 };
+                                                    
 
 export default async function Home() {
 
