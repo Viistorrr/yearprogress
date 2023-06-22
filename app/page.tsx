@@ -27,6 +27,7 @@ const getColor = (percent: number) => {
   }
 };
 
+
 export default async function Home() {
 
   const options = { timeZone: 'America/Bogota',  };
