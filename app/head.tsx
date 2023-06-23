@@ -10,24 +10,24 @@ export default function Head() {
     <>
       <title>Progreso del Año - Dev @viistorrr</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
-      <meta name="description" content="A simple a simple progress bar" />
+      <meta name="description" content="⏳Un simple conteo del porcentaje de avance del año" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@viistorrr" />
       <meta name="twitter:creator" content="@viistorrr" />
       <meta name="twitter:title" content="Progreso del Año" />
-      <meta name="twitter:description" content="Una simple barra de progreso que te muestra el porcentaje de avance del año" />
+      <meta name="twitter:description" content="⏳Un simple conteo del porcentaje de avance del año" />
       <meta
         name="twitter:image"
-        content="https://www.yearprogress.info/assets/imgs/preview.png"
+        content="https://www.yearprogress.info/assets/imgs/preview.jpg"
       />
 
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Progreso del Año" />
-      <meta property="og:description" content="Una simple barra de progreso que te muestra el porcentaje de avance del año" />
+      <meta property="og:description" content="⏳Un simple conteo del porcentaje de avance del año" />
       <meta
         property="og:image"
-        content="https://www.yearprogress.info/assets/imgs/preview.png"
+        content="https://www.yearprogress.info/assets/imgs/preview.jpg"
       />
       <meta property="og:url" content="https://www.yearprogress.info/" />
       <meta property="og:site_name" content="Progreso del Año" />
@@ -39,22 +39,22 @@ export default function Head() {
       <meta name="twitter:title" content="Progreso del Año" />
       <meta
         name="twitter:description"
-        content="Una simple barra de progreso que te muestra el porcentaje de avance del año"
+        content="⏳Un simple conteo del porcentaje de avance del año"
       />
       <meta
         name="twitter:image"
-        content="https://www.progresodelano.info/assets/imgs/preview.png"
+        content="https://www.progresodelano.info/assets/imgs/preview.jpg"
       />
 
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Progreso del Año" />
       <meta
         property="og:description"
-        content="Una simple barra de progreso que te muestra el porcentaje de avance del año"
+        content="⏳Un simple conteo del porcentaje de avance del año"
       />
       <meta
         property="og:image"
-        content="https://www.progresodelano.info/assets/imgs/preview.png"
+        content="https://www.progresodelano.info/assets/imgs/preview.jpg"
       />
       <meta property="og:url" content="https://www.progresodelano.info/" />
       <meta property="og:site_name" content="Progreso del Año" />
