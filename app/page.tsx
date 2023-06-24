@@ -2,9 +2,6 @@ import Clock from "@components/Clock";
 import Error from "@components/Error";
 import "../cron"
 
-
-
-
 import {
   weekDays,
   months,
