@@ -42,7 +42,8 @@ export default async function Home() {
   const currentWeekPercent = (dayOfWeekd / TOTAL_WEEK_DAYS) * 100;
   const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
   const pastDaysOfYear = (date.getTime() - firstDayOfYear.getTime()) / 86400000;
-  const weekNumber = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay()) / 7);
+  let  weekNumber = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay()) / 7);
+  if(dayOfWeekd == 7) weekNumber = weekNumber - 1
   const YearPercent = (dayOfYear / TOTAL_DAYS) * 100;
 
   const updateYearInfo = (options:any) => {}
