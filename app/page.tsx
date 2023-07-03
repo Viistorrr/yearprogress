@@ -1,6 +1,6 @@
 import Clock from "@components/Clock";
 import Error from "@components/Error";
-import "../cron"
+import { date } from "../cron";
 
 
 import {
@@ -28,7 +28,8 @@ export default async function Home() {
 
   const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);
-  const date = new Date();
+  const date = new Date;
+  
   const day = date.getDate();
   const month = (date.getMonth() + 1);
   const year = date.getFullYear().toString();
