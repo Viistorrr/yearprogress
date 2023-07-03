@@ -1,7 +1,5 @@
 import Clock from "@components/Clock";
 import Error from "@components/Error";
-import { date } from "../cron";
-
 
 import {
   weekDays,
@@ -29,7 +27,6 @@ export default async function Home() {
   const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);
   const date = new Date;
-  
   const day = date.getDate();
   const month = (date.getMonth() + 1);
   const year = date.getFullYear().toString();
@@ -48,8 +45,6 @@ export default async function Home() {
   if(dayOfWeekd == 7) weekNumber = weekNumber - 1
   const YearPercent = (dayOfYear / TOTAL_DAYS) * 100;
 
-  const updateYearInfo = (options:any) => {}
-
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
       {date ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
@@ -62,6 +57,7 @@ export default async function Home() {
           </h1>
         </div>
         <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">{dayOfWeek}</span>
+        <Clock />
         <div className="w-full  pr-8 pb-8 pl-8">
         <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="text-lg font-bold text-slate-700 py-2">
@@ -152,10 +148,8 @@ export default async function Home() {
           Compartir en Twitter
         </button>
       </a>
-      <span className="py-4 text-base ">😁✌🏾</span>
       <div className="">
         <p className="text-sm text-slate-700">
-          Desarrollado por{" "}
           <a
             className="text-sky-900 hover:text-sky-700"
             href="https://twitter.com/viistorrr"
