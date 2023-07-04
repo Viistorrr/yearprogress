@@ -22,11 +22,17 @@ const getColor = (percent: number) => {
   }
 };
 
-export default async function Home() {
+async function getData() {
+  const res = await fetch('http://localhost:3000/api/hello')
+  return res.json()
+}
 
+export default async function Home() {
   const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);
-  const date = new Date;
+  const date = await getData();
+  console.log("datdde----", date.date);
+  
   const day = date.getDate();
   const month = (date.getMonth() + 1);
   const year = date.getFullYear().toString();
