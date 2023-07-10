@@ -1,5 +1,7 @@
 import Clock from "@components/Clock";
 import Error from "@components/Error";
+import Image from 'next/image';
+import myGif from 'https://tenor.com/Votc.gif'
 
 import {
   weekDays,
@@ -56,7 +58,9 @@ export default async function Home() {
           Día {dayOfYear} de {TOTAL_DAYS}
         </h1>
         <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">{dayOfWeek}</span>
-        <Clock />
+        
+        
+        <div className="tenor-gif-embed" data-postid="11256412" data-share-method="host" data-aspect-ratio="1" data-width="100%"><a href="https://tenor.com/view/time-clock-gif-11256412">Time Clock GIF</a>from <a href="https://tenor.com/search/time-gifs">Time GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
         <div className="w-full  pr-8 pb-8 pl-8">
         <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="text-lg font-bold text-slate-700 py-2">
