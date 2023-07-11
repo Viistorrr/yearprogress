@@ -54,10 +54,10 @@ export default async function Home() {
           <h2 className="flex justify-center text-lg font-bold text-slate-600">
             {formattedDate}
           </h2>
-          <h1 className="text-xl font-bold text-slate-600 flex justify-center ">
+          <h1 className="text-base font-bold text-slate-600 flex justify-center ">
             Día {dayOfYear} de {TOTAL_DAYS}
           </h1>
-          <span className="text-sm font-bold bg-emerald-100 rounded-full border-2 border-emerald-400 flex justify-center">{dayOfWeek}</span>
+          <span className="text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400 flex justify-center">{dayOfWeek}</span>
         </div>
         <div className="justify-center w-1/2  flex-col">
           <Clock />
