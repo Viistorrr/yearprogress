@@ -1,5 +1,7 @@
 import Clock from "@components/Clock";
 import Error from "@components/Error";
+import Image from 'next/image';
+import myGif from 'https://tenor.com/Votc.gif'
 
 import {
   weekDays,
@@ -55,7 +57,9 @@ export default async function Home() {
           Día {dayOfYear} de {TOTAL_DAYS}
         </h1>
         <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">{dayOfWeek}</span>
-        <Clock />
+        
+        
+        <iframe src="https://giphy.com/embed/tn8zWeNYA73G0" width="120" height="120" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/transparent-gallery-clock-tn8zWeNYA73G0"></a></p>
         <div className="w-full  pr-8 pb-8 pl-8">
         <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="text-lg font-bold text-slate-700 py-2">
