@@ -45,17 +45,24 @@ export default async function Home() {
   if(dayOfWeekd == 7) weekNumber = weekNumber - 1
   const YearPercent = (dayOfYear / TOTAL_DAYS) * 100;
 
+
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
-      {date ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
-        <h2 className="flex justify-center text-lg font-bold text-slate-700 py-2">
-          {formattedDate}
-        </h2>
-        <h1 className="text-xl font-bold text-slate-700">
-          Día {dayOfYear} de {TOTAL_DAYS}
-        </h1>
-        <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">{dayOfWeek}</span>
-        <Clock />
+      {date ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center pt-8">
+      <div className="flex w-8/12 items-center">
+        <div className="w-1/2 grid place-content-center">
+          <h2 className="flex justify-center text-lg font-bold text-slate-600">
+            {formattedDate}
+          </h2>
+          <h1 className="text-xl font-bold text-slate-600 flex justify-center ">
+            Día {dayOfYear} de {TOTAL_DAYS}
+          </h1>
+          <span className="text-sm font-bold bg-emerald-100 rounded-full border-2 border-emerald-400 flex justify-center">{dayOfWeek}</span>
+        </div>
+        <div className="justify-center w-1/2  flex-col">
+          <Clock />
+        </div>
+      </div>
         <div className="w-full  pr-8 pb-8 pl-8">
         <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="text-lg font-bold text-slate-700 py-2">
@@ -171,7 +178,7 @@ export default async function Home() {
         </p>
       </div>
       <div>
-        <p className="text-sm text-slate-700">
+        <p className="text-sm text-slate-700 pb-2">
           <a
             className="text-sky-900 hover:text-sky-700"
             href="https://www.viistorrr.com/"
