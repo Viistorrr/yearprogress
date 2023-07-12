@@ -56,7 +56,7 @@ export default async function Home() {
           <h1 className="text-base font-bold text-slate-600 flex justify-center ">
             Día {dayOfYear} de {TOTAL_DAYS}
           </h1>
-          <span className="text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400 flex justify-center">{dayOfWeek}</span>
+          
         </div>
         <div className="justify-center w-1/2  flex-col">
           <Clock />
@@ -109,16 +109,20 @@ export default async function Home() {
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
-                    className={`flex items-center justify-center py-2 ${getColor(
+                    className={`flex items-center justify-end py-2 ${getColor(
                       currentWeekPercent
                     )} h-4 rounded-full`}
                   style={{
                     width: currentWeekPercent.toString() + "%"
                   }}
-                ></div>
+                >
+                  <span className="text-sm font-bold pr-4">
+                    {dayOfWeek}
+                  </span>
+                </div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              {currentWeekPercent.toFixed(0)}%
+                {currentWeekPercent.toFixed(0)}%
               </h1>
             </div>
           </div>
