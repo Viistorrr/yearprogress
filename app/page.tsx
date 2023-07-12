@@ -45,7 +45,6 @@ export default async function Home() {
   if(dayOfWeekd == 7) weekNumber = weekNumber - 1
   const YearPercent = (dayOfYear / TOTAL_DAYS) * 100;
 
-
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
       {date ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center pt-8">
