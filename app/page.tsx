@@ -1,5 +1,7 @@
 import Clock from "@components/Clock";
 import Error from "@components/Error";
+import { firebaseApp } from "./firebase/config"
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 import {
   weekDays,
@@ -21,6 +23,24 @@ const getColor = (percent: number) => {
     return "bg-emerald-400";
   }
 };
+
+const db = getFirestore(firebaseApp)
+
+const getData = async (collection:any, id:any) =>{
+  let docRef = doc(db, collection, id);
+
+  let result = null;
+  let error = null;
+
+  try {
+      result = await getDoc(docRef);
+  } catch (e) {
+      error = e;
+  }
+
+  return { result, error };
+}
+
 
 export default async function Home() {
 
