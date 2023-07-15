@@ -108,7 +108,7 @@ export default async function Home() {
           </div>
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4">
-              Semana actual | {weekNumber} de {TOTAL_WEEKS}
+              Semana | {weekNumber} de {TOTAL_WEEKS}
             </h1>
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
