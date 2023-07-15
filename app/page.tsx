@@ -51,12 +51,9 @@ export default async function Home() {
       {date ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center pt-8">
       <div className="flex w-8/12 items-center">
         <div className="w-1/2 grid place-content-center">
-          <h2 className="flex justify-center text-lg font-bold text-slate-600">
+          <h2 className="flex justify-center text-3xl font-bold text-slate-600">
             {formattedDate}
           </h2>
-          <h1 className="text-base font-bold text-slate-600 flex justify-center ">
-            Día {dayOfYear} de {TOTAL_DAYS}
-          </h1>
         </div>
         <div className="justify-center w-1/2  flex-col">
           <Clock />
@@ -70,11 +67,16 @@ export default async function Home() {
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
-                  className={`flex items-center justify-center py-2 ${getColor(
+                  className={`flex items-center justify-end py-2 ${getColor(
                     YearPercent
                   )} h-4 rounded-full`}
                   style={{ width: YearPercent.toString() + "%" }}
-                ></div>
+                >
+                  <span className="text-sm font-bold pr-4">
+                    Día {dayOfYear}
+                  </span>
+                </div>
+                
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
               {YearPercent.toFixed(0)}%
@@ -89,13 +91,17 @@ export default async function Home() {
             <div className="flex flex-row w-full items-center align-center">
               <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
                 <div
-                  className={`flex items-center justify-center py-2 ${getColor(
+                  className={`flex items-center justify-end py-2 ${getColor(
                     getMonthPercent(month, day)
                   )} h-4 rounded-full`}
                   style={{
                     width: getMonthPercent(month, day).toString() + "%",
                   }}
-                ></div>
+                >
+                  <span className="text-sm font-bold pr-4">
+                    {formattedDate.substring(0,2)}
+                  </span>
+                </div>
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
               {getMonthPercent(month, day).toFixed(0)}%
