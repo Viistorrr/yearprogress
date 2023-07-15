@@ -51,13 +51,11 @@ export default async function Home() {
       {date ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center pt-8">
       <div className="flex w-8/12 items-center">
         <div className="w-1/2 grid place-content-center">
-          <h2 className="flex justify-center text-3xl font-bold text-slate-600">
+          <h2 className="flex justify-center text-2xl font-bold text-slate-600 pr-6">
             {formattedDate}
           </h2>
         </div>
-        <div className="justify-center w-1/2  flex-col">
           <Clock />
-        </div>
       </div>
         <div className="w-full  pr-8 pb-8 pl-8">
         <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
