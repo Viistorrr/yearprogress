@@ -1,7 +1,7 @@
 import Clock from "@components/Clock";
 import Error from "@components/Error";
 import { firebaseApp } from "./firebase/config"
-import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 
 import {
   weekDays,
@@ -26,27 +26,32 @@ const getColor = (percent: number) => {
 
 const db = getFirestore(firebaseApp)
 
-const getData = async (collection:any, id:any) =>{
-  let docRef = doc(db, collection, id);
-
-  let result = null;
-  let error = null;
-
-  try {
-      result = await getDoc(docRef);
-  } catch (e) {
-      error = e;
-  }
-
-  return { result, error };
+const getData = async () =>{
+  
 }
 
+const updateData =async (date:any) => {
+  
+}
 
 export default async function Home() {
-
   const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);
   const date = new Date;
+console.log(typeof date);
+console.log(date);
+  //update current day info
+  const currentDay = doc(db, "yearprogress", "today");
+  await updateDoc(currentDay, {
+    date: date
+  });
+
+  //get current day info
+  let docRef = doc(db, "yearprogress", "today");
+  const docSnap = await getDoc(docRef);
+  const fecha = docSnap.data();
+  console.log("dddddd", fecha.date);
+
   const day = date.getDate();
   const month = (date.getMonth() + 1);
   const year = date.getFullYear().toString();
