@@ -2,6 +2,7 @@ import Clock from "@components/Clock";
 import Error from "@components/Error";
 import { firebaseApp } from "./firebase/config"
 import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
+import Image from "next/image";
 
 import {
   weekDays,
@@ -34,6 +35,10 @@ const updateData =async (date:any) => {
   
 }
 
+const handleClick = () =>{
+  console.log("click here");
+}
+
 export default async function Home() {
   const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);
@@ -50,8 +55,6 @@ console.log(date);
   let docRef = doc(db, "yearprogress", "today");
   const docSnap = await getDoc(docRef);
   const fecha = docSnap.data();
-  console.log("dddddd", fecha.date);
-
   const day = date.getDate();
   const month = (date.getMonth() + 1);
   const year = date.getFullYear().toString();
@@ -81,7 +84,6 @@ console.log(date);
           <h1 className="text-base font-bold text-slate-600 flex justify-center ">
             Día {dayOfYear} de {TOTAL_DAYS}
           </h1>
-          
         </div>
         <div className="justify-center w-1/2  flex-col">
           <Clock />
@@ -153,6 +155,15 @@ console.log(date);
           </div>
         </div>
       </div> : <Error />}
+      <div className="flex p-2">
+        <Image
+            src="assets/icons/heart-angle-color.svg"
+            width={30}
+            height={30}
+            alt="Picture of the author"
+          />
+        +20
+      </div>
       <a
         key="Twitter"
         href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @iprogresodelano"
@@ -181,6 +192,7 @@ console.log(date);
           Compartir en Twitter
         </button>
       </a>
+      
       <div className="">
         <p className="text-sm text-slate-700">
           <a
