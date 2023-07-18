@@ -27,14 +27,6 @@ const getColor = (percent: number) => {
 
 const db = getFirestore(firebaseApp)
 
-const getData = async () =>{
-  
-}
-
-const updateData =async (date:any) => {
-  
-}
-
 const handleClick = () =>{
   console.log("click here");
 }
@@ -42,40 +34,32 @@ const handleClick = () =>{
 export default async function Home() {
   const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);
-  const date = new Date;
-
-  //update current day info
-  const currentDay = doc(db, "yearprogress", "today");
-  await updateDoc(currentDay, {
-    date: date
-  });
-
   //get current day info
   let docRef = doc(db, "yearprogress", "today");
   const docSnap = await getDoc(docRef);
   const fecha = docSnap.data();
-  
-  const day = date.getDate();
-  const month = (date.getMonth() + 1);
-  const year = date.getFullYear().toString();
-  let formattedDate = formatter.format(date);
+  let dbDate = new Date(fecha?.date.seconds * 1000)
+  const day = dbDate.getDate();
+  const month = (dbDate.getMonth() + 1);
+  const year = dbDate.getFullYear().toString();
+  let formattedDate = formatter.format(dbDate);
   formattedDate = `${day}/${month}/${year}`;
-  const yearStart = new Date(date.getFullYear(), 0, 0);
-  const diff = (date.getTime() - yearStart.getTime()) + ((yearStart.getTimezoneOffset() - date.getTimezoneOffset()) * 60 * 1000);
+  const yearStart = new Date(dbDate.getFullYear(), 0, 0);
+  const diff = (dbDate.getTime() - yearStart.getTime()) + ((yearStart.getTimezoneOffset() - dbDate.getTimezoneOffset()) * 60 * 1000);
   const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const dayOfWeek = weekDays[date.getDay()];
-  let dayOfWeekd = date.getDay()
+  const dayOfWeek = weekDays[dbDate.getDay()];
+  let dayOfWeekd = dbDate.getDay()
   if(dayOfWeekd == 0) dayOfWeekd = 7
   const currentWeekPercent = (dayOfWeekd / TOTAL_WEEK_DAYS) * 100;
-  const firstDayOfYear = new Date(date.getFullYear(), 0, 1);
-  const pastDaysOfYear = (date.getTime() - firstDayOfYear.getTime()) / 86400000;
+  const firstDayOfYear = new Date(dbDate.getFullYear(), 0, 1);
+  const pastDaysOfYear = (dbDate.getTime() - firstDayOfYear.getTime()) / 86400000;
   let  weekNumber = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay()) / 7);
   if(dayOfWeekd == 7) weekNumber = weekNumber - 1
   const YearPercent = (dayOfYear / TOTAL_DAYS) * 100;
 
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
-      {date ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center pt-8">
+      {dbDate ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center pt-8">
       <div className="flex w-8/12 items-center">
         <div className="w-1/2 grid place-content-center">
           <h2 className="flex justify-center text-lg font-bold text-slate-600">
@@ -87,7 +71,6 @@ export default async function Home() {
         </div>
         <div className="justify-center w-1/2  flex-col">
           <Clock />
-          {fecha ? JSON.stringify(fecha.date):""}
         </div>
       </div>
         <div className="w-full  pr-8 pb-8 pl-8">
@@ -156,15 +139,6 @@ export default async function Home() {
           </div>
         </div>
       </div> : <Error />}
-      <div className="flex p-2">
-        <Image
-            src="assets/icons/heart-angle-color.svg"
-            width={30}
-            height={30}
-            alt="Picture of the author"
-          />
-        +20
-      </div>
       <a
         key="Twitter"
         href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @iprogresodelano"
@@ -177,13 +151,13 @@ export default async function Home() {
           type="button"
           data-mdb-ripple="true"
           data-mdb-ripple-color="light"
-          className="px-6 py-2.5 mb-2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center"
+          className="px-4 py-2 mb-2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center"
           style={{ backgroundColor: "#1da1f2" }}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
-            className="w-3.5 h-3.5 mr-2"
+            className="w-3 h-3 mr-2"
           >
             <path
               fill="currentColor"
