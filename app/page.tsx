@@ -43,8 +43,7 @@ export default async function Home() {
   const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);
   const date = new Date;
-console.log(typeof date);
-console.log(date);
+
   //update current day info
   const currentDay = doc(db, "yearprogress", "today");
   await updateDoc(currentDay, {
@@ -55,6 +54,7 @@ console.log(date);
   let docRef = doc(db, "yearprogress", "today");
   const docSnap = await getDoc(docRef);
   const fecha = docSnap.data();
+  
   const day = date.getDate();
   const month = (date.getMonth() + 1);
   const year = date.getFullYear().toString();
@@ -87,6 +87,7 @@ console.log(date);
         </div>
         <div className="justify-center w-1/2  flex-col">
           <Clock />
+          {fecha ? JSON.stringify(fecha.date):""}
         </div>
       </div>
         <div className="w-full  pr-8 pb-8 pl-8">
