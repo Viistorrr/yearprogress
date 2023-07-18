@@ -1,15 +1,12 @@
-import { NextResponse } from 'next/server';
-import type { NextRequest } from 'next/server';
-export function GET(request: NextRequest) {
-  return NextResponse.json(
-    {
-      body: request.body,
-      path: request.nextUrl.pathname,
-      query: request.nextUrl.search,
-      cookies: request.cookies.getAll(),
-    },
-    {
-      status: 200,
-    },
-  );
+import { NextApiRequest, NextApiResponse } from 'next';
+ 
+export default function handler(
+  request: NextApiRequest,
+  response: NextApiResponse,
+) {
+  response.status(200).json({
+    body: request.body,
+    query: request.query,
+    cookies: request.cookies,
+  });
 }
