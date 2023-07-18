@@ -15,12 +15,12 @@ const Clock = () => {
   }, []);
   return (
     <div className="flex items-center md:flex-col">
-      <iframe src="https://giphy.com/embed/tn8zWeNYA73G0" width="80" height="80" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/transparent-gallery-clock-tn8zWeNYA73G0"></a></p>
+      <iframe src="https://giphy.com/embed/tn8zWeNYA73G0" width="70" height="70" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/transparent-gallery-clock-tn8zWeNYA73G0"></a></p>
       <div className="pl-2">
-        <h3 className="text-sm font-bold text-slate-700 pt-2">
+        <h3 className="text-xs font-bold text-slate-700 pt-2">
           {date.toLocaleTimeString().toUpperCase()}
         </h3>
-        <span className="text-sm font-bold text-slate-700 pt-2">Hora Colombia</span>
+        <span className="text-xs font-bold text-slate-700 pt-2">Hora COL</span>
       </div>
       
     </div>
