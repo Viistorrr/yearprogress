@@ -11,4 +11,4 @@ export const updateData = async () => {
 }
 
 // Configura el cronjob para que se ejecute cada minuto
-cron.schedule('* * * * *', updateData);
+cron.schedule('* 1 * * *', updateData);
