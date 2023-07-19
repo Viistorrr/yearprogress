@@ -31,7 +31,16 @@ const handleClick = () =>{
   console.log("click here");
 }
 
+const updateData = async () => {
+  //update current day info
+  const currentDay = doc(db, "yearprogress", "today");
+  updateDoc(currentDay, {
+    date: new Date
+  });
+}
+
 export default async function Home() {
+  updateData()
   const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);
   //get current day info
