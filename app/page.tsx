@@ -95,14 +95,12 @@ export default async function Home() {
                     {dayOfYear} días
                   </span>
                 </div>
-                
               </div>
               <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
               {YearPercent.toFixed(0)}%
               </h1>
             </div>
           </div>
-        
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
             <h1 className="font-bold py-4 text-slate-700">
             {month} meses de {TOTAL_MONTHS}
