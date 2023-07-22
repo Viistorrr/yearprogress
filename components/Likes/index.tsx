@@ -6,7 +6,14 @@ import Image from "next/image";
 
 const db = getFirestore(firebaseApp)
 let docRef = doc(db, "yearprogress", "today");
-  
+const currentLikes = async function getLikes(){
+    const docSnap = await getDoc(docRef);
+    const todayInfo = docSnap.data();
+    console.log(todayInfo?.likes);
+    
+}
+
+
 const updateLikes = async (likes:number) => {
     const currentDay = doc(db, "yearprogress", "today");
     updateDoc(currentDay, {
@@ -15,8 +22,8 @@ const updateLikes = async (likes:number) => {
   }
 
 export default function Likes() {
+    
   const [count, setCount] = useState(0)
-
 
   const handleClick = () =>{
     setCount(count + 1)
