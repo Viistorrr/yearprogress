@@ -1,7 +1,7 @@
 Una simple App que te muestra qué día del año es hoy en Colombia. 
 ## [https://www.progresodelano.info/](https://www.progresodelano.info/) ##
 
-Hecha con Typescript, Firebase, TailwindCSS, NextJS 13, Google Analytics.
+Usa Typescript, Firebase, TailwindCSS, NextJS 13, Google Analytics.
 
 Creada por [@viistorrr](https://twitter.com/viistorrr)
 
