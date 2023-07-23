@@ -50,7 +50,7 @@ count > 0 ? updateLikes(count) : ""
               />
           </button>
           </div>
-          <div className='text-base text-sky-900 pl-2'>{count > 0 ? count : ""}</div>
+          <div className='text-base text-sky-900 pl-2 hover:text-sky-700 hover:font-bold'>{count > 0 ? count : ""}</div>
         </div>
       :""}
     </div>
