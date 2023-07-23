@@ -6,13 +6,6 @@ import Image from "next/image";
 
 const db = getFirestore(firebaseApp)
 let docRef = doc(db, "yearprogress", "today");
-const currentLikes = async function getLikes(){
-    const docSnap = await getDoc(docRef);
-    const todayInfo = docSnap.data();
-    console.log(todayInfo?.likes);
-    
-}
-
 
 const updateLikes = async (likes:number) => {
     const currentDay = doc(db, "yearprogress", "today");
@@ -22,12 +15,7 @@ const updateLikes = async (likes:number) => {
   }
 
 export default function Likes() {
-    
   const [count, setCount] = useState(0)
-
-  const handleClick = () =>{
-    setCount(count + 1)
-}
 
   useEffect(()=>{
     async function fetchLikes() {
@@ -38,11 +26,14 @@ export default function Likes() {
       fetchLikes();
   }, [])
 
-  updateLikes(count)
+  const handleClick = () =>{
+    setCount(count + 1)
+}
+
+  count > 0 ? updateLikes(count) : ""
  
   return (
-    <>
-      {count}
+    <div className='flex items-center align-center w-full'>
       <button onClick={() => handleClick()}>
         <Image
             src="assets/icons/heart-angle-color.svg"
@@ -51,6 +42,7 @@ export default function Likes() {
             alt="like icon"
           />
       </button>
-    </>
+      <span className='mx-4'>{count > 0 ? count : ""}</span>
+    </div>
   )
 }
