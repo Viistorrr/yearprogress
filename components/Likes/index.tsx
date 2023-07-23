@@ -37,14 +37,14 @@ export default function Likes() {
 count > 0 ? updateLikes(count) : ""
 
   return (
-    <div className='flex items-center align-center w-full m-2'>
+    <div className='flex items-center align-center'>
       {count > 0 ?
         <>
           <button onClick={() => handleClick()}>
             <Image
                 src={icon ? likeIcon : dislikeIcon}
-                width={25}
-                height={25}
+                width={30}
+                height={30}
                 alt="like icon"
               />
           </button>

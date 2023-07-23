@@ -3,6 +3,7 @@ import Error from "@components/Error";
 import { firebaseApp } from "./firebase/config"
 import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 import Likes from "@components/Likes";
+const igIcon = "/assets/icons/instagram.svg"
 
 import {
   weekDays,
@@ -147,54 +148,71 @@ export default async function Home() {
         </div>
       </div> : <Error />}
       <div className="flex items-center align-center">
-        <div className="w-3/4 mr-2">
-          <a
-            key="Twitter"
-            href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @iprogresodelano"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sky-500 hover:text-sky-600"
-          >
-
-            <button
-              type="button"
-              data-mdb-ripple="true"
-              data-mdb-ripple-color="light"
-              className="px-4 py-2 text-white font-medium text-xs leading-tight rounded-lg shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center"
-              style={{ backgroundColor: "#1da1f2" }}
+      <div className="mx-2">
+            <a
+              key="Repositorio en Github"
+              href="https://github.com/Viistorrr/yearprogress"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-500 hover:text-sky-600"
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 512 512"
-                className="w-3 h-3 mr-2"
+              <button
+                type="button"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
               >
-                <path
-                  fill="currentColor"
-                  d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"
-                />
+              <svg width="30" height="30" fill="#075985" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 0c5.523 0 10 4.59 10 10.253 0 4.529-2.862 8.371-6.833 9.728-.507.101-.687-.219-.687-.492 0-.338.012-1.442.012-2.814 0-.956-.32-1.58-.679-1.898 2.227-.254 4.567-1.121 4.567-5.059 0-1.12-.388-2.034-1.03-2.752.104-.259.447-1.302-.098-2.714 0 0-.838-.275-2.747 1.051A9.396 9.396 0 0 0 10 4.958a9.375 9.375 0 0 0-2.503.345C5.586 3.977 4.746 4.252 4.746 4.252c-.543 1.412-.2 2.455-.097 2.714-.639.718-1.03 1.632-1.03 2.752 0 3.928 2.335 4.808 4.556 5.067-.286.256-.545.708-.635 1.371-.57.262-2.018.715-2.91-.852 0 0-.529-.985-1.533-1.057 0 0-.975-.013-.068.623 0 0 .655.315 1.11 1.5 0 0 .587 1.83 3.369 1.21.005.857.014 1.665.014 1.909 0 .271-.184.588-.683.493C2.865 18.627 0 14.783 0 10.253 0 4.59 4.478 0 10 0" fill-rule="evenodd"/>
               </svg>
-              Compartir
-            </button>
-          </a>
+
+              </button>
+            </a>
+          </div>
+        <div className="mx-2">
+            <a
+              key="Instagram"
+              href="https://www.instagram.com/iprogresodelano"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sky-500 hover:text-sky-600"
+            >
+              <button
+                type="button"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+              >
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 169.063 169.063">
+                <path fill="#075985" d="M122.406 0H46.654C20.929 0 0 20.93 0 46.655v75.752c0 25.726 20.929 46.655 46.654 46.655h75.752c25.727 0 46.656-20.93 46.656-46.655V46.655C169.063 20.93 148.133 0 122.406 0zm31.657 122.407c0 17.455-14.201 31.655-31.656 31.655H46.654C29.2 154.063 15 139.862 15 122.407V46.655C15 29.201 29.2 15 46.654 15h75.752c17.455 0 31.656 14.201 31.656 31.655v75.752z"/>
+                <path fill="#075985" d="M84.531 40.97c-24.021 0-43.563 19.542-43.563 43.563 0 24.02 19.542 43.561 43.563 43.561s43.563-19.541 43.563-43.561c0-24.021-19.542-43.563-43.563-43.563zm0 72.123c-15.749 0-28.563-12.812-28.563-28.561 0-15.75 12.813-28.563 28.563-28.563s28.563 12.813 28.563 28.563c0 15.749-12.814 28.561-28.563 28.561zm45.39-84.842c-2.89 0-5.729 1.17-7.77 3.22a11.053 11.053 0 0 0-3.23 7.78c0 2.891 1.18 5.73 3.23 7.78 2.04 2.04 4.88 3.22 7.77 3.22 2.9 0 5.73-1.18 7.78-3.22 2.05-2.05 3.22-4.89 3.22-7.78 0-2.9-1.17-5.74-3.22-7.78-2.04-2.05-4.88-3.22-7.78-3.22z"/>
+              </svg>
+              </button>
+            </a>
+          </div>
+          <div className="mx-2">
+            <a
+              key="Twitter"
+              href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @iprogresodelano"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-sky-600"
+            >
+              <button
+                type="button"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+              >
+                <svg width="30" height="30" viewBox="0 -2 20 20" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#075985" d="M6.29 16c7.547 0 11.675-6.156 11.675-11.495 0-.175 0-.349-.012-.522A8.265 8.265 0 0 0 20 1.89a8.273 8.273 0 0 1-2.356.637A4.07 4.07 0 0 0 19.448.292a8.303 8.303 0 0 1-2.606.98 4.153 4.153 0 0 0-5.806-.175 4.006 4.006 0 0 0-1.187 3.86A11.717 11.717 0 0 1 1.392.737a4.005 4.005 0 0 0 1.271 5.392A4.122 4.122 0 0 1 .8 5.624v.051c.001 1.923 1.378 3.579 3.292 3.96a4.144 4.144 0 0 1-1.852.069c.537 1.646 2.078 2.773 3.833 2.806A8.315 8.315 0 0 1 0 14.185a11.754 11.754 0 0 0 6.29 1.812" fill-rule="evenodd"/>
+                </svg>
+              </button>
+            </a>
+          </div>
+          <div>
+            <Likes />
+          </div>
         </div>
-        <div>
-          <Likes />
-        </div>
-      </div>
-      <div className="pt-4">
-        <p className="text-sm text-slate-700">
-          <a
-            className="text-sky-900 hover:text-sky-700"
-            href="https://github.com/Viistorrr/yearprogress"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <i>Repositorio de Github</i>
-          </a>
-        </p>
-      </div>
       <div>
-        <p className="text-sm text-slate-700 pb-2">
+        <p className="text-sm text-slate-700 py-2">
           <a
             className="text-sky-900 hover:text-sky-700"
             href="https://www.viistorrr.com/"
@@ -202,10 +220,9 @@ export default async function Home() {
             rel="noopener noreferrer"
           >
             www.viistorrr.com
-            
           </a>
         </p>
-        </div>
+      </div>
     </main>
   );
 }
