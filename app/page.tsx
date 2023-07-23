@@ -3,7 +3,6 @@ import Error from "@components/Error";
 import { firebaseApp } from "./firebase/config"
 import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 import Likes from "@components/Likes";
-const igIcon = "/assets/icons/instagram.svg"
 
 import {
   weekDays,
@@ -29,7 +28,6 @@ const getColor = (percent: number) => {
 const db = getFirestore(firebaseApp)
 
 const updateData = async () => {
-  //update current day info
   const currentDay = doc(db, "yearprogress", "today");
   updateDoc(currentDay, {
     date: new Date
@@ -40,7 +38,6 @@ export default async function Home() {
   updateData()
   const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);
-  //get current day info
   let docRef = doc(db, "yearprogress", "today");
   const docSnap = await getDoc(docRef);
   const fecha = docSnap.data();
@@ -65,88 +62,86 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
-      {dbDate ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center pt-8">
-      <div className="flex w-8/12 items-center">
-        <div className="w-1/2 grid place-content-center">
-          <h2 className="flex justify-center text-2xl font-bold text-slate-600 pr-6">
+      {dbDate ?
+        <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">     
+          <Clock />
+          <h2 className="flex justify-center text-2xl font-bold text-slate-600">
             {formattedDate}
           </h2>
-        </div>
-          <Clock />
-      </div>
-        <div className="w-full  pr-8 pb-8 pl-8">
-        <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
-            <h1 className="text-lg font-bold text-slate-700 py-2">
-              Año {getCurrentYear()}
-            </h1>
-            <div className="flex flex-row w-full items-center align-center">
-              <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
-                <div
-                  className={`flex items-center justify-end py-2 ${getColor(
-                    YearPercent
-                  )} h-4 rounded-full`}
-                  style={{ width: YearPercent.toString() + "%" }}
-                >
-                  <span className="text-sm font-bold pr-4">
-                    {dayOfYear} días
-                  </span>
-                </div>
-              </div>
-              <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              {YearPercent.toFixed(0)}%
-              </h1>
-            </div>
-          </div>
+          <div className="w-full  pr-8 pb-8 pl-8">
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
-            <h1 className="font-bold py-4 text-slate-700">
-            {month} meses de {TOTAL_MONTHS}
-            </h1>
-            <div className="flex flex-row w-full items-center align-center">
-              <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
-                <div
-                  className={`flex items-center justify-end py-2 ${getColor(
-                    getMonthPercent(month, day)
-                  )} h-4 rounded-full`}
-                  style={{
-                    width: getMonthPercent(month, day).toString() + "%",
-                  }}
-                >
-                  <span className="text-sm font-bold pr-4">
-                    {formattedDate.substring(0,2)} de {months[month].name}
-                  </span>
-                </div>
-              </div>
-              <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              {getMonthPercent(month, day).toFixed(0)}%
+              <h1 className="font-bold py-4">
+                {weekNumber} Semanas de {TOTAL_WEEKS}
               </h1>
+              <div className="flex flex-row w-full items-center align-center">
+                <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
+                  <div
+                      className={`flex items-center justify-end py-2 ${getColor(
+                        currentWeekPercent
+                      )} h-4 rounded-full`}
+                    style={{
+                      width: currentWeekPercent.toString() + "%"
+                    }}
+                  >
+                    <span className="text-sm font-bold pr-4">
+                      {dayOfWeek}
+                    </span>
+                  </div>
+                </div>
+                <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
+                  {currentWeekPercent.toFixed(0)}%
+                </h1>
+              </div>
             </div>
-          </div>
-          <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
-            <h1 className="font-bold py-4">
-              {weekNumber} semanas de {TOTAL_WEEKS}
-            </h1>
-            <div className="flex flex-row w-full items-center align-center">
-              <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
-                <div
+          
+            <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
+              <h1 className="font-bold py-4 text-slate-700">
+              {month} Meses de {TOTAL_MONTHS}
+              </h1>
+              <div className="flex flex-row w-full items-center align-center">
+                <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
+                  <div
                     className={`flex items-center justify-end py-2 ${getColor(
-                      currentWeekPercent
+                      getMonthPercent(month, day)
                     )} h-4 rounded-full`}
-                  style={{
-                    width: currentWeekPercent.toString() + "%"
-                  }}
-                >
-                  <span className="text-sm font-bold pr-4">
-                    {dayOfWeek}
-                  </span>
+                    style={{
+                      width: getMonthPercent(month, day).toString() + "%",
+                    }}
+                  >
+                    <span className="text-sm font-bold pr-4">
+                      {formattedDate.substring(0,2)} de {months[month].name}
+                    </span>
+                  </div>
                 </div>
+                <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
+                {getMonthPercent(month, day).toFixed(0)}%
+                </h1>
               </div>
-              <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                {currentWeekPercent.toFixed(0)}%
+            </div>
+            <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
+              <h1 className="text-lg font-bold text-slate-700 py-2">
+                Año {getCurrentYear()}
               </h1>
+              <div className="flex flex-row w-full items-center align-center">
+                <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
+                  <div
+                    className={`flex items-center justify-end py-2 ${getColor(
+                      YearPercent
+                    )} h-4 rounded-full`}
+                    style={{ width: YearPercent.toString() + "%" }}
+                  >
+                    <span className="text-sm font-bold pr-4">
+                      {dayOfYear} días
+                    </span>
+                  </div>
+                </div>
+                <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
+                {YearPercent.toFixed(0)}%
+                </h1>
+              </div>
             </div>
           </div>
-        </div>
-      </div> : <Error />}
+        </div> : <Error />}
       <div className="flex items-center align-center">
       <div className="mx-2">
             <a
