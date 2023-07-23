@@ -207,9 +207,7 @@ export default async function Home() {
               </button>
             </a>
           </div>
-          <div>
-            <Likes />
-          </div>
+          <Likes />
         </div>
       <div>
         <p className="text-sm text-slate-700 py-2">

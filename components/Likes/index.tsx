@@ -37,9 +37,10 @@ export default function Likes() {
 count > 0 ? updateLikes(count) : ""
 
   return (
-    <div className='flex items-center align-center'>
+    <div className=''>
       {count > 0 ?
-        <>
+        <div className='flex items-center'>
+          <div>
           <button onClick={() => handleClick()}>
             <Image
                 src={icon ? likeIcon : dislikeIcon}
@@ -48,8 +49,9 @@ count > 0 ? updateLikes(count) : ""
                 alt="like icon"
               />
           </button>
-          <span className='text-lg'>{count > 0 ? count : ""}</span>
-        </>
+          </div>
+          <div className='text-base text-sky-900 pl-2'>{count > 0 ? count : ""}</div>
+        </div>
       :""}
     </div>
   )
