@@ -147,7 +147,7 @@ export default async function Home() {
         </div>
       </div> : <Error />}
       <div className="flex items-center align-center">
-        <div className="w-3/4">
+        <div className="w-3/4 mr-2">
           <a
             key="Twitter"
             href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @iprogresodelano"
@@ -181,7 +181,7 @@ export default async function Home() {
           <Likes />
         </div>
       </div>
-      <div className="py-4">
+      <div className="pt-4">
         <p className="text-sm text-slate-700">
           <a
             className="text-sky-900 hover:text-sky-700"
@@ -193,6 +193,19 @@ export default async function Home() {
           </a>
         </p>
       </div>
+      <div>
+        <p className="text-sm text-slate-700 pb-2">
+          <a
+            className="text-sky-900 hover:text-sky-700"
+            href="https://www.viistorrr.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            www.viistorrr.com
+            
+          </a>
+        </p>
+        </div>
     </main>
   );
 }

@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react'
 import { firebaseApp } from 'app/firebase/config';
 import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 import Image from "next/image";
-const likeIcon = "/assets/icons/heart-angle-color.svg"
-const dislikeIcon = "/assets/icons/heart-angle.svg"
+const likeIcon = "/assets/icons/thumb-up-full.svg"
+const dislikeIcon = "/assets/icons/thumb-up.svg"
 
 const db = getFirestore(firebaseApp)
 let docRef = doc(db, "yearprogress", "today");
@@ -37,14 +37,14 @@ export default function Likes() {
 count > 0 ? updateLikes(count) : ""
 
   return (
-    <div className='flex items-center align-center w-full mx-2'>
+    <div className='flex items-center align-center w-full m-2'>
       {count > 0 ?
         <>
           <button onClick={() => handleClick()}>
             <Image
                 src={icon ? likeIcon : dislikeIcon}
-                width={30}
-                height={30}
+                width={25}
+                height={25}
                 alt="like icon"
               />
           </button>
