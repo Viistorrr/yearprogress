@@ -3,6 +3,7 @@ import Error from "@components/Error";
 import { firebaseApp } from "./firebase/config"
 import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 import Likes from "@components/Likes";
+import Toast from "@components/Toast";
 
 import {
   weekDays,
@@ -63,7 +64,7 @@ export default async function Home() {
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
       {dbDate ?
-        <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">     
+        <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
           <Clock />
           <h2 className="flex justify-center text-2xl font-bold text-slate-600">
             {formattedDate}
@@ -214,6 +215,9 @@ export default async function Home() {
         </a>
         <p className="flex items-center justify-center">© 2022</p>
       </div>
+      <Toast />
+      
+      
     </main>
   );
 }
