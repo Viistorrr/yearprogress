@@ -1,13 +1,8 @@
 import Clock from "@components/Clock";
 import Error from "@components/Error";
-<<<<<<< HEAD
-import Image from 'next/image';
-import myGif from 'https://tenor.com/Votc.gif'
-=======
 import { firebaseApp } from "./firebase/config"
 import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 import Likes from "@components/Likes";
->>>>>>> fb65da566e0974334a869dc3a6071adbcc265ac4
 
 import {
   weekDays,
@@ -67,37 +62,6 @@ export default async function Home() {
 
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
-<<<<<<< HEAD
-      {date ? <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">
-        <h2 className="flex justify-center text-lg font-bold text-slate-700 py-2">
-          {formattedDate}
-        </h2>
-        <h1 className="text-xl font-bold text-slate-700">
-          Día {dayOfYear} de {TOTAL_DAYS}
-        </h1>
-        <span className="px-4 text-base font-bold bg-emerald-100 rounded-full border-2 border-emerald-400">{dayOfWeek}</span>
-        <iframe src="https://giphy.com/embed/7Z8QOXkz3USMDb9NZH" width="60" height="80" className="giphy-embed rounded-xl" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/poop-toilet-poo-7Z8QOXkz3USMDb9NZH"></a></p>
-        <div className="w-full  pr-8 pb-8 pl-8">
-        <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
-            <h1 className="text-lg font-bold text-slate-700 py-2">
-              {getCurrentYear()}
-            </h1>
-            <div className="flex flex-row w-full items-center align-center">
-              <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
-                <div
-                  className={`flex items-center justify-center py-2 ${getColor(
-                    YearPercent
-                  )} h-4 rounded-full`}
-                  style={{ width: YearPercent.toString() + "%" }}
-                ></div>
-              </div>
-              <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-              {YearPercent.toFixed(0)}%
-              </h1>
-            </div>
-          </div>
-        
-=======
       {dbDate ?
         <div className="flex flex-col w-full md:w-1/2 lg:w-1/2 items-center justify-center">     
           <Clock />
@@ -105,7 +69,6 @@ export default async function Home() {
             {formattedDate}
           </h2>
           <div className="w-full  pr-8 pb-8 pl-8">
->>>>>>> fb65da566e0974334a869dc3a6071adbcc265ac4
           <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
               <h1 className="font-bold py-4">
                 {weekNumber} Semanas
