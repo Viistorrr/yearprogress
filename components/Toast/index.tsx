@@ -25,7 +25,7 @@ export default function Toast(){
       <div className='font-bold'>
         {quote ? toast(quote.toString()) : null}
         <ToastContainer
-            position="top-center"
+            position="bottom-center"
             autoClose={5000}
             hideProgressBar={false}
             newestOnTop={false}
