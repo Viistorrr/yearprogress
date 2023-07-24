@@ -1,12 +1,14 @@
 import cron from 'node-cron';
+import { updateDoc } from "firebase/firestore";
 
 // Define la tarea a ejecutar
-export const date = () => {
-  // Aquí puedes colocar el código que deseas ejecutar en tu 
-  const date = new Date();
-  console.log("date inside cron")
-  return date;
-};
+export const updateData = async () => {
+  //update current day info
+  const currentDay = doc(db, "yearprogress", "today");
+  updateDoc(currentDay, {
+    date: new Date
+  });
+}
 
 // Configura el cronjob para que se ejecute cada minuto
-cron.schedule('* * * * *', date);
+cron.schedule('* 1 * * *', updateData);

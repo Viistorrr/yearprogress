@@ -8,7 +8,7 @@ export default function Head() {
 
   return (
     <>
-      <title>Progreso del Año - Dev @viistorrr</title>
+      <title>Progreso del Año</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="description" content="⏳Un simple conteo del porcentaje de avance del año" />
 
