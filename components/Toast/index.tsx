@@ -23,9 +23,9 @@ export default function Toast(){
 
     return (
       <div className='font-bold'>
-        {quote ? toast(quote.toString()) : null}
+        {quote ? toast.info(quote.toString()) : null}
         <ToastContainer
-            position="bottom-center"
+            position="top-center"
             autoClose={5000}
             hideProgressBar={false}
             newestOnTop={false}
@@ -33,8 +33,9 @@ export default function Toast(){
             rtl={false}
             pauseOnFocusLoss
             draggable
+            limit={1}
             pauseOnHover
-            theme="light" />
+            theme="colored" />
         
       </div>
     );
