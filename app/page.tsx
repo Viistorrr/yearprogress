@@ -216,8 +216,6 @@ export default async function Home() {
         <p className="flex items-center justify-center">© 2022</p>
       </div>
       <Toast />
-      
-      
     </main>
   );
 }
