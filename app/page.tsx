@@ -202,6 +202,150 @@ export default async function Home() {
               </button>
             </a>
           </div>
+          <div className="mr-2">
+            <a
+              key="Twitter"
+              href="https://www.buymeacoffee.com/viistorrr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-sky-600"
+            >
+              <button
+                type="button"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="light"
+              >
+                <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={30}
+    height={30}
+    viewBox="0 0 32 32"
+  >
+    <defs>
+      <clipPath id="a">
+        <path d="M0 0h32v32H0z" />
+      </clipPath>
+    </defs>
+    <g clipPath="url(#a)" data-name="Group 2792">
+      <g data-name="Group 2767">
+        <g data-name="Group 2766">
+          <g data-name="Group 2765">
+            <path
+              fill="#075985"
+              d="M28.718 17.632h-.312v-3.716h.573a1 1 0 0 0 .964-1.266 14.461 14.461 0 0 0-27.886 0 1 1 0 0 0 .964 1.266h.573v3.716h-.312a3.118 3.118 0 0 0-3.115 3.115v.4a3.111 3.111 0 0 0 2.257 2.981 2.942 2.942 0 0 0-.216 1.1v1.791a2.966 2.966 0 0 0 2.962 2.963h22.035a2.966 2.966 0 0 0 2.962-2.963v-1.791a2.925 2.925 0 0 0-.26-1.2 3.118 3.118 0 0 0 1.926-2.877v-.4a3.118 3.118 0 0 0-3.115-3.119ZM16 4.025a12.507 12.507 0 0 1 11.592 7.891H4.408A12.507 12.507 0 0 1 16 4.025Zm10.406 9.891v1.128a3.393 3.393 0 0 0-.472.354 1.068 1.068 0 0 1-1.628 0 2.048 2.048 0 0 0-2.943 0 1.064 1.064 0 0 1-1.623 0 2.046 2.046 0 0 0-2.942 0 1.06 1.06 0 0 1-1.62 0 2.041 2.041 0 0 0-2.938 0 1.058 1.058 0 0 1-1.618 0 2.042 2.042 0 0 0-2.939 0 1.06 1.06 0 0 1-1.62 0 3.23 3.23 0 0 0-.469-.35v-1.132ZM5.594 16.309a1.909 1.909 0 0 0 1.278.465 2.059 2.059 0 0 0 1.471-.624 1.059 1.059 0 0 1 1.619 0 2.04 2.04 0 0 0 2.938 0 1.059 1.059 0 0 1 1.618 0 2.042 2.042 0 0 0 2.939 0 1.064 1.064 0 0 1 1.623 0 2.045 2.045 0 0 0 2.941 0 1.067 1.067 0 0 1 1.626 0 2.036 2.036 0 0 0 1.473.624 1.892 1.892 0 0 0 1.286-.469v1.327h-.314a1 1 0 0 0-.937.65 1.88 1.88 0 0 1-1.749 1.224 1.844 1.844 0 0 1-1.184-.439 1.011 1.011 0 0 0-.355-.18.973.973 0 0 0-.12-.021 1.01 1.01 0 0 0-.163-.028 1.066 1.066 0 0 0-.187.017 1.275 1.275 0 0 1-1.351-.671 1 1 0 0 0-.895-.552H5.594Zm-3.427 4.438a1.116 1.116 0 0 1 1.115-1.115H18.6a3.248 3.248 0 0 0 2.706 1.245 3.788 3.788 0 0 0 2.1.629 3.888 3.888 0 0 0 3.308-1.874h2a1.116 1.116 0 0 1 1.115 1.115v.4a1.117 1.117 0 0 1-1.115 1.116H3.282a1.117 1.117 0 0 1-1.115-1.116Zm26 6.265a.964.964 0 0 1-.962.963H5.17a.964.964 0 0 1-.962-.963v-1.791a.963.963 0 0 1 .962-.962h22.035a.963.963 0 0 1 .962.962Z"
+              data-name="Path 3916"
+            />
+          </g>
+        </g>
+      </g>
+      <g data-name="Group 2770">
+        <g data-name="Group 2769">
+          <g data-name="Group 2768">
+            <path
+              fill="#075985"
+              d="M20.347 7.5a.732.732 0 1 0-.732-.732.733.733 0 0 0 .732.732Z"
+              data-name="Path 3917"
+            />
+          </g>
+        </g>
+      </g>
+      <g data-name="Group 2773">
+        <g data-name="Group 2772">
+          <g data-name="Group 2771" transform="translate(-52 -208)">
+            <circle
+              cx={0.732}
+              cy={0.732}
+              r={0.732}
+              fill="#075985"
+              data-name="Ellipse 10"
+              transform="translate(67.267 212.574)"
+            />
+          </g>
+        </g>
+      </g>
+      <g data-name="Group 2776">
+        <g data-name="Group 2775">
+          <g data-name="Group 2774" transform="translate(-52 -208)">
+            <circle
+              cx={0.732}
+              cy={0.732}
+              r={0.732}
+              fill="#075985"
+              data-name="Ellipse 11"
+              transform="translate(75.465 217.14)"
+            />
+          </g>
+        </g>
+      </g>
+      <g data-name="Group 2779">
+        <g data-name="Group 2778">
+          <g data-name="Group 2777">
+            <path
+              fill="#075985"
+              d="M11.844 7.5a.732.732 0 1 0-.732-.732.733.733 0 0 0 .732.732Z"
+              data-name="Path 3918"
+            />
+          </g>
+        </g>
+      </g>
+      <g data-name="Group 2782">
+        <g data-name="Group 2781">
+          <g data-name="Group 2780">
+            <path
+              fill="#075985"
+              d="M16.192 7.238a.732.732 0 1 0 .732.733.733.733 0 0 0-.732-.733Z"
+              data-name="Path 3919"
+            />
+          </g>
+        </g>
+      </g>
+      <g data-name="Group 2785">
+        <g data-name="Group 2784">
+          <g data-name="Group 2783" transform="translate(-52 -208)">
+            <circle
+              cx={0.732}
+              cy={0.732}
+              r={0.732}
+              fill="#075985"
+              data-name="Ellipse 12"
+              transform="translate(63.112 217.14)"
+            />
+          </g>
+        </g>
+      </g>
+      <g data-name="Group 2788">
+        <g data-name="Group 2787">
+          <g data-name="Group 2786" transform="translate(-52 -208)">
+            <circle
+              cx={0.732}
+              cy={0.732}
+              r={0.732}
+              fill="#075985"
+              data-name="Ellipse 13"
+              transform="translate(71.615 217.14)"
+            />
+          </g>
+        </g>
+      </g>
+      <g data-name="Group 2791">
+        <g data-name="Group 2790">
+          <g data-name="Group 2789" transform="translate(-52 -208)">
+            <circle
+              cx={0.732}
+              cy={0.732}
+              r={0.732}
+              fill="#075985"
+              data-name="Ellipse 14"
+              transform="translate(59.261 217.14)"
+            />
+          </g>
+        </g>
+      </g>
+    </g>
+  </svg>
+              </button>
+            </a>
+          </div>
           <Likes />
         </div>
       <div className="flex-col items-center justify-center text-sm text-sky-900 hover:text-sky-700 py-2">
