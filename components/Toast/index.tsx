@@ -19,14 +19,14 @@ export default function Toast(){
             setQuote(todayInfo?.quotes[randQuoute])
         }
         fetchQuotes();
-    }, [])
+    }, [quote])
 
     return (
       <div className='font-bold'>
         {quote ? toast.info(quote.toString()) : null}
         <ToastContainer
             position="top-center"
-            autoClose={10000}
+            autoClose={6000}
             hideProgressBar={false}
             newestOnTop={false}
             closeOnClick

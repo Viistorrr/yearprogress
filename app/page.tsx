@@ -4,6 +4,7 @@ import { firebaseApp } from "./firebase/config"
 import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 import Likes from "@components/Likes";
 import Toast from "@components/Toast";
+import Timeline from "@components/Timeline";
 
 import {
   weekDays,
@@ -11,8 +12,6 @@ import {
   getMonthPercent,
   getCurrentYear,
   TOTAL_DAYS,
-  TOTAL_WEEKS,
-  TOTAL_MONTHS,
   TOTAL_WEEK_DAYS
 } from "@utils/constants";
 
@@ -357,7 +356,6 @@ export default async function Home() {
         >
           www.viistorrr.com
         </a>
-        <p className="flex items-center justify-center">© 2022</p>
       </div>
       <Toast />
     </main>
