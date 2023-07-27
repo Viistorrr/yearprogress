@@ -28,7 +28,7 @@ export default function Toast(){
             position="top-center"
             autoClose={6000}
             hideProgressBar={false}
-            newestOnTop={false}
+            newestOnTop={true}
             closeOnClick
             rtl={false}
             pauseOnFocusLoss
