@@ -345,6 +345,7 @@ export default async function Home() {
               </button>
             </a>
           </div>
+          
           <Likes />
         </div>
       <div className="flex-col items-center justify-center text-sm text-sky-900 hover:text-sky-700 py-2">
