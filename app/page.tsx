@@ -4,7 +4,6 @@ import { firebaseApp } from "./firebase/config"
 import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 import { Footer } from "@components/Footer";
 import Toast from "@components/Toast";
-import Timeline from "@components/Timeline";
 
 import {
   weekDays,
