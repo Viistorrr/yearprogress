@@ -2,9 +2,7 @@
 import { useState, useEffect } from 'react'
 import { firebaseApp } from 'app/firebase/config';
 import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
-import Image from "next/image";
-const likeIcon = "/assets/icons/thumb-up-full.svg"
-const dislikeIcon = "/assets/icons/thumb-up.svg"
+import { ThumbUpFull, ThumbUp } from '@components/Icons';
 
 const db = getFirestore(firebaseApp)
 let docRef = doc(db, "yearprogress", "today");
@@ -42,12 +40,7 @@ count > 0 ? updateLikes(count) : ""
         <div className='flex items-center'>
           <div>
           <button onClick={() => handleClick()}>
-            <Image
-                src={icon ? likeIcon : dislikeIcon}
-                width={30}
-                height={30}
-                alt="like icon"
-              />
+            {icon ? <ThumbUpFull /> : <ThumbUp />}
           </button>
           </div>
           <div className='text-base text-sky-900 pl-2 hover:text-sky-700 hover:font-bold'>{count > 0 ? count : ""}</div>
