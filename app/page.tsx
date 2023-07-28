@@ -60,46 +60,46 @@ export default async function Home() {
           </h2>
           <div className="w-full  pr-8 pb-8 pl-8">
             <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
-              <WeekInfo 
-                weekNumber={weekNumber} 
-                currentWeekPercent={currentWeekPercent} 
+              <WeekInfo
+                weekNumber={weekNumber}
+                currentWeekPercent={currentWeekPercent}
                 dayOfWeek={dayOfWeek} />
             </div>
             <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
-              <MonthInfo 
-                month={month} 
-                day={day} 
-                formattedDate={formattedDate} 
+              <MonthInfo
+                month={month}
+                day={day}
+                formattedDate={formattedDate}
                 months={months} />
             </div>
             <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
-              <YearInfo 
-                yearPercent={yearPercent} 
+              <YearInfo
+                yearPercent={yearPercent}
                 dayOfYear={dayOfYear} />
             </div>
           </div>
         </div> : <Error />}
       <div className="flex items-center align-center">
         <div className="mx-2">
-            <a
-              key="Instagram"
-              href="https://www.instagram.com/iprogresodelano"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sky-500 hover:text-sky-600"
+          <a
+            key="Instagram"
+            href="https://www.instagram.com/iprogresodelano"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sky-500 hover:text-sky-600"
+          >
+            <button
+              type="button"
+              data-mdb-ripple="true"
+              data-mdb-ripple-color="light"
             >
-              <button
-                type="button"
-                data-mdb-ripple="true"
-                data-mdb-ripple-color="light"
-              >
-              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 169.063 169.063">
-                <path fill="#075985" d="M122.406 0H46.654C20.929 0 0 20.93 0 46.655v75.752c0 25.726 20.929 46.655 46.654 46.655h75.752c25.727 0 46.656-20.93 46.656-46.655V46.655C169.063 20.93 148.133 0 122.406 0zm31.657 122.407c0 17.455-14.201 31.655-31.656 31.655H46.654C29.2 154.063 15 139.862 15 122.407V46.655C15 29.201 29.2 15 46.654 15h75.752c17.455 0 31.656 14.201 31.656 31.655v75.752z"/>
-                <path fill="#075985" d="M84.531 40.97c-24.021 0-43.563 19.542-43.563 43.563 0 24.02 19.542 43.561 43.563 43.561s43.563-19.541 43.563-43.561c0-24.021-19.542-43.563-43.563-43.563zm0 72.123c-15.749 0-28.563-12.812-28.563-28.561 0-15.75 12.813-28.563 28.563-28.563s28.563 12.813 28.563 28.563c0 15.749-12.814 28.561-28.563 28.561zm45.39-84.842c-2.89 0-5.729 1.17-7.77 3.22a11.053 11.053 0 0 0-3.23 7.78c0 2.891 1.18 5.73 3.23 7.78 2.04 2.04 4.88 3.22 7.77 3.22 2.9 0 5.73-1.18 7.78-3.22 2.05-2.05 3.22-4.89 3.22-7.78 0-2.9-1.17-5.74-3.22-7.78-2.04-2.05-4.88-3.22-7.78-3.22z"/>
-              </svg>
-              </button>
-            </a>
-          </div>
+            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 169.063 169.063">
+              <path fill="#075985" d="M122.406 0H46.654C20.929 0 0 20.93 0 46.655v75.752c0 25.726 20.929 46.655 46.654 46.655h75.752c25.727 0 46.656-20.93 46.656-46.655V46.655C169.063 20.93 148.133 0 122.406 0zm31.657 122.407c0 17.455-14.201 31.655-31.656 31.655H46.654C29.2 154.063 15 139.862 15 122.407V46.655C15 29.201 29.2 15 46.654 15h75.752c17.455 0 31.656 14.201 31.656 31.655v75.752z"/>
+              <path fill="#075985" d="M84.531 40.97c-24.021 0-43.563 19.542-43.563 43.563 0 24.02 19.542 43.561 43.563 43.561s43.563-19.541 43.563-43.561c0-24.021-19.542-43.563-43.563-43.563zm0 72.123c-15.749 0-28.563-12.812-28.563-28.561 0-15.75 12.813-28.563 28.563-28.563s28.563 12.813 28.563 28.563c0 15.749-12.814 28.561-28.563 28.561zm45.39-84.842c-2.89 0-5.729 1.17-7.77 3.22a11.053 11.053 0 0 0-3.23 7.78c0 2.891 1.18 5.73 3.23 7.78 2.04 2.04 4.88 3.22 7.77 3.22 2.9 0 5.73-1.18 7.78-3.22 2.05-2.05 3.22-4.89 3.22-7.78 0-2.9-1.17-5.74-3.22-7.78-2.04-2.05-4.88-3.22-7.78-3.22z"/>
+            </svg>
+            </button>
+          </a>
+        </div>
           <div className="mx-2">
             <a
               key="Twitter"

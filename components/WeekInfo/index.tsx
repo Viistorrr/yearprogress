@@ -1,6 +1,5 @@
-'use client'
 const getColor = (percent: number) => {
-  if (percent <= 33.3333) {
+  if (percent && percent <= 33.3333) {
     return "bg-rose-400";
   } else if (33.3333 < percent && percent <= 66.6666) {
     return "bg-amber-400";
@@ -10,7 +9,6 @@ const getColor = (percent: number) => {
 };
 
 const WeekInfo = ({weekNumber, currentWeekPercent, dayOfWeek}:any) => {
-  const date = new Date
   return (
    <>
       <h1 className="font-bold py-4">
