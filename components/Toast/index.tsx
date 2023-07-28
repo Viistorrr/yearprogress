@@ -36,7 +36,6 @@ export default function Toast(){
             limit={1}
             pauseOnHover
             theme="colored" />
-        
       </div>
     );
   }
