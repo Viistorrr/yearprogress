@@ -26,7 +26,7 @@ export default function Toast(){
         {quote ? toast.info(quote.toString()) : null}
         <ToastContainer
             position="top-center"
-            autoClose={6000}
+            autoClose={quote?.length < 100 ? 7000 : 10000}
             hideProgressBar={false}
             newestOnTop={true}
             closeOnClick
