@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {firebaseApp} from "../../app/firebase/config"
-import { getFirestore, doc, getDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc, QueryDocumentSnapshot } from "firebase/firestore";
 
 const db = getFirestore(firebaseApp)
 
@@ -26,7 +26,7 @@ export default function Toast(){
         {quote ? toast.info(quote.toString()) : null}
         <ToastContainer
             position="top-center"
-            autoClose={6000}
+            autoClose={quote?.length < 100 ? 7000 : 10000}
             hideProgressBar={false}
             newestOnTop={true}
             closeOnClick
