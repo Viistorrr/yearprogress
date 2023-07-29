@@ -34,7 +34,7 @@ const updateData = async () => {
 }
 
 export default async function Home() {
-  updateData()
+  updateData() 
   const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);
   let docRef = doc(db, "yearprogress", "today");
