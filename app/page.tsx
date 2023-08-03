@@ -24,7 +24,6 @@ const getColor = (percent: number) => {
   }
 };
 
-
 const db = getFirestore(firebaseApp)
 
 const updateData = async () => {
