@@ -26,6 +26,7 @@ const getColor = (percent: number) => {
 
 const db = getFirestore(firebaseApp)
 
+
 const updateData = async () => {
   const currentDay = doc(db, "yearprogress", "today");
   updateDoc(currentDay, {
