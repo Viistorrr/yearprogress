@@ -34,7 +34,6 @@ const updateData = async () => {
   });
 }
 
-
 export default async function Home() {
   updateData() 
   const options = { timeZone: 'America/Bogota',  };
