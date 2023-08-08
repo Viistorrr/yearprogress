@@ -1,10 +1,9 @@
+import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 import Clock from "@components/Clock";
 import Error from "@components/Error";
-import { firebaseApp } from "./firebase/config"
-import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
+import { firebaseApp } from "@app/firebase/config"
 import { Footer } from "@components/Footer";
 import Toast from "@components/Toast";
-
 
 import {
   weekDays,
@@ -35,7 +34,7 @@ const updateData = async () => {
 }
 
 export default async function Home() {
-  updateData() 
+  updateData()
   const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);
   let docRef = doc(db, "yearprogress", "today");
