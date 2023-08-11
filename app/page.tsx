@@ -14,6 +14,7 @@ import {
   TOTAL_WEEK_DAYS
 } from "@utils/constants";
 
+
 const getColor = (percent: number) => {
   if (percent <= 33.3333) {
     return "bg-rose-400";
