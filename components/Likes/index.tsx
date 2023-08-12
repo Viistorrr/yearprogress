@@ -13,6 +13,7 @@ const updateLikes = async (likes:number) => {
       likes: likes
     });
   }
+  
 
 export default function Likes() {
   const [count, setCount] = useState(0)
