@@ -12,7 +12,7 @@ const updateLikes = async (likes:number) => {
     updateDoc(currentDay, {
       likes: likes
     });
-  }  
+  }
 
 export default function Likes() {
   const [count, setCount] = useState(0)
