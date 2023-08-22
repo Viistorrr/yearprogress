@@ -18,7 +18,7 @@ const MonthInfo = ({month, day, formattedDate, months}:any) => {
         {month} Meses
         </h1>
         <div className="flex flex-row w-full items-center align-center">
-          <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
+          <div className="flex items-center w-full bg-slate-100 rounded-full h-4">
             <div
               className={`flex items-center justify-end py-2 ${getColor(
                 getMonthPercent(month, day)

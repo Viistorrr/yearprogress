@@ -24,6 +24,16 @@ const updateData = async () => {
   });
 }
 
+const getColor = (percent: number) => {
+  if (percent && percent <= 33.3333) {
+    return "bg-rose-400";
+  } else if (33.3333 < percent && percent <= 66.6666) {
+    return "bg-amber-400";
+  } else {
+    return "bg-emerald-400";
+  }
+};
+
 export default async function Home() {
   updateData()
   const options = { timeZone: 'America/Bogota',  };
@@ -63,7 +73,9 @@ export default async function Home() {
               <WeekInfo
                 weekNumber={weekNumber}
                 currentWeekPercent={currentWeekPercent}
-                dayOfWeek={dayOfWeek} />
+                dayOfWeek={dayOfWeek}
+                color={getColor(currentWeekPercent)}
+                 />
             </div>
             <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
               <MonthInfo
