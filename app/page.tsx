@@ -11,8 +11,10 @@ import YearInfo from "@components/YearInfo";
 import {
   weekDays,
   months,
+  getMonthPercent,
   TOTAL_DAYS,
-  TOTAL_WEEK_DAYS
+  TOTAL_WEEK_DAYS,
+  getCurrentYear
 } from "@utils/constants";
 
 const db = getFirestore(firebaseApp)
@@ -82,12 +84,17 @@ export default async function Home() {
                 month={month}
                 day={day}
                 formattedDate={formattedDate}
-                months={months} />
+                months={months} 
+                color={getColor(getMonthPercent(month, day))}
+                currentMonthPercent={getMonthPercent(month, day)}
+                />
             </div>
             <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
               <YearInfo
+                currentYear={getCurrentYear()}
                 yearPercent={yearPercent}
-                dayOfYear={dayOfYear} />
+                dayOfYear={dayOfYear}
+                color={getColor(yearPercent)} />
             </div>
           </div>
         </div> : <Error />}
