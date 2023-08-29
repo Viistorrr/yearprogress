@@ -1,4 +1,4 @@
-import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 import Clock from "@components/Clock";
 import Error from "@components/Error";
 import { firebaseApp } from "@app/firebase/config"
@@ -7,6 +7,7 @@ import Toast from "@components/Toast";
 import WeekInfo from "@components/WeekInfo";
 import MonthInfo from "@components/MonthInfo";
 import YearInfo from "@components/YearInfo";
+import { updateData, scheduleNextUpdate } from "@utils/dateinfo";
 
 import {
   weekDays,
@@ -19,13 +20,6 @@ import {
 
 const db = getFirestore(firebaseApp)
 
-const updateData = async () => {
-  const currentDay = doc(db, "yearprogress", "today");
-  updateDoc(currentDay, {
-    date: new Date
-  });
-}
-
 const getColor = (percent: number) => {
   if (percent && percent <= 33.3333) {
     return "bg-rose-400";
@@ -37,7 +31,8 @@ const getColor = (percent: number) => {
 };
 
 export default async function Home() {
-  updateData()
+  updateData();
+  scheduleNextUpdate();
   const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);
   let docRef = doc(db, "yearprogress", "today");
@@ -70,8 +65,8 @@ export default async function Home() {
           <h2 className="flex justify-center text-2xl font-bold text-slate-600">
             {formattedDate}
           </h2>
-          <div className="w-full  pr-8 pb-8 pl-8">
-            <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
+          <div className="w-full pr-8 pb-8 pl-8">
+            <div className="flex flex-col w-full h-min items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
               <WeekInfo
                 weekNumber={weekNumber}
                 currentWeekPercent={currentWeekPercent}
@@ -79,7 +74,7 @@ export default async function Home() {
                 color={getColor(currentWeekPercent)}
                  />
             </div>
-            <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
+            <div className="flex flex-col w-full h-min items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
               <MonthInfo
                 month={month}
                 day={day}
@@ -89,7 +84,7 @@ export default async function Home() {
                 currentMonthPercent={getMonthPercent(month, day)}
                 />
             </div>
-            <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
+            <div className="flex flex-col h-min w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
               <YearInfo
                 currentYear={getCurrentYear()}
                 yearPercent={yearPercent}
