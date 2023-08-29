@@ -1,3 +1,5 @@
+import { firebaseApp } from "@app/firebase/config"
+import { getFirestore, doc, getDoc, updateDoc } from "firebase/firestore";
 import {
     weekDays,
     months,
@@ -6,6 +8,33 @@ import {
     TOTAL_WEEK_DAYS,
     getCurrentYear
   } from "@utils/constants";
+
+  const db = getFirestore(firebaseApp)
+
+  export const updateData = async () => {
+    const currentDay = doc(db, "yearprogress", "today");
+    updateDoc(currentDay, {
+      date: new Date
+    });
+    setInterval(updateData, 24 * 60 * 60 * 1000);
+  }
+
+  export function scheduleNextUpdate() {
+    const now:any = new Date();
+    
+    let nextUpdate:any = new Date(now);
+    nextUpdate.setHours(9, 45, 0, 0);
+  
+    if (nextUpdate <= now) {
+      // Si ya pasó la hora de la actualización de hoy, programamos para mañana
+      nextUpdate.setDate(nextUpdate.getDate() + 1);
+    }
+  
+    const timeUntilUpdate:any = nextUpdate - now;
+    
+    // Programamos la próxima actualización
+    setInterval(updateData, timeUntilUpdate);
+  }
 
 export const options = { timeZone: 'America/Bogota',  };
   const formatter = new Intl.DateTimeFormat('en-US', options);

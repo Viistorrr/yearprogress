@@ -10,9 +10,9 @@ const YearInfo = ({currentYear, yearPercent, dayOfYear, color}:any) => {
         {currentYear}
       </h1>
       <div className="flex flex-row w-full items-center align-center">
-        <div className="flex items-center w-full bg-slate-100 rounded-full h-4">
+        <div className="flex items-center w-full bg-slate-100 rounded-lg h-4">
           <div
-            className={`flex items-center justify-end py-2 ${color} h-4 rounded-full`}
+            className={`flex items-center justify-end py-2 ${color} h-2 rounded-lg`}
             style={{ width: yearPercent.toString() + "%" }}
           >
             <span className="text-sm font-bold pr-4">

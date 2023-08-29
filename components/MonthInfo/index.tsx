@@ -7,9 +7,9 @@ const MonthInfo = ({month, formattedDate, months, color, currentMonthPercent}:an
         {month} Meses
         </h1>
         <div className="flex flex-row w-full items-center align-center">
-          <div className="flex items-center w-full bg-slate-100 rounded-full h-4">
+          <div className="flex items-center w-full bg-slate-100 rounded-lg h-4">
             <div
-              className={`flex items-center justify-end py-2 ${color} h-4 rounded-full`}
+              className={`flex items-center justify-end py-2 ${color} h-4 rounded-lg`}
               style={{
                 width: {currentMonthPercent}.toString() + "%",
               }}
