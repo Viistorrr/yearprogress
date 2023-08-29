@@ -4,26 +4,18 @@ import Error from "@components/Error";
 import { firebaseApp } from "@app/firebase/config"
 import { Footer } from "@components/Footer";
 import Toast from "@components/Toast";
-
+import WeekInfo from "@components/WeekInfo";
+import MonthInfo from "@components/MonthInfo";
+import YearInfo from "@components/YearInfo";
 
 import {
   weekDays,
   months,
   getMonthPercent,
-  getCurrentYear,
   TOTAL_DAYS,
-  TOTAL_WEEK_DAYS
+  TOTAL_WEEK_DAYS,
+  getCurrentYear
 } from "@utils/constants";
-
-const getColor = (percent: number) => {
-  if (percent <= 33.3333) {
-    return "bg-rose-400";
-  } else if (33.3333 < percent && percent <= 66.6666) {
-    return "bg-amber-400";
-  } else {
-    return "bg-emerald-400";
-  }
-};
 
 const db = getFirestore(firebaseApp)
 
@@ -33,6 +25,16 @@ const updateData = async () => {
     date: new Date
   });
 }
+
+const getColor = (percent: number) => {
+  if (percent && percent <= 33.3333) {
+    return "bg-rose-400";
+  } else if (33.3333 < percent && percent <= 66.6666) {
+    return "bg-amber-400";
+  } else {
+    return "bg-emerald-400";
+  }
+};
 
 export default async function Home() {
   updateData()
@@ -58,7 +60,7 @@ export default async function Home() {
   const pastDaysOfYear = (dbDate.getTime() - firstDayOfYear.getTime()) / 86400000;
   let  weekNumber = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay()) / 7);
   if(dayOfWeekd == 7) weekNumber = weekNumber - 1
-  const YearPercent = (dayOfYear / TOTAL_DAYS) * 100;
+  const yearPercent = (dayOfYear / TOTAL_DAYS) * 100;
 
   return (
     <main className="flex flex-col w-full justify-center items-center h-screen bg-white text-slate-700">
@@ -69,75 +71,30 @@ export default async function Home() {
             {formattedDate}
           </h2>
           <div className="w-full  pr-8 pb-8 pl-8">
-          <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
-              <h1 className="font-bold py-4">
-                {weekNumber} Semanas
-              </h1>
-              <div className="flex flex-row w-full items-center align-center">
-                <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
-                  <div
-                      className={`flex items-center justify-end py-2 ${getColor(
-                        currentWeekPercent
-                      )} h-4 rounded-full`}
-                    style={{
-                      width: currentWeekPercent.toString() + "%"
-                    }}
-                  >
-                    <span className="text-sm font-bold pr-4">
-                      {dayOfWeek}
-                    </span>
-                  </div>
-                </div>
-                <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                  {currentWeekPercent.toFixed(0)}%
-                </h1>
-              </div>
+            <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
+              <WeekInfo
+                weekNumber={weekNumber}
+                currentWeekPercent={currentWeekPercent}
+                dayOfWeek={dayOfWeek}
+                color={getColor(currentWeekPercent)}
+                 />
             </div>
             <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
-              <h1 className="font-bold py-4 text-slate-700">
-              {month} Meses
-              </h1>
-              <div className="flex flex-row w-full items-center align-center">
-                <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
-                  <div
-                    className={`flex items-center justify-end py-2 ${getColor(
-                      getMonthPercent(month, day)
-                    )} h-4 rounded-full`}
-                    style={{
-                      width: getMonthPercent(month, day).toString() + "%",
-                    }}
-                  >
-                    <span className="text-sm font-bold pr-4">
-                      {formattedDate.substring(0,2)} de {months[month].name}
-                    </span>
-                  </div>
-                </div>
-                <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                {getMonthPercent(month, day).toFixed(0)}%
-                </h1>
-              </div>
+              <MonthInfo
+                month={month}
+                day={day}
+                formattedDate={formattedDate}
+                months={months} 
+                color={getColor(getMonthPercent(month, day))}
+                currentMonthPercent={getMonthPercent(month, day)}
+                />
             </div>
             <div className="flex flex-col w-full items-center align-center justify-center border-2 rounded-lg border-slate-300 pt-2 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
-              <h1 className="text-lg font-bold text-slate-700 py-2">
-                {getCurrentYear()}
-              </h1>
-              <div className="flex flex-row w-full items-center align-center">
-                <div className="flex items-center w-11/12 bg-slate-100 rounded-full h-4">
-                  <div
-                    className={`flex items-center justify-end py-2 ${getColor(
-                      YearPercent
-                    )} h-4 rounded-full`}
-                    style={{ width: YearPercent.toString() + "%" }}
-                  >
-                    <span className="text-sm font-bold pr-4">
-                      {dayOfYear} días
-                    </span>
-                  </div>
-                </div>
-                <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-                {YearPercent.toFixed(0)}%
-                </h1>
-              </div>
+              <YearInfo
+                currentYear={getCurrentYear()}
+                yearPercent={yearPercent}
+                dayOfYear={dayOfYear}
+                color={getColor(yearPercent)} />
             </div>
           </div>
         </div> : <Error />}

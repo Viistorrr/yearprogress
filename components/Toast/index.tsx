@@ -2,8 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import {firebaseApp} from "@app/firebase/config"
-import { getFirestore, doc, getDoc } from "firebase/firestore";
+import {firebaseApp} from "../../app/firebase/config"
+import { getFirestore, doc, getDoc, QueryDocumentSnapshot } from "firebase/firestore";
 
 const db = getFirestore(firebaseApp)
 
