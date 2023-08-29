@@ -1,0 +1,34 @@
+import {
+    weekDays,
+    months,
+    getMonthPercent,
+    TOTAL_DAYS,
+    TOTAL_WEEK_DAYS,
+    getCurrentYear
+  } from "@utils/constants";
+
+export const options = { timeZone: 'America/Bogota',  };
+  const formatter = new Intl.DateTimeFormat('en-US', options);
+  //let docRef = doc(db, "yearprogress", "today");
+  //const docSnap = await getDoc(docRef);
+  /*const fecha = docSnap.data();
+  let dbDate = new Date(fecha?.date.seconds * 1000)
+  const day = dbDate.getDate();
+  const month = (dbDate.getMonth() + 1);
+  const year = dbDate.getFullYear().toString();
+  let formattedDate = formatter.format(dbDate);
+  formattedDate = `${day}/${month}/${year}`;
+  const yearStart = new Date(dbDate.getFullYear(), 0, 0);
+  const diff = (dbDate.getTime() - yearStart.getTime()) + ((yearStart.getTimezoneOffset() - dbDate.getTimezoneOffset()) * 60 * 1000);
+  const dayOfYear = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const dayOfWeek = weekDays[dbDate.getDay()];
+  let dayOfWeekd = dbDate.getDay()
+  if(dayOfWeekd == 0) dayOfWeekd = 7
+  const currentWeekPercent = (dayOfWeekd / TOTAL_WEEK_DAYS) * 100;
+  const firstDayOfYear = new Date(dbDate.getFullYear(), 0, 1);
+  const pastDaysOfYear = (dbDate.getTime() - firstDayOfYear.getTime()) / 86400000;
+  let  weekNumber = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay()) / 7);
+  if(dayOfWeekd == 7) weekNumber = weekNumber - 1
+  const yearPercent = (dayOfYear / TOTAL_DAYS) * 100;*/
+
+  export default options
