@@ -18,12 +18,13 @@ import {
     });
     setInterval(updateData, 24 * 60 * 60 * 1000);
   }
+  
 
   export function scheduleNextUpdate() {
     const now:any = new Date();
     
     let nextUpdate:any = new Date(now);
-    nextUpdate.setHours(8, 45, 0, 0);
+    nextUpdate.setHours(24, 0, 0, 0);
   
     if (nextUpdate <= now) {
       // Si ya pasó la hora de la actualización de hoy, programamos para mañana
