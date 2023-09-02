@@ -18,7 +18,6 @@ import {
   getCurrentYear
 } from "@utils/constants";
 
-
 const db = getFirestore(firebaseApp)
 
 const getColor = (percent: number) => {
