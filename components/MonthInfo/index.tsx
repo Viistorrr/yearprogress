@@ -1,6 +1,6 @@
 'use client'
 
-const MonthInfo = ({month, formattedDate, months, color, currentMonthPercent}:any) => {
+export const MonthInfo = ({month, formattedDate, months, color, currentMonthPercent}:any) => {
   return (
    <>
       <h1 className="font-bold py-4 text-slate-700">

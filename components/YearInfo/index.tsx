@@ -2,7 +2,7 @@
 import { getCurrentYear } from "@utils/constants";
 
 
-const YearInfo = ({currentYear, yearPercent, dayOfYear, color}:any) => {
+export const YearInfo = ({currentYear, yearPercent, dayOfYear, color}:any) => {
   const date = new Date
   return (
    <>

@@ -1,4 +1,4 @@
-const WeekInfo = ({weekNumber, currentWeekPercent, dayOfWeek, color}:any) => {
+export const WeekInfo = ({weekNumber, currentWeekPercent, dayOfWeek, color}:any) => {
   return (
    <>
       <h1 className="font-bold py-8">

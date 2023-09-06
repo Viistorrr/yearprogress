@@ -1,14 +1,13 @@
 import { getFirestore, doc, getDoc } from "firebase/firestore";
-import Clock from "@components/Clock";
-import Error from "@components/Error";
 import { firebaseApp } from "@app/firebase/config"
+import { updateData, scheduleNextUpdate } from "@utils/dateinfo";
+import { WeekInfo } from "@components/WeekInfo";
+import { MonthInfo } from "@components/MonthInfo";
+import { YearInfo } from "@components/YearInfo";
+import { Clock } from "@components/Clock";
+import { Error } from "@components/Error";
 import { Footer } from "@components/Footer";
 import Toast from "@components/Toast";
-import WeekInfo from "@components/WeekInfo";
-import MonthInfo from "@components/MonthInfo";
-import YearInfo from "@components/YearInfo";
-import { updateData, scheduleNextUpdate } from "@utils/dateinfo";
-
 import {
   weekDays,
   months,
@@ -72,14 +71,14 @@ export default async function Home() {
                 currentWeekPercent={currentWeekPercent}
                 dayOfWeek={dayOfWeek}
                 color={getColor(currentWeekPercent)}
-                 />
+                />
             </div>
             <div className="flex flex-col w-full h-min items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
               <MonthInfo
                 month={month}
                 day={day}
                 formattedDate={formattedDate}
-                months={months} 
+                months={months}
                 color={getColor(getMonthPercent(month, day))}
                 currentMonthPercent={getMonthPercent(month, day)}
                 />

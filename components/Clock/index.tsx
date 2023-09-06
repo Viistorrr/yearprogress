@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 
-const Clock = () => {
+export const Clock = () => {
   const [date, setDate] = useState(new Date());
 
   function refreshClock() {
