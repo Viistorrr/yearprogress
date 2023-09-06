@@ -15,7 +15,7 @@ export default function Home() {
           <MonthInfo />
           <YearInfo />
         </div>
-        <b><i>Disclaimer:</i></b> Estoy Refactorizando, los datos están ok, debo arreglar CSS.
+        <b><i>Disclaimer:</i></b> Los datos están ok, Estoy Refactorizando y debo arreglar CSS pero ya quedó para mañana
       </div>
     <Footer />
     <Toast />
