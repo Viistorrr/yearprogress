@@ -7,7 +7,7 @@ import { getFirestore, doc, getDoc, QueryDocumentSnapshot } from "firebase/fires
 
 const db = getFirestore(firebaseApp)
 
-export default function Toast(){
+export const Toast = () => {
     const [quote, setQuote] = useState("")
 
     useEffect(()=>{
