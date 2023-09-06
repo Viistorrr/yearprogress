@@ -34,13 +34,16 @@ export const Footer = () => (
             <Likes />
         </div>
         <div className="flex-col items-center justify-center text-sm text-sky-900 hover:text-sky-700 py-2">
-            <a
-                href="https://www.viistorrr.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                >
-                www.viistorrr.com
-            </a>
+            <i>
+                <a
+                    href="https://www.viistorrr.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                    viistorrr
+                </a>
+            </i>
+            👨🏾‍💻
         </div>
     </>
 )
