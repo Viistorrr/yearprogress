@@ -9,7 +9,6 @@ import MonthInfo from "@components/MonthInfo";
 import YearInfo from "@components/YearInfo";
 import { updateData, scheduleNextUpdate } from "@utils/dateinfo";
 
-
 import {
   weekDays,
   months,
