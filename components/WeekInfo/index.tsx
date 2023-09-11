@@ -1,8 +1,16 @@
 'use client'
+import { tss } from "tss-react/mui";
+import Button from "@mui/material/Button";
+import Box from '@mui/material/Box';
+import { useState } from "react";
 import {
   weekDays,
   TOTAL_WEEK_DAYS
 } from "@utils/constants";
+
+type Props = {
+  className?: string;
+};
 
 const getColor = (percent: number) => {
   if (percent && percent <= 33.3333) {
@@ -14,7 +22,11 @@ const getColor = (percent: number) => {
   }
 };
 
-export const WeekInfo = () => {
+export const WeekInfo = (props: Props) => {
+  const {className} = props
+  const [isClicked, setIsClicked] = useState(false);
+
+    const { classes, cx } = useStyles({ "color": isClicked ? "blue": "red" });
   let date = new Date()
   const dayOfWeek = weekDays[date.getDay()];
   let dayOfWeekd = date.getDay()
@@ -26,7 +38,8 @@ export const WeekInfo = () => {
   if(dayOfWeekd == 7) weekNumber = weekNumber - 1
 
   return (
-   <div className="flex flex-col w-full h-min items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
+    <div className="flex flex-col w-full">
+    <Box component="span" sx={{ p: 4, border: '1px solid grey', width:1, borderRadius:'10px', boxShadow:'3px 3px 3px grey' }}>
       <h1 className="font-bold py-8">
         {weekNumber} Semanas
       </h1>
@@ -47,6 +60,26 @@ export const WeekInfo = () => {
           {currentWeekPercent.toFixed(0)}%
         </h1>
       </div>
+      </Box>
     </div>
+    
   );
 };
+
+const useStyles = tss
+    .withParams<{ color: "red" | "blue"; }>()
+    .create(({ theme, color })=> ({
+        root: {
+            // The color of the text is either blue or red depending of 
+            // the state fo the component.
+            color,
+            // When the curser is over the button has a black border
+            "&:hover": {
+                border: '4px solid black'
+            },
+            // On screens bigger than MD the button will have a big cyan border
+ 	    [theme.breakpoints.up("md")]: {
+	        border: '10px solid cyan'
+	    }
+        }
+    }));
