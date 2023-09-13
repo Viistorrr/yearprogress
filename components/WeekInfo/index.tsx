@@ -1,4 +1,7 @@
 'use client'
+import Box from '@mui/material/Box';
+import LinearProgress from '@mui/material/LinearProgress';
+import Typography from '@mui/material/Typography';
 import {
   weekDays,
   TOTAL_WEEK_DAYS
@@ -6,11 +9,11 @@ import {
 
 const getColor = (percent: number) => {
   if (percent && percent <= 33.3333) {
-    return "bg-rose-400";
+    return "error";
   } else if (33.3333 < percent && percent <= 66.6666) {
-    return "bg-amber-400";
+    return "warning";
   } else {
-    return "bg-emerald-400";
+    return "success";
   }
 };
 
@@ -26,27 +29,21 @@ export const WeekInfo = () => {
   if(dayOfWeekd == 7) weekNumber = weekNumber - 1
 
   return (
-   <div className="flex flex-col w-full h-min items-center align-center justify-center border-2 rounded-lg border-slate-300 pr-8 pb-8 pl-8 shadow-lg mt-4 hover:pr-6 hover:pr-b6 hover:pl-6 hover:shadow-xl">
-      <h1 className="font-bold py-8">
-        {weekNumber} Semanas
-      </h1>
-      <div className="flex flex-row w-full items-center align-center">
-        <div className="flex items-center w-full bg-slate-100 rounded-lg h-2">
-          <div
-              className={`flex items-center justify-center py-4 ${getColor(currentWeekPercent)} h-2`}
-            style={{
-              width: currentWeekPercent.toString() + "%"
-            }}
-          >
-            <span className="text-sm font-bold pr-4">
-              {dayOfWeek}
-            </span>
-          </div>
-        </div>
-        <h1 className="w-1/12 pl-2 pr-8 font-bold items-center text-sm text-sky-900">
-          {currentWeekPercent.toFixed(0)}%
+    <div className="flex flex-col w-full">
+      <Box component="span" sx={{ p: 4, my: 2, border: '1px solid grey', width:1, borderRadius:'10px', boxShadow:'3px 3px 3px grey' }}>
+        <h1 className="font-bold py-8">
+          {weekNumber} Semanas
         </h1>
-      </div>
-    </div>
+        <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box sx={{ width: '100%', mr: 1 }}>
+          {dayOfWeek}
+          <LinearProgress variant="determinate" color={getColor(currentWeekPercent)} value={currentWeekPercent} />
+        </Box>
+        <Box sx={{ minWidth: 35 }}>
+          <Typography variant="body2" color="text.secondary">{`${Math.round(currentWeekPercent)}%`}</Typography>
+        </Box>
+      </Box>
+    </Box>
+  </div>
   );
 };
