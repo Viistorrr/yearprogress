@@ -32,12 +32,12 @@ export const WeekInfo = () => {
     <div className="flex flex-col w-full">
       <Box component="span" sx={{ p: 4, my: 2, border: '1px solid grey', width:1, borderRadius:'10px', boxShadow:'3px 3px 3px grey' }}>
         <h1 className="font-bold py-8">
-          {weekNumber} Semanas
+        {dayOfWeek}
         </h1>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Box sx={{ width: '100%', mr: 1 }}>
           <LinearProgress variant="determinate" color={getColor(currentWeekPercent)} value={currentWeekPercent} />
-          {dayOfWeek} 
+          {weekNumber} Semanas
         </Box>
         <Box sx={{ minWidth: 35 }}>
           <Typography variant="body2" color="text.secondary">{`${Math.round(currentWeekPercent)}%`}</Typography>

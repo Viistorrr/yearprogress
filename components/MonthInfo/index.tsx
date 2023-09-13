@@ -32,12 +32,12 @@ export const MonthInfo = () => {
     <div className="flex flex-col w-full">
       <Box component="span" sx={{ p: 4, border: '1px solid grey', width:1, borderRadius:'10px', boxShadow:'3px 3px 3px grey' }}>
         <h1 className="font-bold py-4 text-slate-700">
-          {month} Meses
+          {day} de {months[month].name}
           </h1>
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Box sx={{ width: '100%', mr: 1 }}>
             <LinearProgress variant="determinate" color={getColor(getMonthPercent(month, day))} value={getMonthPercent(month, day)} />
-            {day} de {months[month].name} 
+            {month} Meses
           </Box>
           <Box sx={{ minWidth: 35 }}>
             <Typography variant="body2" color="text.secondary">{`${Math.round(getMonthPercent(month, day))}%`}</Typography>
