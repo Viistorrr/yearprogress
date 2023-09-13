@@ -36,8 +36,8 @@ export const WeekInfo = () => {
         </h1>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Box sx={{ width: '100%', mr: 1 }}>
-          {dayOfWeek}
           <LinearProgress variant="determinate" color={getColor(currentWeekPercent)} value={currentWeekPercent} />
+          {dayOfWeek} 
         </Box>
         <Box sx={{ minWidth: 35 }}>
           <Typography variant="body2" color="text.secondary">{`${Math.round(currentWeekPercent)}%`}</Typography>

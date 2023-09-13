@@ -37,6 +37,7 @@ export const MonthInfo = () => {
           <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Box sx={{ width: '100%', mr: 1 }}>
             <LinearProgress variant="determinate" color={getColor(getMonthPercent(month, day))} value={getMonthPercent(month, day)} />
+            {day} de {months[month].name} 
           </Box>
           <Box sx={{ minWidth: 35 }}>
             <Typography variant="body2" color="text.secondary">{`${Math.round(getMonthPercent(month, day))}%`}</Typography>
