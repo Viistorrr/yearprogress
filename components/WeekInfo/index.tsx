@@ -1,5 +1,6 @@
 'use client'
 import Box from '@mui/material/Box';
+import Clock from '@components/Clock';
 import LinearProgress from '@mui/material/LinearProgress';
 import Typography from '@mui/material/Typography';
 import {
@@ -29,11 +30,10 @@ export const WeekInfo = () => {
   if(dayOfWeekd == 7) weekNumber = weekNumber - 1
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex w-full">
       <Box component="span" sx={{ p: 4, my: 2, border: '1px solid grey', width:1, borderRadius:'10px', boxShadow:'3px 3px 3px grey' }}>
-        <h1 className="font-bold py-8">
-        {dayOfWeek}
-        </h1>
+        {dayOfWeek} {' '}
+        <Clock />
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
         <Box sx={{ width: '100%', mr: 1 }}>
           <LinearProgress variant="determinate" color={getColor(currentWeekPercent)} value={currentWeekPercent} />
