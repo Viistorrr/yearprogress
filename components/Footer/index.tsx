@@ -6,7 +6,7 @@ export const Footer = () => (
         <div className="flex">
             <a
                 key="Instagram"
-                href="https://www.instagram.com/iprogresodelano"
+                href="https://www.instagram.com/solotiips"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sky-500 hover:text-sky-600 m-6"
@@ -15,7 +15,7 @@ export const Footer = () => (
             </a>
             <a
                 key="Twitter"
-                href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @iprogresodelano"
+                href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @solotiips"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-sky-600"
