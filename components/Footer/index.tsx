@@ -36,7 +36,7 @@ export const Footer = () => (
         <div className="flex-col items-center justify-center text-sm text-sky-900 hover:text-sky-700 py-2">
             <i>
                 <a
-                    href="https://www.viistorrr.com/"
+                    href="https://viistorrr.com/?utm_source=progresodelano&utm_medium=web"
                     target="_blank"
                     rel="noopener noreferrer"
                     >
