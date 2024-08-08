@@ -59,6 +59,7 @@ export default function Head() {
       <meta property="og:url" content="https://www.progresodelano.info/" />
       <meta property="og:site_name" content="Progreso del Año" />
       <meta property="og:locale" content="es_ES" />
+      <meta name="google-site-verification" content="dAw0AMvRwpe0g3xMUzxVgYEwlO6qtZM_tUT7kLgbM7k" />
 
       <Script
         src="https://www.googletagmanager.com/gtag/js?id=G-3ZY266V0CC"
