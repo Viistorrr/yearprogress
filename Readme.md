@@ -1,5 +1,5 @@
-una simple app que te muestra qué día del año es hoy. 
-## [progresodelano.info](https://www.progresodelano.info) ##
+una simple app que te muestra el porcentaje de avance del año en curso 
+## [progresodelano](https://vyearprogress.vercel.app/?utm_source=github&utm_medium=web) ##
 
 Usa Typescript, Firebase, TailwindCSS, NextJS 13, Google Analytics
 
