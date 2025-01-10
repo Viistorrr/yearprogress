@@ -19,7 +19,7 @@ export default function Head() {
       <meta name="twitter:description" content="⏳Un simple conteo del porcentaje de avance del año" />
       <meta
         name="twitter:image"
-        content="https://www.yearprogress.info/assets/imgs/prev.png"
+        content="https://vyearprogress.vercel.app/assets/imgs/prev.png"
       />
 
       <meta property="og:type" content="website" />
@@ -27,9 +27,9 @@ export default function Head() {
       <meta property="og:description" content="⏳Un simple conteo del porcentaje de avance del año" />
       <meta
         property="og:image"
-        content="https://www.yearprogress.info/assets/imgs/prev.png"
+        content="https://vyearprogress.vercel.app/assets/imgs/prev.png"
       />
-      <meta property="og:url" content="https://www.yearprogress.info/" />
+      <meta property="og:url" content="https://vyearprogress.vercel.app/" />
       <meta property="og:site_name" content="Progreso del Año" />
       <meta property="og:locale" content="en_US" />
 
@@ -43,7 +43,7 @@ export default function Head() {
       />
       <meta
         name="twitter:image"
-        content="https://www.progresodelano.info/assets/imgs/prev.png"
+        content="https://vyearprogress.vercel.app/assets/imgs/prev.png"
       />
 
       <meta property="og:type" content="website" />
@@ -54,9 +54,9 @@ export default function Head() {
       />
       <meta
         property="og:image"
-        content="https://www.progresodelano.info/assets/imgs/prev.png"
+        content="https://vyearprogress.vercel.app/assets/imgs/prev.png"
       />
-      <meta property="og:url" content="https://www.progresodelano.info/" />
+      <meta property="og:url" content="https://vyearprogress.vercel.app/" />
       <meta property="og:site_name" content="Progreso del Año" />
       <meta property="og:locale" content="es_ES" />
       <meta name="google-site-verification" content="dAw0AMvRwpe0g3xMUzxVgYEwlO6qtZM_tUT7kLgbM7k" />
