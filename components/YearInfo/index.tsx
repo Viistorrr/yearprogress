@@ -27,7 +27,7 @@ export const YearInfo = () => {
     <div className="flex flex-col w-full">
       <Box component="span" sx={{ p: 4, mt: 2, border: '1px solid grey', width:1, borderRadius:'10px', boxShadow:'3px 3px 3px grey' }}>
        <h1 className="text-lg font-bold text-slate-700 py-2">
-        {dayOfYear} días
+        {dayOfYear > 1 ? `${dayOfYear} días` : `${dayOfYear} día`}
       </h1>
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Box sx={{ width: '100%', mr: 1 }}>

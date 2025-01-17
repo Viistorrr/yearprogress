@@ -12,7 +12,7 @@ export default function Home() {
       <div className="flex w-full items-center justify-center">
         <iframe src="https://giphy.com/embed/7Z8QOXkz3USMDb9NZH" width="60" height="80" className="giphy-embed rounded-lg mb-4" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/poop-toilet-poo-7Z8QOXkz3USMDb9NZH"></a></p>
         <div className="flex flex-col w-2/12">
-          <span className="font-bold my-12 gap-3 ml-4">hoy</span>
+          <span className="font-bold my-12 gap-3 ml-4">esta semana</span>
           <span className="font-bold my-12 gap-3 ml-4">este mes</span>
           <span className="font-bold my-12 gap-3 ml-4">este año</span>
         </div>
