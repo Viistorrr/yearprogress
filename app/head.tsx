@@ -11,7 +11,7 @@ export default function Head() {
       <title>Progreso del Año</title>
       <meta content="width=device-width, initial-scale=1" name="viewport" />
       <meta name="description" content="⏳Un simple conteo del porcentaje de avance del año" />
-
+      <meta name="google-site-verification" content="4GmVfp_LSQ0MHO4_x3f9DNBIq7ll8ijbwgXKXAcQDtM" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@viistorrr" />
       <meta name="twitter:creator" content="@viistorrr" />
@@ -79,6 +79,7 @@ export default function Head() {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3769837006415356"
         crossOrigin="anonymous"
       ></Script>
+      
     </>
   );
 }
