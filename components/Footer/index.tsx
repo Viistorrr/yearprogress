@@ -1,9 +1,18 @@
 import Likes from "@components/Likes";
-import { Instagram, Twitter, Burger } from "@components/Icons";
+import { Instagram, Twitter, Burger, Heart } from "@components/Icons";
 
 export const Footer = () => (
     <>
         <div className="flex">
+            <a
+                key="Lovable"
+                href="https://lifestreamoftime.lovable.app?utm_medium=vyearprogress1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sky-500 hover:text-sky-600 m-6"
+                >
+                <Heart />
+            </a>
             <a
                 key="Instagram"
                 href="https://www.instagram.com/solotiips"
