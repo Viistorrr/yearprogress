@@ -1,11 +1,4 @@
-"use client";
-import Script from "next/script";
-import { usePathname, useRouter } from "next/navigation";
-
 export default function Head() {
-  const path = usePathname();
-  const router = useRouter();
-
   return (
     <>
       <title>Progreso del Año</title>
@@ -62,23 +55,28 @@ export default function Head() {
       <meta name="google-site-verification" content="dAw0AMvRwpe0g3xMUzxVgYEwlO6qtZM_tUT7kLgbM7k" />
       
 
-      <Script
+      {/* Google tag (gtag.js) */}
+      <script
+        async
         src="https://www.googletagmanager.com/gtag/js?id=G-3ZY266V0CC"
-        strategy="afterInteractive"
-      ></Script>
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
+      ></script>
+      <script
+        id="google-analytics"
+        dangerouslySetInnerHTML={{
+          __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
+
             gtag('config', 'G-3ZY266V0CC');
-            `}
-      </Script>
-      <Script
+          `,
+        }}
+      ></script>
+      <script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3769837006415356"
         crossOrigin="anonymous"
-      ></Script>
+      ></script>
     </>
   );
 }

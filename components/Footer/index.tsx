@@ -24,7 +24,7 @@ export const Footer = () => (
             </a>
             <a
                 key="Twitter"
-                href="https://twitter.com/intent/tweet?text=https://www.progresodelano.info/ @solotiips"
+                href="https://twitter.com/intent/tweet?text=https://vyearprogress.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-sky-600"
@@ -45,7 +45,7 @@ export const Footer = () => (
         <div className="flex-col items-center justify-center text-sm text-sky-900 hover:text-sky-700 py-2">
             <i>
                 <a
-                    href="https://viistorrr.com/?utm_source=progresodelano&utm_medium=web"
+                    href="https://viistorrr.vercel.app/?utm_source=vyearprogress"
                     target="_blank"
                     rel="noopener noreferrer"
                     >

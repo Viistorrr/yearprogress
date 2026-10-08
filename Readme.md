@@ -5,5 +5,5 @@ Usa Typescript, Firebase, TailwindCSS, NextJS 13, Google Analytics
 
 Creada por [@viistorrr](https://twitter.com/viistorrr)
 
-- [viistorrr.com](https://www.viistorrr.com)
+- [viistorrr.com](https://www.viistorrr.vercel.app)
 - [Buy me a coffee](https://www.buymeacoffee.com/viistorrr)
