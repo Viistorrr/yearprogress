@@ -5,6 +5,7 @@ import { Years } from "@components/Years";
 import { Clock } from "@components/Clock";
 import { Footer } from "@components/Footer";
 import { Toast } from "@components/Toast";
+import { ClientOnly } from "@components/ClientOnly";
 
 export default function Home() {
   return (
@@ -17,9 +18,11 @@ export default function Home() {
           <span className="font-bold my-12 gap-3 ml-4">este año</span>
         </div>
         <div className="w-10/12 pb-8">
-          <WeekInfo />
-          <MonthInfo />
-          <YearInfo />
+          <ClientOnly>
+            <WeekInfo />
+            <MonthInfo />
+            <YearInfo />
+          </ClientOnly>
         </div>
       </div>
       <Years />
